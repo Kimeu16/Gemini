@@ -1,0 +1,15 @@
+- [ ] **Backend Integration**
+    - [ ] Create `updateEmployeeSignature` controller in `employee.controller.ts`
+    - [ ] Add route for signature update in `employee.routes.ts`
+    - [ ] Update `adminApproveLeaveRequest` in `leave.controller.ts` to snapshot signatures
+- [ ] **Frontend UI Updates**
+    - [ ] Add signature upload UI to `Employees.tsx`
+    - [ ] Update `Requests.tsx` to handle `approverSignature`
+- [ ] **PDF Engine Refinement**
+    - [ ] Update `LeaveRequestPdfData` type in `corporatePdf.ts`
+    - [ ] Refactor `drawSignatureTable` to render images
+- [ ] **Documentation**
+    - [ ] Create `Signature_Extraction_Guide.md`
+- [ ] **Verification**
+    - [ ] Test upload workflow
+    - [ ] Test PDF generation with images
