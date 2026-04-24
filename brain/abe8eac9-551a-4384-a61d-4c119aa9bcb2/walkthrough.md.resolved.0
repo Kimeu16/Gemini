@@ -1,0 +1,31 @@
+# Login Restoration & Phone Format Normalization
+
+I have successfully restored application access by resolving the backend connectivity issues and fixing a critical mismatch in the login credential validation.
+
+## Changes Made
+
+### backend Restoration
+- **Process Management**: Identified and terminated a "zombie" `node.exe` process that was blocking port `5000` but not responding to requests.
+- **Service Restart**: Successfully restarted the backend server. Verified it is healthy and reachable at [http://localhost:5000/api/health](http://localhost:5000/api/health).
+
+### Login Logic Enhancement
+- **Format-Agnostic Validation**: Modified [auth.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/auth.controller.ts) to handle phone number passwords more robustly.
+- **Normalization Fallback**: The system now automatically normalizes both the stored phone number and the entered password during the login check. This allows users to log in using either the local format (`07...`) or the international format (`254...`) as their temporary password.
+
+### Database Audit
+- **Normalization Check**: Verified that all **58 users** in the database have their phone numbers correctly stored in the `254...` international format.
+- **User Specifics**: Confirmed that your account (`kimeu.anthony@alandick.co.ke`) is correctly configured with the normalized phone `254714229987`.
+
+## Verification Results
+
+### Automated Tests
+- **Backend Health**: `200 OK` from health endpoint.
+- **Login Verification (254 Format)**: `200 OK` (Token generated).
+- **Login Verification (07 Format)**: `200 OK` (Token generated — Fix verified).
+
+### Manual Verification Required
+- Please refresh your browser at [http://localhost:8080/login](http://localhost:8080/login) and try logging in again. 
+- You can now use either `0714229987` or `254714229987` as your password.
+
+> [!NOTE]
+> I have also reverted the `.env` changes as requested, keeping the production IP configuration intact.

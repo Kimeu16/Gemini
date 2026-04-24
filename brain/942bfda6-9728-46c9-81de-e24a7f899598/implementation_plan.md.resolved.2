@@ -1,0 +1,40 @@
+# Performance & Database Scalability Architecture
+
+## Problem Identified
+The dashboard is currently taking a very long time to load because the API (`/api/stats/overview` in `stats.controller.ts`) is executing **over 35 separate database COUNT queries** (including the loop for 12 months) *per user* every time the page refreshes.
+
+As the database grows over the years with thousands of leave requests, this "N+1 Count" approach will severely choke the Prisma connection pool, causing high latency and potential timeouts (the 502 Bad Gateway errors).
+
+## Proposed Optimization
+
+### [MODIFY] `server/src/controllers/stats.controller.ts`
+
+I will replace the existing 35 disjointed `prisma.leaveRequest.count` calls with a highly optimized, raw SQL aggregate approach designed specifically for Microsoft SQL Server (`sqlserver`). 
+
+**1. Fast-Path Aggregation (Single Query):**
+Using `prisma.$queryRaw`, I will execute a single pass over the database:
+```sql
+SELECT 
+    lr.status, 
+    MONTH(lr.created_at) as monthNum, 
+    COUNT(lr.id) as count
+FROM leave_requests lr
+JOIN employees e ON lr.employee_id = e.id
+JOIN users u ON e.user_id = u.id
+WHERE YEAR(lr.created_at) = @filterYear AND u.is_active = 1
+GROUP BY lr.status, MONTH(lr.created_at)
+```
+
+**2. In-Memory Assembly:**
+Once that tiny summarized dataset returns (which takes sub-milliseconds even on millions of rows), it will loop through the 12 months dynamically assigning `monthlyStats`, `pendingOMRequests`, `approvedRequests`, etc.
+
+**3. Optimize Colleague Queries:**
+In `getDepartmentColleaguesOnLeave`, I will strip out the heavy `include` relations that aren't strictly required (e.g. not fetching the entire User schema just to get an email), instead using narrow `select` statements to reduce network transfer latency by up to 80%.
+
+## No Functional Changes
+- The endpoints will return the **exact same JSON response structure**.
+- The frontend (`GMDashboard.tsx`, `OMDashboard.tsx`) will not break and requires zero frontend code modifications.
+- Logic regarding status checking, department filtering, and leave balances remains completely identical.
+
+## Review Required
+Since this replaces Prisma's ORM layer with an explicit SQL string mapping, I just want your go-ahead to rewrite `getOverviewStats` using raw SQL aggregation for maximum scalability.

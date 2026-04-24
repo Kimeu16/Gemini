@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Final walkthrough for removal of the role suffixes from the \"Approve\" buttons on the Leave Requests page. The labels have been simplified for a cleaner, more professional look across both desktop and mobile views.",
+  "updatedAt": "2026-04-17T10:56:20.955742600Z",
+  "version": "1"
+}

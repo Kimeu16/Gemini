@@ -1,0 +1,59 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<div  />
+	AD
+	AlanDick
+	Enterprise
+	Main Menu
+	[1] (73,177)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold bg-white/10 text-white shadow-[0_4px_12px_rgba(0,0,0,0.1)]' />
+		[2] (9,179)<div  />
+		[3] (76,177)<span >Command Center />
+		[4] (127,177)<div  />
+	[5] (73,230)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+		[6] (81,230)<span >Site Inventory />
+	[7] (73,284)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+		[8] (81,284)<span >Users & Teams />
+	[9] (73,338)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+		[10] (81,338)<span >Escalation Matrix />
+	[11] (73,391)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+		[12] (81,391)<span >Operations Checklists />
+	[13] (73,445)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+		[14] (81,445)<span >Security & Access />
+	Support
+	[15] (73,559)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all text-sm font-semibold group' />
+		[16] (48,559)<span >Settings />
+	[17] (73,613)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all text-sm font-semibold group' />
+		[18] (54,613)<span >Help Center />
+	[19] (73,908)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-destructive hover:bg-destructive/10 transition-all text-sm font-bold group mb-2' />
+		[20] (49,908)<span >Sign Out />
+	[21] (73,961)<button class='w-full flex items-center justify-center py-2.5 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all' />
+	[22] (174,43)<button class='p-2.5 rounded-xl hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all duration-200 border border-transparent hover:border-border' />
+	Command Center
+	AlanDick East Africa Operations
+	[23] (802,43)<input class='bg-transparent border-none focus:ring-0 text-sm ml-3 w-48 placeholder:text-muted-foreground/60' placeholder='Search command center...' />
+	[24] (889,43)<button class='p-2.5 rounded-xl hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all relative group border border-transparent hover:border-border' />
+		[25] (892,36)<span  />
+	[26] (943,43)<button class='flex items-center gap-3 p-1.5 pr-4 rounded-xl hover:bg-secondary/80 transition-all border border-transparent hover:border-border' />
+		[27] (916,43)<div  />
+			[28] (916,43)<span >AD />
+		[29] (953,43)<div  />
+			[30] (953,34)<p >Administrator />
+			[31] (953,50)<p >Ops Manager />
+	[32] (285,146)<input class='flex w-full border px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10 h-10 text-sm bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/10 rounded-xl transition-all shadow-sm' placeholder='Search all 40+ fields...' />
+	[33] (885,146)<select class='bg-transparent text-[13px] font-bold focus:ring-0 border-none p-0 pr-8 text-foreground' />
+	[34] (951,146)<button class='p-2.5 rounded-xl border border-border/50 bg-background/50 text-muted-foreground hover:text-foreground hover:bg-background transition-all shadow-sm' />
+	[35] (573,230)<div class='flex-1 overflow-auto relative custom-scrollbar' scrollable='true' />
+		[36] (194,227)<th  />
+			[37] (196,226)<div ># />
+		Location / Site
+	Showing
+	1
+	-
+	0
+	of
+	0
+	assets
+
+</current_dom>

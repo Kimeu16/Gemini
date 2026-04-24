@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_TASK",
+  "summary": "Creating a 'ship.ps1' script to automate the cleanup, Git synchronization (commit/push), and production deployment process for the Leave Tracker application.",
+  "updatedAt": "2026-04-14T05:56:49.209370200Z"
+}

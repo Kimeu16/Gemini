@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Cleanup plan for obsolete backend scripts, log files, and database backups in the server directory.",
+  "updatedAt": "2026-04-10T06:53:17.754140200Z",
+  "requestFeedback": true
+}

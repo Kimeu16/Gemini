@@ -1,0 +1,19 @@
+# Fix Login Failure (ERR_CONNECTION_REFUSED)
+
+The user is experiencing a login failure because the backend is unresponsive on port 5000 and has incorrect CORS/Frontend IP configurations in `.env`.
+
+## Proposed Changes
+
+### [Server]
+
+#### [MODIFY] [.env](file:///c:/Apps/Leave%20Tracker/server/.env)
+- Update `FRONTEND_URL` and `ALLOWED_ORIGINS` to use the correct machine IP `10.172.19.161` (currently truncated to `10.172.19.16`).
+- Change `NODE_ENV` to `development` for better debugging.
+
+## Verification Plan
+
+### Automated Tests
+- Run `curl -i http://localhost:5000/api/health` to ensure the server is responding.
+
+### Manual Verification
+- Ask the user to try logging in again at `http://10.172.19.161:8080/login`.

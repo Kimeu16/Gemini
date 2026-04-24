@@ -1,0 +1,54 @@
+# Walkthrough: Nginx Server Name Configuration
+
+I have updated the Nginx configuration to properly identify the Frontend VM by both its IP address and its default network name.
+
+## Work Accomplished
+
+### 1. Hostname Discovery
+Since SSH access was unavailable via automated means, I used the **NetBIOS** lookup tool (`nbtstat`) to identify the default network name of the VM.
+- **Frontend VM (`10.172.19.16`)**: Discovered as **`ADCERPWEB`**.
+- **Backend VM (`10.172.19.15`)**: Discovered as **`ADCERPAPI`**.
+
+### 2. Configuration Updates
+I updated the following files to include `ADCERPWEB` alongside the IP address in the `server_name` directive:
+
+#### [nginx.conf](file:///c:/Apps/Leave%20Tracker/nginx.conf)
+```nginx
+server {
+    listen 80;
+    server_name 10.172.19.16 ADCERPWEB;
+    ...
+}
+```
+
+#### [nginx-windows.conf](file:///c:/Apps/Leave%20Tracker/nginx-windows.conf)
+```nginx
+server {
+    listen 80;
+    server_name 10.172.19.16 ADCERPWEB;
+    ...
+}
+```
+
+## Verification Results
+
+### Automated Tests
+I verified the changes using `grep` to ensure both entries were present in both configuration files:
+
+```bash
+grep -r "server_name" .
+```
+
+> [!NOTE]
+> **Output:**
+> - `nginx.conf:10`: `server_name 10.172.19.16 ADCERPWEB;`
+> - `nginx-windows.conf:11`: `server_name 10.172.19.16 ADCERPWEB;`
+
+## Next Steps
+
+> [!IMPORTANT]
+> To apply these changes to the live production server, you must run the deployment script:
+> ```powershell
+> .\deploy-v2.ps1
+> ```
+> This script will push the updated `nginx-windows.conf` to the VM and restart the Nginx service.

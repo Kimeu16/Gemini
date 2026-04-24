@@ -1,0 +1,14 @@
+# PDF Redesign Complete!
+
+I've overhauled the `jsPDF` coordinate math to implement strict grid spacing and removed all heavy, thick black boxes in favor of sleek, minimalist, perfectly aligned borders. 
+
+### Changes Delivered
+- **Airy Header Design:** Removed the overly heavy, solid black brand-block on top, replacing it with a minimalist `0.4mm` thick border, opening up more visual breathing room from the start.
+- **Removed Cluttered Block Fills:** Stripped the heavy black accents around dates, textboxes, and signature rows. The emphasis is now entirely on the typographic layout (capitalization, layout alignment, and exact character spacing) to deliver that premium editorial feel.
+- **Typographic Refinement:** Rebuilt the `Employee Disclosure`, `Signature Column`, and `Contact & Handover` blocks to rely on `BRAND.black` text grids rather than colorful shading.
+- **Code Stability:** Verified that all TS typings cleanly compiled and the exact properties defined in `corporatePdf.ts` generated without error.
+
+> [!TIP]
+> Try generating a leave application! You should notice instantly that the bounding boxes and text layout look drastically cleaner and lighter on the eyes than the previous blocky style.
+
+Let me know if you want to tweak any margin lines, adjust the font letter-spacing further, or compress the signature alignment!

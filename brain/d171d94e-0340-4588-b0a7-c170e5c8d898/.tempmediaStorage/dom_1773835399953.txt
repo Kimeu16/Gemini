@@ -1,0 +1,264 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+AD
+AlanDick
+Enterprise
+Main Menu
+[0] (73,177)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[1] (81,177)<span >Command Center />
+[2] (73,230)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold bg-white/10 text-white shadow-[0_4px_12px_rgba(0,0,0,0.1)]' />
+	[3] (9,230)<div  />
+	[4] (76,230)<span >Site Inventory />
+	[5] (127,230)<div  />
+[6] (73,284)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[7] (81,284)<span >Users & Teams />
+[8] (73,338)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[9] (81,338)<span >Escalation Matrix />
+[10] (73,391)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[11] (81,391)<span >Operations Checklists />
+[12] (73,445)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[13] (81,445)<span >Security & Access />
+Support
+[14] (73,559)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all text-sm font-semibold group' />
+	[15] (48,559)<span >Settings />
+[16] (73,613)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all text-sm font-semibold group' />
+	[17] (54,613)<span >Help Center />
+[18] (73,908)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-destructive hover:bg-destructive/10 transition-all text-sm font-bold group mb-2' />
+	[19] (49,908)<span >Sign Out />
+[20] (73,961)<button class='w-full flex items-center justify-center py-2.5 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all' />
+[21] (174,43)<button class='p-2.5 rounded-xl hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all duration-200 border border-transparent hover:border-border' />
+Site Inventory
+AlanDick East Africa Operations
+[22] (802,43)<input class='bg-transparent border-none focus:ring-0 text-sm ml-3 w-48 placeholder:text-muted-foreground/60' placeholder='Search command center...' />
+[23] (889,43)<button class='p-2.5 rounded-xl hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all relative group border border-transparent hover:border-border' />
+	[24] (892,36)<span  />
+[25] (943,43)<button class='flex items-center gap-3 p-1.5 pr-4 rounded-xl hover:bg-secondary/80 transition-all border border-transparent hover:border-border' />
+	[26] (916,43)<div  />
+		[27] (916,43)<span >AD />
+	[28] (953,43)<div  />
+		[29] (953,34)<p >Administrator />
+		[30] (953,50)<p >Ops Manager />
+[31] (285,167)<input class='flex w-full border px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10 h-10 text-sm bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/10 rounded-xl transition-all shadow-sm' placeholder='Search assets by name, IP, or type...' />
+[32] (885,167)<select class='bg-transparent text-[13px] font-bold focus:ring-0 border-none p-0 pr-8 text-foreground' />
+[33] (951,167)<button class='p-2.5 rounded-xl border border-border/50 bg-background/50 text-muted-foreground hover:text-foreground hover:bg-background transition-all shadow-sm' />
+[34] (194,240)<th  />
+	[35] (196,240)<div ># />
+[36] (289,240)<th  />
+	[37] (289,240)<div >Location / Site />
+[38] (395,240)<th  />
+	[39] (395,240)<div >Region />
+[40] (484,240)<th  />
+	[41] (484,240)<div >Power Grid />
+[42] (586,240)<th  />
+	[43] (586,240)<div >Network />
+[44] (680,240)<th  />
+	[45] (680,240)<div >Entry Point />
+[46] (753,240)<th  />
+	[47] (753,240)<div >REON />
+[48] (803,240)<th  />
+	[49] (803,240)<div >Tier />
+[50] (880,240)<th  />
+	[51] (880,240)<div >Connectivity />
+[52] (573,300)<tr  />
+	[53] (194,300)<td  />
+		[54] (196,300)<span >0001 />
+	[55] (289,300)<td  />
+		[56] (232,299)<span >— />
+	[57] (395,300)<td >Nairobi />
+	[58] (484,300)<td >Grid / Genset />
+	[59] (586,300)<td >Installed 2024 />
+	[60] (680,300)<td >172.28.65.102 />
+	[61] (753,300)<td  />
+		[62] (750,301)<div >INT />
+	[63] (803,300)<td  />
+		[64] (798,301)<div >P3 />
+	[65] (880,300)<td  />
+		[66] (880,300)<div >Monitoring />
+			[67] (842,300)<span  />
+	[68] (952,300)<td  />
+		[69] (952,300)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[70] (573,369)<tr  />
+	[71] (194,369)<td  />
+		[72] (196,368)<span >0002 />
+	[73] (289,369)<td  />
+		[74] (232,368)<span >— />
+	[75] (395,369)<td >Nairobi />
+	[76] (484,369)<td >Grid / Genset />
+	[77] (586,369)<td >Installed 2024 />
+	[78] (680,369)<td >172.28.64.54 />
+	[79] (753,369)<td  />
+		[80] (750,369)<div >INT />
+	[81] (803,369)<td  />
+		[82] (798,370)<div >P3 />
+	[83] (880,369)<td  />
+		[84] (880,369)<div >Working />
+			[85] (842,369)<span  />
+	[86] (952,369)<td  />
+		[87] (952,369)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[88] (573,437)<tr  />
+	[89] (194,437)<td  />
+		[90] (196,437)<span >0003 />
+	[91] (289,437)<td  />
+		[92] (232,436)<span >— />
+	[93] (395,437)<td >Nairobi />
+	[94] (484,437)<td >Grid / Genset />
+	[95] (586,437)<td >Installed 2024 />
+	[96] (680,437)<td >172.28.64.64 />
+	[97] (753,437)<td  />
+		[98] (750,438)<div >INT />
+	[99] (803,437)<td  />
+		[100] (798,438)<div >P2 />
+	[101] (880,437)<td  />
+		[102] (880,437)<div >Working />
+			[103] (842,437)<span  />
+	[104] (952,437)<td  />
+		[105] (952,437)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[106] (573,506)<tr  />
+	[107] (194,506)<td  />
+		[108] (196,506)<span >0004 />
+	[109] (289,506)<td  />
+		[110] (232,505)<span >— />
+	[111] (395,506)<td >Nairobi />
+	[112] (484,506)<td >Solar PV / Grid />
+	[113] (586,506)<td >Installed 2024 />
+	[114] (680,506)<td >172.28.64.138 />
+	[115] (753,506)<td  />
+		[116] (750,506)<div >INT />
+	[117] (803,506)<td  />
+		[118] (798,507)<div >P2 />
+	[119] (880,506)<td  />
+		[120] (880,506)<div >Working />
+			[121] (842,506)<span  />
+	[122] (952,506)<td  />
+		[123] (952,506)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[124] (573,574)<tr  />
+	[125] (194,574)<td  />
+		[126] (196,574)<span >0005 />
+	[127] (289,574)<td  />
+		[128] (232,574)<span >— />
+	[129] (395,574)<td >Eldoret />
+	[130] (484,574)<td >Grid / Genset />
+	[131] (586,574)<td >Installed 2024 />
+	[132] (680,574)<td >172.28.65.209 />
+	[133] (753,574)<td  />
+		[134] (750,575)<div >INT />
+	[135] (803,574)<td  />
+		[136] (798,575)<div >P3 />
+	[137] (880,574)<td  />
+		[138] (880,574)<div >Working />
+			[139] (842,574)<span  />
+	[140] (952,574)<td  />
+		[141] (952,574)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[142] (573,643)<tr  />
+	[143] (194,643)<td  />
+		[144] (196,643)<span >0006 />
+	[145] (289,643)<td  />
+		[146] (232,642)<span >— />
+	[147] (395,643)<td >Nairobi />
+	[148] (484,643)<td >Grid />
+	[149] (586,643)<td >Installed 2024 />
+	[150] (680,643)<td >172.28.65.93 />
+	[151] (753,643)<td  />
+		[152] (750,644)<div >INT />
+	[153] (803,643)<td  />
+		[154] (798,644)<div >P3 />
+	[155] (880,643)<td  />
+		[156] (880,643)<div >Working />
+			[157] (842,643)<span  />
+	[158] (952,643)<td  />
+		[159] (952,643)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[160] (573,712)<tr  />
+	[161] (194,712)<td  />
+		[162] (196,711)<span >0007 />
+	[163] (289,712)<td  />
+		[164] (232,711)<span >— />
+	[165] (395,712)<td >Nairobi />
+	[166] (484,712)<td >Grid />
+	[167] (586,712)<td >Installed 2024 />
+	[168] (680,712)<td >172.28.65.70 />
+	[169] (753,712)<td  />
+		[170] (750,712)<div >INT />
+	[171] (803,712)<td  />
+		[172] (798,712)<div >P3 />
+	[173] (880,712)<td  />
+		[174] (880,712)<div >Working />
+			[175] (842,712)<span  />
+	[176] (952,712)<td  />
+		[177] (952,712)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[178] (573,780)<tr  />
+	[179] (194,780)<td  />
+		[180] (196,780)<span >0008 />
+	[181] (289,780)<td  />
+		[182] (232,779)<span >— />
+	[183] (395,780)<td >Nakuru />
+	[184] (484,780)<td >Grid / Genset />
+	[185] (586,780)<td >Installed 2024 />
+	[186] (680,780)<td >172.27.194.5 />
+	[187] (753,780)<td  />
+		[188] (750,781)<div >INT />
+	[189] (803,780)<td  />
+		[190] (798,781)<div >P2 />
+	[191] (880,780)<td  />
+		[192] (880,780)<div >Working />
+			[193] (842,780)<span  />
+	[194] (952,780)<td  />
+		[195] (952,780)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[196] (573,849)<tr  />
+	[197] (194,849)<td  />
+		[198] (196,849)<span >0009 />
+	[199] (289,849)<td  />
+		[200] (232,848)<span >— />
+	[201] (395,849)<td  />
+		[202] (378,848)<span >— />
+	[203] (484,849)<td >DG-Grid-Solar />
+	[204] (586,849)<td >Installed 2024 />
+	[205] (680,849)<td >172.28.65.167 />
+	[206] (753,849)<td  />
+		[207] (750,849)<div >INT />
+	[208] (803,849)<td  />
+		[209] (798,850)<div >P3 />
+	[210] (880,849)<td  />
+		[211] (880,849)<div >At Risk />
+			[212] (842,849)<span  />
+	[213] (952,849)<td  />
+		[214] (952,849)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[215] (573,917)<tr  />
+	[216] (194,917)<td  />
+		[217] (196,917)<span >0010 />
+	[218] (289,917)<td  />
+		[219] (232,917)<span >— />
+	[220] (395,917)<td >Kisumu />
+	[221] (484,917)<td >Grid / Genset />
+	[222] (586,917)<td >Installed 2024 />
+	[223] (680,917)<td >172.28.65.166 />
+	[224] (753,917)<td  />
+		[225] (750,918)<div >INT />
+	[226] (803,917)<td  />
+		[227] (798,918)<div >P2 />
+	[228] (880,917)<td  />
+		[229] (880,917)<div >At Risk />
+			[230] (842,917)<span  />
+	[231] (952,917)<td  />
+		[232] (952,917)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+[233] (573,986)<tr >Grid / Genset />
+	[234] (194,986)<td  />
+		[235] (196,986)<span >0011 />
+	[236] (289,986)<td  />
+		[237] (232,985)<span >— />
+	[238] (395,986)<td >Kitale />
+	Grid / Genset
+	[239] (586,986)<td >Installed 2024 />
+	[240] (680,986)<td >172.28.65.210 />
+	[241] (753,986)<td  />
+		[242] (750,987)<div >INT />
+	[243] (803,986)<td  />
+		[244] (798,987)<div >P2 />
+	[245] (880,986)<td  />
+		[246] (880,986)<div >Working />
+			[247] (842,986)<span  />
+	[248] (952,986)<td  />
+		[249] (952,986)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+
+</current_dom>

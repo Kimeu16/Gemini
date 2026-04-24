@@ -1,0 +1,10 @@
+- [x] Implement deployment guards in `deploy-posh.ps1`
+  - [x] Add `$SkipConfirm` logic
+  - [x] Add `Read-Host` prompts for local test check & production overwrite warning
+- [x] Update Corporate PDF Layout (`corporatePdf.ts`)
+  - [x] Define `BRAND.accentNavy` as `[24, 21, 69]`
+  - [x] Update `drawHeader` to match the new image-based layout
+  - [x] Update Page 1 call to use the new `drawHeader` and generate correct `LVE-YYYYMM-XXXXX` format ID
+  - [x] Remove `drawHeader` call from Page 2
+  - [x] Ensure formatting handles `generateSignatureFormPdf` correctly
+- [x] Verify PDF generation code compiles

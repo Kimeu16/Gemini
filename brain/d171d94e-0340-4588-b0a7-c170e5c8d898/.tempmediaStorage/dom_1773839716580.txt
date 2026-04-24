@@ -1,0 +1,635 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+AlanDick Organisation Structure and Escalation Matrix Ver 5.0.xlsx : Sites
+[0] (500,502)<div id='sheets-viewport' scrollable='true' />
+	Latitude
+	Longitude
+	On Air Date
+	Region
+	Rectifier Type
+	Tenants / Operators
+	REON Integration
+	Rectifier Installed Capacity (3KW Module)
+	Rectifier Max Capacity
+	Security Company
+	Site Type
+	Electronic Lock ID
+	Field Engineer Name
+	Field Engineer Email Account
+	Field Engineer Phone Contact
+	-1.293144
+	36.808639
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Safaricom IBS
+	NI1181
+	Peter Mutai
+	petermutai@gmail.com
+	254728724668
+	-1.299223
+	36.7811
+	24/12/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Rooftop
+	NA_INFILL_PLAN_4
+	Peter Mutai
+	petermutai@gmail.com
+	254728724668
+	-1.262401
+	36.823266
+	24/05/2022
+	Nairobi
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Airtel IBS
+	NI1453
+	Millicent Andaji
+	andanjimillicent@gmail.com
+	254703650300
+	-1.31293
+	36.88977
+	23/03/2021
+	Nairobi
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Airtel Rooftop
+	NI1297
+	Ronald Chola
+	cholaronny@gmail.com
+	254724945895
+	0.86493
+	35.21997
+	07/11/2021
+	Eldoret
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WU1290
+	Hilary Mungai
+	hilarymungai@gmail.com
+	254723574290
+	-1.274159
+	36.848385
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Safaricom IBS
+	NI3303
+	Millicent Andaji
+	andanjimillicent@gmail.com
+	254703650300
+	-1.45075
+	36.980656
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Rooftop
+	MOS066
+	Philip Wambua
+	wambuaphilip08@gmail.com
+	254793005960
+	-0.24849
+	36.13041
+	25/08/2022
+	Nakuru
+	Megmeet
+	Dual Operator
+	Integrated
+	18KW
+	18KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WL1180
+	Vincent Kipruto
+	kiprutovincent1995@gmail.com
+	254729260150
+	-0.12463
+	34.26473
+	31/05/2023
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Greenfield
+	WN1982
+	Ben Kamau
+	kamaub572@gmail.com
+	254727998852
+	0.2587019
+	34.295251
+	21/02/2023
+	Kisumu
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Airtel Greenfield
+	WN1120
+	Ben Kamau
+	kamaub572@gmail.com
+	254727998852
+	1.05113
+	35.01697
+	11/11/2021
+	Kitale
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WU1756
+	Jeremiah Mandioli
+	jmadioli992@gmail.com
+	254722906543
+	0.99928
+	35.05806
+	06/11/2021
+	Kitale
+	ELTEK
+	Multi Vendor
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel JTL Greenfield
+	WU1757
+	Jeremiah Mandioli
+	jmadioli992@gmail.com
+	254722906543
+	-0.7013332
+	34.7865439
+	22/01/2022
+	Kisii
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WL1078
+	Ramadhan Abdullahi
+	ramadhanabdullahi45@gmail.com
+	254768697625
+	-0.877806
+	35.42241
+	15/01/2024
+	Bomet
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Airtel Greenfield
+	AKL109
+	Samson Kamau
+	samsonkiyo@gmail.com
+	254721565497
+	-0.779083
+	35.340983
+	04/03/2021
+	Bomet
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Rooftop
+	WL1557
+	Samson Kamau
+	samsonkiyo@gmail.com
+	254721565497
+	-0.78533
+	35.32441
+	14/02/2022
+	Bomet
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WL0984
+	Samson Kamau
+	samsonkiyo@gmail.com
+	254721565497
+	-0.09605
+	34.26882
+	25/01/2022
+	Kisumu
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Greenfield
+	WN1108
+	Ben Kamau
+	kamaub572@gmail.com
+	254727998852
+	-0.59577778
+	34.928333
+	19/01/2022
+	Kisii
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WL1964
+	Ramadhan Abdullahi
+	ramadhanabdullahi45@gmail.com
+	254768697625
+	4.20162
+	36.683088
+	USF
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom USF Greenfield
+	EU1539
+	Roy Mokoosio
+	roy.mokoosio@gmail.com
+	254721389654
+	0.44367
+	34.18276
+	19/02/2022
+	Kakamega
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WN1620
+	Elias Watwati
+	eliaswatwati@gmail.com
+	254727906777
+	0.592468
+	34.559648
+	27/01/2022
+	Kakamega
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WN0962
+	Elias Watwati
+	eliaswatwati@gmail.com
+	254727906777
+	0.5691
+	34.54904
+	27/02/2023
+	Kakamega
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WN0963
+	Jeremiah Mandioli
+	jmadioli992@gmail.com
+	254722906543
+	0.187462159
+	34.68424057
+	23/04/2023
+	Kisumu
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WN1699
+	Ben Kamau
+	kamaub572@gmail.com
+	254727998852
+	0.45604
+	34.1372
+	17/03/2022
+	Kakamega
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom JTL Greenfield
+	WN1043
+	Elias Watwati
+	eliaswatwati@gmail.com
+	254727906777
+	0.45171
+	34.10287
+	29/03/2021
+	Kakamega
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom JTL Greenfield
+	WN1041
+	Elias Watwati
+	eliaswatwati@gmail.com
+	254727906777
+	0.4626
+	34.1325
+	22/04/2024
+	Kakamega
+	ELTEK
+	Dual Operator
+	Integrated
+	18KW
+	21KW
+	Serico
+	Safaricom Airtel Greenfield
+	WN1042
+	Elias Watwati
+	eliaswatwati@gmail.com
+	254727906777
+	-1.21357
+	36.91017
+	28/10/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Rooftop
+	NM1183
+	Brian Gichana
+	briangichana38@gmail.com
+	254712731301
+	-0.359548
+	37.0014499
+	07/03/2023
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Greenfield
+	NYI051
+	Brian Gichana
+	briangichana38@gmail.com
+	254712731301
+	0.73627
+	34.41709
+	22/01/2022
+	Kakamega
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Greenfield
+	WN0841
+	Elias Watwati
+	eliaswatwati@gmail.com
+	254727906777
+	-0.55001
+	35.18384
+	18/03/2021
+	Kericho
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WL0965
+	Andrew Terer
+	andterer@gmail.com
+	254722224561
+	-0.58886
+	35.18978
+	31/10/2021
+	Bomet
+	ELTEK
+	Multi Vendor
+	Integrated
+	18KW
+	21KW
+	Hatari
+	Safaricom Airtel JTL Greenfield
+	WL1127
+	Samson Kamau
+	samsonkiyo@gmail.com
+	254721565497
+	-1.508381
+	36.962958
+	25/06/2022
+	Nairobi
+	MEGMEET
+	Single Operator
+	Integrated
+	18KW
+	18KW
+	Serico
+	Airtel Greenfield
+	NA0201
+	Philip Wambua
+	wambuaphilip08@gmail.com
+	254793005960
+	-1.274924
+	36.848121
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Safaricom IBS
+	NI3311
+	Peter Mutai
+	petermutai@gmail.com
+	254728724668
+	-0.283498
+	36.073944
+	03/04/2022
+	Nakuru
+	MEGMEET
+	Single Operator
+	Integrated
+	18KW
+	18KW
+	Hatari
+	Airtel Rooftop
+	Airtel
+	Joseph Kimani
+	jkimani23.jk@gmail.com
+	254714580464
+	-1.468507
+	36.95727
+	12/12/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Rooftop
+	AD0169
+	Philip Wambua
+	wambuaphilip08@gmail.com
+	254793005960
+	-1.2177
+	36.89595
+	17/09/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Rooftop
+	AD0103
+	Millicent Andaji
+	andanjimillicent@gmail.com
+	254703650300
+	-1.226415051
+	36.93006437
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Rooftop
+	NM0855
+	Millicent Andaji
+	andanjimillicent@gmail.com
+	254703650300
+	-1.285733704
+	36.95044537
+	24/08/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Safaricom Greenfield
+	NM0084
+	Ronald Chola
+	cholaronny@gmail.com
+	254724945895
+	-1.2870483
+	36.6870621
+	19/06/2023
+	Nairobi
+	MEGMEET
+	Single Operator
+	Integrated
+	18KW
+	18KW
+	N/A
+	Airtel Street Pole
+	Airtel
+	Cynelion Moses Wafula
+	cynelion@gmail.com
+	254703254900
+	-1.258892
+	36.888131
+	05/12/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Airtel JTL Rooftop
+	NA0176
+	Millicent Andaji
+	andanjimillicent@gmail.com
+	254703650300
+	3.656587
+	36.315126
+	USF
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom USF Greenfield
+	EU1492
+	Roy Mokoosio
+	roy.mokoosio@gmail.com
+	254721389654
+Sites
+[1] (997,979)<div  />
+	[2] (997,977)<b >> />
+[3] (997,993)<div  />
+	[4] (997,991)<b >< />
+
+</current_dom>

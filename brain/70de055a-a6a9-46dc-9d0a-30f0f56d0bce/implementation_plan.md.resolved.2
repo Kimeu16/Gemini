@@ -1,0 +1,41 @@
+# Implementation Plan: Flexible SMTP Configuration for Company Email
+
+The goal is to move from a hardcoded Gmail configuration to a flexible SMTP setup that supports company email providers (like Microsoft 365, Outlook, or custom SMTP servers).
+
+## Proposed Changes
+
+### [Backend Configuration]
+
+#### [MODIFY] [env.ts](file:///c:/Apps/Leave%20Tracker/server/src/config/env.ts)
+- Add the following variables to the `envSchema`:
+    - `SMTP_HOST`: The SMTP server address.
+    - `SMTP_PORT`: The SMTP server port (usually `587` or `465`).
+    - `SMTP_SECURE`: Boolean for using SSL/TLS.
+    - `SMTP_SERVICE`: Optional service name (e.g., 'gmail', 'outlook365') for automatic configuration.
+
+#### [MODIFY] [email.service.ts](file:///c:/Apps/Leave%20Tracker/server/src/services/email.service.ts)
+- Update `nodemailer.createTransport` logic:
+    - If `SMTP_HOST` is provided, use generalized SMTP configuration.
+    - If `SMTP_SERVICE` is provided, use the Nodemailer service shorthand.
+    - Fallback to the current Gmail default for backwards compatibility.
+
+#### [MODIFY] [.env.example](file:///c:/Apps/Leave%20Tracker/server/.env.example)
+- Add documentation for the new SMTP variables with clear examples for Office 365 and Google Workspace.
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> To provide exact instructions, I need to know which email provider your company uses (e.g., Microsoft Office 365/Outlook, Google Workspace, or a private company server).
+
+> [!WARNING]
+> Changing these settings will require a restart of the backend service to take effect. If you follow the steps below, I will guide you through updating the files and restarting the service.
+
+## Verification Plan
+
+### Automated Tests
+- I will run `npm run build` in the server directory to ensure the new environment schema and service logic pass TypeScript validation.
+
+### Manual Verification
+- After configuration, you can use the "Forgot Password" or "Account Setup" feature in the UI to trigger a test email.

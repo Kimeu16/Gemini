@@ -1,0 +1,7 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Identify and remove obsolete deployment scripts, diagnostic tools, and build artifacts from the root directory to maintain a clean codebase.",
+  "updatedAt": "2026-04-10T06:50:02.692557900Z",
+  "version": "3",
+  "requestFeedback": true
+}

@@ -1,0 +1,48 @@
+# Modern B&W PDF Redesign
+
+This plan outlines the steps and design changes to visually upgrade your leave application PDF to be modern, strictly black and white, and perfectly evenly spaced, without switching away from raw `jsPDF`.
+
+## User Review Required
+
+> [!IMPORTANT]
+> Since we are sticking with raw `jsPDF` (and skipping Wizi PDF as you mentioned it's not worth the migration!), our focus will be strictly on math-based grid layouts and typography. I want to make sure you like the direction before I rewrite the coordinates.
+
+Does this strategy sound good to you? Once approved I'll jump right in and apply these coordinate/spacing updates.
+
+## Proposed Changes
+
+### Redesigning `src/lib/corporatePdf.ts`
+
+The current PDF layout relies on incremental Y-values, which causes visual clutter and uneven spacing. We will overhaul the rendering math:
+
+1. **Strict Black & White Palette:**
+   - Remove "danger" (red/pink backgrounds) or other varied grays.
+   - Use only solid black (`[0,0,0]`), stark white (`[255,255,255]`), and exact mid-tones (`[240,240,240]` for very subtle backgrounds or pure borders) to guarantee maximum contrast.
+
+2. **Consistent Spacing & Grid System:**
+   - Implement a fixed vertical spacing multiplier (e.g., blocks are always separated by exactly `12mm` or `16mm` of whitespace).
+   - Convert all forms into clean, evenly spaced boxes (a classic 2-column or 3-column grid where the widths are mathematically identical).
+
+3. **Modern Corporate Typography:**
+   - Use `helvetica` exclusively but rely heavier on uppercase, heavily tracked (letter-spaced) section titles with thick underlining.
+   - Make primary data values larger and bolder, contrasting against small, tracked-out helper labels (e.g., "START DATE").
+
+4. **Cleaner Approval Blocks:**
+   - Refactor the signature and approval blocks on Page 2 to look like high-end corporate sign-off boxes. We will ensure all boxes share the exact same height and width across the page.
+
+#### [MODIFY] corporatePdf.ts
+
+- **Adjust `BRAND` constants**: Strip out colored accents and standardise minimalist grays.
+- **Refactor `drawHeader`**: Implement a sleeker top border header instead of a massive solid black box, lending to an airy, evenly spaced document.
+- **Refactor `generateLeaveRequestPdf`**: Update all X/Y coordinate math to cleanly align text strings, bounding boxes, and lines into an even grid.
+
+## Open Questions
+
+1. **Header Style:** I plan to replace the heavy black chunk at the top of the header with a clean, minimalist border and tracked-out text to increase "breathing room" (even spacing). Are you okay with lightening the header footprint for a more modern look?
+2. **Page Count:** The application currently spills into 2 pages to accommodate all the status and signatures. Should we keep it spaced cleanly over 2 pages, or try to aggressively compress it into 1? (I recommend 2 pages to keep the spacing even and uncrowded).
+
+## Verification Plan
+
+### Manual Verification
+- We will generate a test leave request PDF using the system.
+- Visually verify that distances between sections are identical (e.g., always 12mm), column widths perfectly align, and all text uses matching stark B&W contrast.

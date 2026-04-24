@@ -1,0 +1,29 @@
+# Leave Tracker VM Unification & Daily Log Rotation
+
+## 🎯 Goal Accomplished
+Centralized all Leave Tracker application components into a single root directory (`C:\AlanDick-LeaveTracker`) on both production VMs. Replaced scattered log files with a robust daily log partitioning system featuring a 3-day retention policy. 
+
+## 🛠️ Changes Implemented
+
+### 1. Unified Infrastructure Root
+Created a single professional-grade directory structure on both VMs for all Leave Tracker operations:
+*   `C:\AlanDick-LeaveTracker\app` - Central execution junction.
+*   `C:\AlanDick-LeaveTracker\versions` - Version retention (maximum 5 releases).
+*   `C:\AlanDick-LeaveTracker\ops` - Operations/Monitoring tools.
+*   `C:\AlanDick-LeaveTracker\staging` - Release transit area.
+*   `C:\AlanDick-LeaveTracker\logs` - Central partitioned logs.
+*   `C:\AlanDick-LeaveTracker\metadata` - Lockfiles and manifest data.
+
+### 2. Daily Log Partitioning
+*   Updated `watchdog-backend.ps1` and `watchdog-nginx.ps1` to dynamically construct daily directories (`logs/YYYY-MM-DD/watchdog.log`).
+*   Configured the `cleanup-vm.ps1` to parse all date subdirectories under `\logs` and rigidly enforce a **3-day retention limit**, saving long-term disk space from runaway logs.
+
+### 3. Pipeline Upgrades
+*   `deploy-v2.ps1` completely re-routed to drop payloads, manage metadata, and toggle atomic junctions against the new `C:\AlanDick-LeaveTracker` root exclusively.
+*   The deployment orchestrator integrates the `cleanup-vm.ps1` script to run identically against the new paths at the end of every ship cycle.
+
+## ✅ Verification
+> [!SUCCESS]
+> Both Frontend (VM1) and Backend (VM2) reported `100% OK` during proxy health checks post-migration.
+
+The entire migration script executed directly against the servers, moving legacy structures over, resetting the Windows Task Scheduler, and starting the systems from their new persistent homes without any user disruption.

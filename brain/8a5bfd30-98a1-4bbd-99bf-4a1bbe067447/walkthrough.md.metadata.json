@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Finalized the reversion to the 3-VM distributed architecture. Updated all configurations and technical documentation to reflect separate IPs for Frontend (10.172.19.16), Backend (10.172.19.15), and Database (10.172.19.33).",
+  "updatedAt":  "2026-04-23T09:04:40.910713200Z",
+  "version":  "1"
+}

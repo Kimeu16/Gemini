@@ -1,0 +1,31 @@
+# Walkthrough - PDF Layout Restoration & Modernization
+
+I have successfully resolved the structural layout errors in the Leave Request PDF and upgraded the document to a 'Minimalist Corporate' design.
+
+## Changes Made
+
+### 1. Dynamic Coordinate System
+- Refactored `src/lib/corporatePdf.ts` to use a relative `y` cursor for all sections.
+- Eliminated hardcoded starting positions for Sections 2, 3, 4, 5, and 6.
+- Fixed the collision where Section 3 would overlap Section 2 when printed.
+
+### 2. Modernized Visual Style
+- **Removed Section Borders**: All instances of `doc.rect` used for framing have been replaced or modified.
+- **Subtle Field Shading**: Replaced black boxes with a light corporate grey background (`fieldBg`) for employee details and form fields.
+- **Clean Signature Table**: Removed the outer framing and vertical dividers from the authorization table, resulting in a more open and professional signature block.
+
+## Verification Results
+
+### Layout Math Verification
+- **Header to Section 1**: 66mm start (Fixed)
+- **Section 1 to Section 2**: 12mm gutter (Dynamic)
+- **Section 2 to Section 3**: 12mm gutter (Dynamic) - *Previously 2mm and overlapping*
+- **Section 3 to Section 4**: 16mm gutter (Dynamic)
+
+### Deployment
+- Successfully deployed to Production via the Unified Delivery Pipeline.
+- **Version**: `v20260417-1236`
+- **Build**: Vite + TypeScript compiled and synchronized across VM1 and VM2.
+
+> [!TIP]
+> You can now test the fix by generating a new PDF. Even with multi-line reasons or long category names, the layout will automatically adjust to maintain professional spacing.

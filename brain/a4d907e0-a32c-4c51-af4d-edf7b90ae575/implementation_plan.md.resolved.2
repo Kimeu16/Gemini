@@ -1,0 +1,47 @@
+# Implementation Plan: "Next-Level" Structural Premium UI
+
+![Next-Level Bento Portfolio Mockup](file:///C:/Users/kymeu/.gemini/antigravity/brain/a4d907e0-a32c-4c51-af4d-edf7b90ae575/next_level_bento_portfolio_mockup_1776761872209.png)
+
+The "Titan Aurora" aesthetic will be evolved into a **Structural Premium** design system. We will move away from soft organic blobs toward high-precision geometry, math-based SVG animations, and a structured "Bento Grid" layout that screams "Official" and "Engineering Excellence."
+
+## User Review Required
+
+> [!IMPORTANT]
+> The biggest change is the shift from "Aurora Blobs" to a **Kinetic SVG Wave**. This creates a more technical, professional feeling that aligns with Google/Microsoft standards.
+> We will also introduce a **Bento Grid** layout which is the gold standard for high-end product design in 2025.
+
+## Proposed Changes
+
+---
+
+### [Component] [NEW] [KineticWave](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/KineticWave.tsx)
+A high-fidelity SVG background replacing the CSS blobs. It will feature multiple overlapping sine waves with varying frequencies and opacities.
+
+### [Component] [MODIFY] [Index](file:///c:/Apps/spark-portfolio-main/src/pages/Index.tsx)
+Refactor the main landing page to incorporate a **Bento Grid** layout for the "Projects" and "Skills" sections. This provides a more structured, professional presentation.
+
+### [Component] [MODIFY] [index.css](file:///c:/Apps/spark-portfolio-main/src/index.css)
+Update the design tokens for a "Technical Noir" look:
+- **Typography**: Refined spacing and weight hierarchy.
+- **Borders**: Sharp 1px borders with "Subtle Glow" rather than large blurry shadows.
+- **Grids**: Standardize on a sophisticated 12-column mesh grid.
+
+### [Component] [MODIFY] [Hero](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Hero.tsx)
+Add a "Scanline" or "Mesh" overlay to the hero to give it a high-tech "Architect" feel.
+
+---
+
+## Open Questions
+
+- **Color Palette**: Do you prefer the current Electric Cyan/Purple, or should we move to a more "Stealth" monochrome with a single accent color (e.g., Pure White or Gold)?
+- **Wave Complexity**: Should the wave be global (full screen) or confined to specific sections to maintain maximum focus on text?
+
+## Verification Plan
+
+### Automated Tests
+- `npm run dev`: Verify fluid motion of the SVG waves.
+- `npm run build`: Ensure no performance regressions with the new SVG components.
+
+### Manual Verification
+- Visual audit of the Bento Grid layout on mobile vs desktop.
+- Testing the "Intelligent Cursor" interactions with the new bento cards.

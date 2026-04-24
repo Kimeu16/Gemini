@@ -1,0 +1,9 @@
+# Task Progress: Codespot Aesthetic Transfer
+
+- [ ] Update `index.css` to adopt neon green as the primary color and dark monochrome for others.
+- [ ] Remove `Syne` font in favor of `Space Grotesk` or `Outfit` alongside `Inter` and `JetBrains Mono`.
+- [ ] Update `KineticWave.tsx` to map to the new neon-green color profile (Matrix-style code look).
+- [ ] Refactor `Hero.tsx` to use the sharper colors and simplified button borders.
+- [ ] Refactor `Projects.tsx`, `Skills.tsx`, `Experience.tsx` replacing cyan/gold accents with shades of green/grey.
+- [ ] Refactor `Navbar.tsx` and `Contact.tsx` for consistency.
+- [ ] Final visual review via dev server.

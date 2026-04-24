@@ -1,0 +1,21 @@
+- [x] Backend Refactoring
+    - [x] Rename legacy CEO fields in `leave.controller.ts` and `employee.controller.ts`
+    - [x] Refactor `gmApprovedToAdmin` email service to use parameter object
+    - [x] Update role authorization in `leave.routes.ts`
+    - [x] Remove unused variables (e.g., `userDept`)
+- [x] Frontend Refactoring
+    - [x] Update query keys in `AdminDashboard.tsx`
+    - [x] Update data mapping in `CalendarView.tsx`
+    - [x] Standardize role labels in `Requests.tsx`
+    - [x] Update terminology in `UserGuide.tsx`
+- [/] Documentation Update
+    - [ ] Update `Technical_Guide.html` (labels, statuses, endpoints)
+    - [ ] Update `TECHNICAL_DOCS.md` (role definitions, statuses)
+    - [ ] Update `README.md` (approval routing)
+    - [ ] Update `wiki/1-Architecture/Flow.md` (Mermaid diagrams)
+- [/] Script Updates
+    - [ ] Rename and update `server/create-ceo.ts` -> `create-admin.ts`
+    - [ ] Rename and update `server/get-ceo.ts` -> `get-admin.ts`
+- [/] Final Verification
+    - [ ] Run `npx prisma generate` to fix stale client
+    - [ ] Global search to confirm zero legacy CEO references

@@ -1,0 +1,13 @@
+# Bulk Upload with Custom Balances & Deferred Emails
+
+## Backend
+- [ ] Update `createEmployeeWithUserSchema` to accept `annualLeave`, `sickLeave`, `suppressEmail`
+- [ ] Modify `processSingleEmployee()` to use custom balances and respect email suppression
+- [ ] Add `sendWelcomeEmails` controller endpoint
+- [ ] Add route `POST /employees/send-welcome-emails`
+
+## Frontend
+- [ ] Update Excel parsing to read `annual_leave` / `sick_leave` columns
+- [ ] Add "Suppress Emails" checkbox to Bulk Import dialog
+- [ ] Pass `suppressEmail` + custom balances to API
+- [ ] Add "Send Welcome Emails" button + confirmation dialog

@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan to relocate the 'Carry Forward' feature from Settings to a more visible and OM-exclusive location. \nIncludes adding a dedicated widget to the OM Dashboard and potentially adding a management tab to the Employees page.",
+  "updatedAt": "2026-04-10T12:11:35.652922200Z",
+  "requestFeedback": true
+}

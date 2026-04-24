@@ -1,0 +1,44 @@
+# Login Debug & Fix Plan (502 Bad Gateway)
+
+The user is unable to log in after deploying the Leave Tracker application. Investigation via the browser DOM and network logs shows a **502 Bad Gateway** error on `POST /api/auth/login`. This indicates that the Nginx reverse proxy (on `10.172.19.16`) cannot reach the backend service (proxied to `10.172.19.15:5000`).
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Backend VM Architecture**: The current Nginx configuration assumes a 3-VM setup where the backend is on `10.172.19.15`. If you intended to run both frontend and backend on the same machine (`10.172.19.16`), we need to update the configuration to use `localhost:5000`.
+
+> [!WARNING]
+> **Port 5000 Accessibility**: Test-NetConnection to `10.172.19.15:5000` failed. This means either the service is not running on that VM or a firewall is blocking the traffic.
+
+## Proposed Changes
+
+### 1. Verification Phase (Research)
+- **Check Backend Process**: Verify if the backend service is running on `10.172.19.15` using PM2 or Node.
+- **Firewall Audit**: Use PowerShell on the backend server to ensure port 5000 is open.
+- **Logs Inspection**: Review Nginx error logs on the frontend server to confirm the exact upstream failure reason.
+
+### 2. Configuration Adjustments
+
+#### [MODIFY] [nginx-windows.conf](file:///c:/Apps/Leave%20Tracker/nginx-windows.conf)
+If the backend and frontend are on the same server, update the `proxy_pass` to point to `localhost`.
+
+#### [MODIFY] [server/.env](file:///c:/Apps/Leave%20Tracker/server/.env)
+Ensure the `BACKEND_URL` and `ALLOWED_ORIGINS` are correctly set for the production environment.
+
+### 3. Service Restart
+- Restart the backend service (if it was crashed or not started).
+- Reload Nginx configuration to apply any proxy changes.
+
+## Open Questions
+
+- **Where is the backend running?** Is it on `10.172.19.15` or `10.172.19.16`?
+- **Are you using PM2?** The previous attempt to run `pm2 status` failed because it's not in the PATH. We may need to locate it or use standard `node` commands.
+
+## Verification Plan
+
+### Automated Tests
+- `Invoke-WebRequest -Uri "http://10.172.19.16/api/health" -Method Get`: Verify Nginx proxy to backend health check.
+- `browser_subagent`: Re-test login with the provided credentials (`tkymeu@gmail.com`) to ensure successful redirection to `/dashboard`.
+
+### Manual Verification
+- Manually log in via the browser and verify that the "Welcome back" toast appears.

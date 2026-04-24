@@ -1,0 +1,9 @@
+# Verification Task: Escalation Matrix Integration
+
+- [ ] Navigate to http://localhost:8080/
+- [ ] Wait 5 seconds
+- [ ] Click on "Escalation Matrix" in the sidebar
+- [ ] Wait 5 seconds
+- [ ] Take a screenshot
+- [ ] Verify live data (Site out of Service, Generator Mains Failure, etc.)
+- [ ] Check console logs for errors

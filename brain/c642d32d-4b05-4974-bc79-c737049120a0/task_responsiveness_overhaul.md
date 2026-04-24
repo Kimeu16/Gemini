@@ -1,0 +1,16 @@
+- `[x]` Dashboard grid responsiveness overhaul
+- `[x]` Employees hero action responsiveness
+- `[/]` Requests Page (`Requests.tsx`) Mobile Card View
+    - `[ ]` Define mobile-friendly card layout
+    - `[ ]` Implement conditional rendering (Hide table/Show cards)
+    - `[ ]` Test action accessibility (View/Approve/Reject)
+- `[ ]` Reports Page (`Reports.tsx`) Optimization
+    - `[ ]` Review Recharts responsive heights
+    - `[ ]` Optimize KPI grid labels
+    - `[ ]` Ensure Department Table is responsive
+- `[ ]` Logs Page (`Logs.tsx`) Mobile Card View
+    - `[ ]` Define compact mobile card layout for logs
+    - `[ ]` Implement conditional rendering
+- `[ ]` Employees Page (`Employees.tsx`) Table Optimization
+    - `[ ]` Convert Annual Processing preview table to card view on mobile
+- `[ ]` Final Verification across all breakpoints (Mobile/Tablet/Desktop)

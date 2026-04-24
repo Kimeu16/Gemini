@@ -1,0 +1,35 @@
+# Dual Database Configuration (Local & Remote)
+
+We will set up a local SQL Server using Docker for "offline" testing, while preserved the existing VM connection settings for when the server is back online.
+
+## Proposed Changes
+
+### 1. Docker Environment [NEW]
+- Create a `docker-compose.yml` or a reusable one-liner to start the local SQL Server.
+- Use the same credentials (`leave_app_user` / `H0rs3br1dg3@2`) to minimize configuration drift.
+
+### 2. server/.env [MODIFY]
+- We will restructure the `.env` file to contain both connection strings.
+- One will be active, and the other will be commented out, allowing for a quick "1-second toggle".
+- We'll also provide a way to use `.env.local` specifically for local development.
+
+### 3. Database Sync
+- Run a special "Local Init" command to push the schema and seed data to the Docker instance without affecting the remote VM database.
+
+
+## Verification Plan
+
+### Automated Tests
+- `npx prisma db push`: Verify schema is successfully applied.
+- `node seed-prod.js`: Verify initial data is inserted.
+- Check the `nodemon` server terminal to ensure the `ConnectionError` is resolved.
+
+### Manual Verification
+- Attempt to log in with `ceo@company.com` / `Admin123!` (from seed script).
+- Verify navigation to "Requests" and "Employees" pages works without database errors.
+
+## Open Questions
+
+- Do you have enough disk space (~2GB) for the SQL Server Docker image?
+- Would you prefer a lightweight **SQLite** solution instead? 
+    - *Note: SQLite would require modifying the Prisma schema and some code because it doesn't support all MSSQL features used in this project.*

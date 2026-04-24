@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Technical plan to clean up the workspace, organize and commit the large set of pending changes (spanning schema, backend logic, and frontend UI), and push the code to GitHub. This includes adding new reservation features and workflow refinements.",
+  "updatedAt": "2026-04-14T05:39:05.214479600Z",
+  "requestFeedback": true
+}

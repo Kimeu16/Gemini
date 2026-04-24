@@ -1,0 +1,8 @@
+# PDF Layout Modernization Tasks
+
+- [/] Refactor `drawHeader` to be a sleek header rather than a massive black block.
+- [ ] Refactor `generateLeaveRequestPdf` to align text identically along mathematically pure grid columns (`boxW`, `colW`).
+- [ ] Change all lines to consistent thickness (`0.3` or `0.5`).
+- [ ] Overhaul spacing increments (e.g. `y += 14`, `y += 20`) to be exact.
+- [ ] Enforce uppercase + char spacing for a high-end editorial feel.
+- [ ] Update `drawSignatureRow` to match the new minimalist layout.

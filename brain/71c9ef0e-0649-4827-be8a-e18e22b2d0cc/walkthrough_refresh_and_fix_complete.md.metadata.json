@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Completed user refresh and display limits fix. All 56 employees are now visible in the directory, and the primary staff records are fully synchronized with the standardized CSV data.",
+  "updatedAt": "2026-04-14T09:26:34.519261500Z"
+}

@@ -1,0 +1,6 @@
+- [ ] Backend: Update `stats.controller.ts` to include pending reservation counts
+- [ ] Frontend: Update `OMDashboard.tsx` (StatCard + Grid + Skeleton)
+- [ ] Frontend: Update `GMDashboard.tsx` (StatCard + Grid + Skeleton)
+- [ ] Frontend: Update `CEODashboard.tsx` (StatCard + Grid + Skeleton)
+- [ ] Responsiveness Audit: Review and fix responsiveness across mobile/desktop for dashboards
+- [ ] Verify functionality and layout

@@ -1,0 +1,16 @@
+# Debugging Login Issue on http://10.172.19.16/login
+
+## Plan
+1. [x] Navigate to http://10.172.19.16/login.
+2. [x] Fill in email (test@alandick.co.ke) and password.
+3. [/] Click login.
+4. [x] Check browser console logs for errors. (Empty)
+5. [/] Check network requests for /api/auth/login. (Tool timed out)
+6. [ ] Report status code and error messages.
+7. [ ] Identify any UI issues or JS errors blocking execution.
+
+## Findings
+- Console logs are empty after clicking "Sign In".
+- `browser_list_network_requests` timed out.
+- The "Sign In" button does not appear to stay in a loading state or provide feedback.
+- I will try to press "Enter" in the password field to trigger login and watch for network requests again.

@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Walkthrough of all changes made to support bulk employee upload with custom leave balances and deferred welcome emails. Covers backend schema/controller/route changes and frontend Excel parsing, suppress checkbox, and Send Welcome Emails button.",
+  "updatedAt": "2026-04-13T12:04:10.717763300Z"
+}

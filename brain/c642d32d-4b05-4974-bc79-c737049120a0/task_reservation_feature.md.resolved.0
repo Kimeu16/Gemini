@@ -1,0 +1,16 @@
+# Task: Reserve Leave Days Implementation
+
+- `[/]` Database: Add `Reservation` model to Prisma schema
+- `[ ]` Backend: Create Reservation endpoints
+    - `[ ]` `POST /api/reservations`
+    - `[ ]` `GET /api/reservations/my`
+    - `[ ]` `GET /api/reservations/department`
+    - `[ ]` `POST /api/reservations/:id/convert`
+    - `[ ]` `POST /api/reservations/:id/cancel`
+- `[ ]` Frontend: UI Integration
+    - `[ ]` `ReservationModal` component
+    - `[ ]` Calendar integration (Dashed/Faded styling)
+    - `[ ]` My History tab for reservations
+- `[ ]` Verification & Deployment
+    - `[ ]` Local testing
+    - `[ ]` Production deployment with Prisma migration

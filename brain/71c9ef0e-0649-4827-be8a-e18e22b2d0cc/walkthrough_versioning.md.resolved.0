@@ -1,0 +1,34 @@
+# Walkthrough: Automated App Versioning
+
+I have implemented an automated versioning system that stamps the application with a unique ID (Timestamp + Git Hash) every time you deploy.
+
+## Changes Made
+
+### 1. Deployment Pipeline
+Modified [deploy-v2.ps1](file:///c:/Apps/Leave%20Tracker/deploy-v2.ps1) to inject a dynamic metadata step:
+- **Automatic Metadata**: Generates `src/version.json` during the build process.
+- **Traceability**: Captures the current Git short-hash and a formatted timestamp.
+
+### 2. Login Page UI
+Updated [Login.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Login.tsx) with branded version info:
+- **Discreet Placement**: Added to the footer below the copyright.
+- **Modern Styling**: Uses a mono-spaced font in a capsule pill for a "technical but clean" look.
+
+### 3. Dashboard Sidebar
+Updated [Sidebar.tsx](file:///c:/Apps/Leave%20Tracker/src/components/layout/Sidebar.tsx) for supportability:
+- **Visible build info**: Tucked away at the very bottom of the sidebar.
+- **High-contrast text**: Uses the existing dashboard color palette with low-opacity metadata labels.
+
+## Verification Results
+
+### Build Test (Dry Run)
+I ran `.\ship.ps1 -DryRun -SkipConfirm` and verified the following output:
+> `-> Generating version metadata (src/version.json)...`
+> `[OK] Version info staged: v20260414-0928 (d2cf008)`
+
+### Local Dev Verification
+The `src/version.json` placeholder was created to ensure your local dev environment remains functional and shows `vDev-Local`.
+
+---
+> [!IMPORTANT]
+> The version only updates when you run the **Ship** or **Deploy** scripts. Local development will always show `vDev-Local`.

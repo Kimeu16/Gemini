@@ -1,0 +1,29 @@
+# Fix Deployment Failures
+
+This plan addresses the backend build errors and SSH connectivity issues encountered during the recent deployment attempt.
+
+## Proposed Changes
+
+### Backend Code Fixes
+
+#### [MODIFY] [auth.ts](file:///c:/Apps/Leave%20Tracker/server/src/middleware/auth.ts)
+- Add `name: string` to the `user` object in the `AuthRequest` interface.
+- Update the `authenticate` middleware to populate the `name` field from the database.
+
+#### [MODIFY] [leave.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/leave.controller.ts)
+- Replace `.replaceAll(/\s+/g, '_')` with `.replace(/\s+/g, '_')` on line 234 to ensure compatibility with the current TypeScript target (`es2016`).
+
+### Infrastructure Investigation
+
+#### [INVESTIGATE] VM2 Connectivity
+- Perform a network probe to `10.172.19.15` (VM2) to diagnose the SSH timeout.
+- Verify if the VM is reachable via ping or port 22.
+
+## Verification Plan
+
+### Automated Tests
+- Run `npm run build` in the `server` directory to verify code fixes.
+- Run `Test-NetConnection` to verify connectivity to VM2.
+
+### Manual Verification
+- Re-run `npm run ship` and monitor the output for successful connection to both VMs.

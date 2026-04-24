@@ -1,0 +1,35 @@
+# Walkthrough - Document Refinements Complete
+
+I have finalized the layout, styling, and structural improvements for the Leave Request system. These changes ensure that both the downloadable PDF and the live UI preview are professionally polished, accurate, and visually synchronized.
+
+## Key Accomplishments
+
+### 1. Fixed Signature Label Overflow
+I broadened the role label column to prevent text overflow for longer titles like "Chief Executive Officer."
+- **PDF**: Increased `sigLabelW` from **34mm to 40mm**.
+- **UI Preview**: Widen the first column from **120px to 150px**.
+
+### 2. Corrected Page Numbering
+The PDF now correctly tracks and displays the two-page structure in the footer.
+- Added a footer to **Page 1**.
+- Updated footer logic to display **"PAGE 1 OF 2"** and **"PAGE 2 OF 2"** consistently.
+
+### 3. Removed Background Shading
+Removed the light grey backgrounds from the "Contact & Handover" section across both views to maintain a clean monochromatic aesthetic.
+- **PDF**: Disabled the field background rectangle fills.
+- **UI Preview**: Removed the `#f8f7fc` background from the contact grid items.
+
+### 4. Layout Synchronization
+Fine-tuned the vertical spacing so that the transition from the Handover Report to the Official Approval section is compact and professional in both the system preview and the final PDF.
+
+## Verification Results
+
+### Page 2 Layout (PDF)
+> [!NOTE]
+> All signatures now have adequate spacing, and the "Chief Executive Officer" title is perfectly aligned within its border.
+
+### UI Preview Footer
+> [!TIP]
+> The preview footer now uses a clean transparent background with dark text, providing a much higher-quality "paper" feel within the system.
+
+You can now test these changes by viewing any leave request in the system and downloading the generated PDF!

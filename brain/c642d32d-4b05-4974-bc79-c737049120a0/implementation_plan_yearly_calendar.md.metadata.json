@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan to transform the Yearly Calendar View into a high-density, high-fidelity heatmap-style overview. This includes switching to status dots for events in yearly mode, optimizing grid layout, and refining typography for a professional corporate look.",
+  "updatedAt": "2026-04-10T07:58:19.547476400Z",
+  "requestFeedback": true
+}

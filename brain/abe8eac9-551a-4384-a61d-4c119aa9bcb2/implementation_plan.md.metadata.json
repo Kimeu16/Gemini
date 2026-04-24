@@ -1,0 +1,7 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Proposed architectural plan to replace native browser date inputs with a dynamic React-Day-Picker based Calendar component in the Leave Requests interface. This will visually distinguish working days from non-working days (weekends based on MON_FRI/MON_SAT schedules and Kenyan public holidays) to give employees clear visual feedback on their leave applications.",
+  "updatedAt": "2026-04-14T13:06:03.144331Z",
+  "version": "5",
+  "requestFeedback": true
+}

@@ -1,0 +1,81 @@
+# Plan: Fully Shift from CEO to Administrator Role
+
+This plan outlines the final steps to completely replace the "CEO" role and nomenclature with "Administrator" (or "Admin") across the Leave Tracker system, ensuring consistency between the UI, backend logic, and documentation.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Manual CEO Signatures**: We will keep the "CEO / Managing Director" label on the final PDF signature line as requested, but the system approval stage will be renamed to "Admin Confirmation" or "Administrator Approval".
+>
+> **Backward Compatibility**: Database field mappings (e.g., `@map("ceo_approver_id")`) will be kept for now to avoid data migration, but the Prisma model fields and TypeScript variables will use the `admin` prefix.
+
+## Proposed Changes
+
+---
+
+### Backend Components
+
+#### [MODIFY] [prisma/schema.prisma](file:///c:/Apps/Leave%20Tracker/server/prisma/schema.prisma)
+- Update any remaining internal field names (if any) to use `admin` prefix while keeping `@map` to legacy database columns.
+
+#### [MODIFY] [src/controllers/leave.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/leave.controller.ts)
+- Rename internal variables like `ceoNameRef`, `ceoEmployee` to `adminNameRef`, `adminEmployee`.
+- Update error messages and log messages to use "Administrator" instead of "CEO".
+- Update email template calls (e.g., `gmApprovedToCEO` to `gmApprovedToAdmin`).
+
+#### [MODIFY] [src/services/email.service.ts](file:///c:/Apps/Leave%20Tracker/server/src/services/email.service.ts)
+- Rename template functions: `gmApprovedToCEO` -> `gmApprovedToAdmin`.
+- Update email subjects: "CEO Approval Required" -> "Admin Confirmation Required".
+- Update email HTML content: Replace "CEO Authorization", "Hi CEO", etc., with "Administrator Confirmation" or similar.
+- Keep references to "CEO's manual signature" where explaining the process.
+
+#### [MODIFY] [src/controllers/reservation.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/reservation.controller.ts)
+- Update any internal strings or log messages.
+
+---
+
+### Frontend Components
+
+#### [MODIFY] [src/components/dashboard/AdminDashboard.tsx](file:///c:/Apps/Leave%20Tracker/src/components/dashboard/AdminDashboard.tsx)
+- Rename query keys: `ceoPendingRequests` -> `adminPendingRequests`.
+- Rename IDs: `apply-for-leave-btn-ceo` -> `apply-for-leave-btn-admin`.
+
+#### [MODIFY] [src/pages/Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)
+- Update role labels in the UI: "3. CEO" -> "3. Administrator".
+
+#### [MODIFY] [src/pages/CalendarView.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/CalendarView.tsx)
+- Rename functions: `getCeoDotClass` -> `getAdminDotClass`, `getCeoLabel` -> `getAdminLabel`.
+
+#### [MODIFY] [src/lib/corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
+- Update logic to handle the `ADMINISTRATOR` role correctly.
+- *Preserve* the "CEO / Managing Director" label on the signature line but ensure the data source is correct.
+
+---
+
+### Documentation
+
+#### [MODIFY] [Technical_Guide.html](file:///c:/Apps/Leave%20Tracker/Technical_Guide.html)
+- Globally find and replace "CEO" with "Administrator" where it refers to the system role.
+
+#### [MODIFY] [TECHNICAL_DOCS.md](file:///c:/Apps/Leave%20Tracker/TECHNICAL_DOCS.md)
+- Update role and status descriptions.
+
+#### [MODIFY] [wiki/1-Architecture/Flow.md](file:///c:/Apps/Leave%20Tracker/wiki/1-Architecture/Flow.md)
+- Update Mermaid diagrams and flow descriptions.
+
+## Open Questions
+
+1. **Specific Labels**: Should the final stage be labeled as **"Admin Authorization"**, **"Administrator Final Approval"**, or something else? I've used "Administrator Confirmation" in this plan.
+2. **CTO Role**: The system also has a "CTO" role which seems to have similar permissions. Should this also be consolidated or left alone?
+
+## Verification Plan
+
+### Automated Tests
+- Run `npm run build` in both server and client to ensure no broken references.
+- Check that all API endpoints still work with the `ADMINISTRATOR` role.
+
+### Manual Verification
+- Log in as an Administrator and verify the dashboard shows "Pending Admin Confirmation".
+- Submit a leave request and follow it through the workflow (OM -> GM -> Admin).
+- Verify the emails received at each stage use the new nomenclature.
+- Generate a PDF and ensure the signature line still says "CEO / Managing Director".

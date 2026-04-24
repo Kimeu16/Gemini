@@ -1,0 +1,17 @@
+- [x] Fix 500 Internal Server Error (Identified SQL Server unique constraint issue)
+- [/] Database Schema Updates
+    - [x] Remove `@unique` from `leave_request_id`
+    - [ ] Add `approver_id` and `handled_at` fields
+    - [ ] Run `prisma db push` and `prisma generate`
+- [ ] Backend Workflow Development
+    - [ ] Implement `approveReservation` endpoint
+    - [ ] Implement `rejectReservation` endpoint
+    - [ ] Integrate Email Notifications (Requester & Approver)
+    - [ ] Integrate In-App Notifications
+- [ ] Frontend Enhancements
+    - [ ] Update Calendar item colors by status
+    - [ ] Add Approval actions to Manager/OM views
+- [ ] Verification & Cleanup
+    - [ ] Verify multiple reservations can be created (Fixed 500)
+    - [ ] Verify email delivery
+    - [ ] Remove debug logs and fix error handler

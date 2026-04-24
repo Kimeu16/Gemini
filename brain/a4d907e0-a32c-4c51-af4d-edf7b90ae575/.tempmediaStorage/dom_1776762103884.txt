@@ -1,0 +1,87 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Shots
+Explore
+Hire Talent
+Get Hired
+Community
+Sign up
+Log in
+One Week Wonders
+PRO
++
+2.9k
+1.2m
+Flowbase
+864
+587k
+Devanta Ebison
+3.3k
+1.2m
+Nija Works
+PRO
++
+626
+436k
+Mike | Creative Mints
+PRO
+2.1k
+1.2m
+UI8
+PRO
+3.1k
+940k
+Love Henry
+543
+293k
+Orix Creative
+PRO
++
+469
+409k
+1
+Morva Labs
+PRO
+602
+373k
+One Week Wonders
+PRO
++
+852
+555k
+One Week Wonders
+PRO
++
+486
+409k
+Daniel Sun
+478
+328k
+4
+[0] (500,500)<div class='shot-overlay js-shot-overlay lazyloading-hidden-container overlay-visible lazyloaded' />
+	[1] (500,521)<div class='overlay-content js-overlay-content' scrollable='true' />
+		Portfolio / Animation
+		[2] (242,188)<a class='sticky-header__avatar hoverable' href='/creativemints' />
+			[3] (242,188)<drb-avatar  />
+				[4] (242,188)<img  />
+		[5] (297,188)<a class='hoverable' href='/creativemints'>Mike | Creative Mints />
+		[6] (362,188)<button class='sticky-header__available'>Available for work />
+		[7] (401,188)<a class='form-btn follow shot-follow sentence-btn ' href='/creativemints/followers'>Follow />
+		[8] (657,188)<button class='btn2 btn2--tertiary btn2--circle' />
+		[9] (684,188)<a class='bucket-shot btn2 btn2--circle btn2--tertiary' href='/signups/new' title='Save shot' />
+		[10] (732,188)<a class='btn2  hide-on-mobile' href='/signups/new' title='Get in touch' />
+			[11] (732,188)<span >Get in touch />
+		[12] (258,996)<button aria-label='Pause' class='btn2 btn2--circle btn2--secondary-alt' />
+		[13] (398,996)<div  />
+		[14] (976,330)<button class='btn2 btn2--tertiary btn2--circle with-indicator comments-action' />
+			[15] (983,314)<span >42 />
+		[16] (976,387)<button class='btn2 btn2--tertiary btn2--circle share-action' />
+		[17] (976,445)<button class='btn2 btn2--tertiary btn2--circle tertiary' />
+	[18] (990,21)<a aria-label='close' class='js-close-overlay close-overlay' href='#' />
+Hiring for a project?
+Create a brief and start getting proposals from top design talent.
+Start a Project Brief
+
+</current_dom>

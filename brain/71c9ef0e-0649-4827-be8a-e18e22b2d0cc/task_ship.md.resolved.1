@@ -1,0 +1,4 @@
+- [x] Develop the `ship.ps1` script with cleanup, git sync, and deployment integration
+- [x] Add `ship` command to `package.json`
+- [x] Verify script with `.\ship.ps1 -DryRun`
+- [x] Final handoff and walkthrough

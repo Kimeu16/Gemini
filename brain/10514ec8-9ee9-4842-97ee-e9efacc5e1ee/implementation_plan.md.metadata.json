@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Fixing backend build errors and investigating VM connectivity issues.\n1. Update `AuthRequest` to include `name`.\n2. Fix `replaceAll` compatibility issue.\n3. Test connectivity to VM2.",
+  "updatedAt": "2026-04-15T05:36:30.599715700Z",
+  "requestFeedback": true
+}

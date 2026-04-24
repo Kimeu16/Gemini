@@ -1,0 +1,28 @@
+# Investigation and Fix: Deployment Synchronization
+
+The user reports that the recent changes to the PDF generator and the Requests UI have not been reflected in the deployed environment, despite a successful deployment script execution.
+
+## Research Findings
+- **Local Source**: Verified that `corporatePdf.ts` and `Requests.tsx` contain the correct updates.
+- **Local Build**: `npm run build` completed successfully, and `dist` artifacts appear to contain the new logic (verified by minified string inspection).
+- **Deployment Script**: `deploy-posh.ps1` reported success and HTTP 200 health checks.
+- **Potential Gap**: Browser caching (`expires 1d` in Nginx) or stale remote `dist` contents due to script variable expansion behavior or file locks.
+
+## Proposed Actions
+
+### 1. Infrastructure Audit (Remote)
+- Verify the content of `index.html` on the remote server to identify active asset hashes.
+- Check the modification times of assets in `C:\leave-tracker\dist\assets` on the production VM.
+- Inspect Nginx logs for any reload or serving errors.
+
+### 2. Deployment Script Hardening
+- Update `deploy-posh.ps1` to explicitly clear the `dist` folder before extraction using more robust PowerShell commands.
+- Disable aggressive caching in `nginx-windows.conf` for a short period to force client updates.
+
+### 3. Verification & Redeploy
+- Run a clean build: `rm -rf dist && npm run build`.
+- Re-run the deployment script and verify the live hashes via `curl`.
+
+## Open Questions
+- Is the user accessing the site via an IP or a domain that might be cached by a proxy?
+- Can the user verify the changes by using an Incognito/Private window (to rule out browser cache)?

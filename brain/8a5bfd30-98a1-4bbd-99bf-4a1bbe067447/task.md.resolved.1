@@ -1,0 +1,26 @@
+# Consolidate Frontend + Backend onto Single VM
+
+## Infrastructure & Config
+- [x] Update `nginx-windows.conf` — proxy to localhost, update root path
+- [x] Update `nginx.conf` — compact version
+- [x] Update `server/.env.production` — update IPs
+- [x] Delete `nginx-frontend.conf` (CentOS legacy, no longer relevant)
+
+## Deployment Scripts
+- [x] Rewrite `deploy-v2.ps1` — single VM deployment
+- [x] Update `ship.ps1` — single VM references
+- [x] Update `install-watchdogs.ps1` — single VM
+- [x] Update `probe_vms_v2.ps1` — single VM checks
+- [x] Create consolidated `setup-vm.ps1` (merge frontend + backend setup)
+- [x] Delete `setup-frontend-vm.ps1`
+- [x] Update `setup-backend-vm.ps1` → rename to `setup-vm.ps1`
+
+## Documentation
+- [x] Update `README.md`
+- [x] Update `TECHNICAL_DOCS.md`
+- [x] Update `WATCHDOG-SETUP.md`
+- [x] Update `wiki/5-Deployment/Operations-Runbook.md`
+- [x] Update `Technical_Guide.html`
+
+## Verification
+- [ ] Dry-run build test

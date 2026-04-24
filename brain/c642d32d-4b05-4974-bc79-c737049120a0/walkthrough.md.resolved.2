@@ -1,0 +1,33 @@
+# Codebase Cleanup: Obsolete Files Removed
+
+The codebase has been streamlined by removing legacy scripts, temporary diagnostic tools, and old build artifacts. This ensures that only relevant, production-ready files remain in the root directory.
+
+## Changes Made
+
+### 1. Legacy Deployment & Probing Scripts
+Removed scripts that have been superseded by the current 3-VM architecture tools:
+- `deploy-posh.ps1` (Legacy)
+- `probe-vms.ps1` (Legacy)
+
+### 2. Diagnostic & Verification Tools
+Deleted one-off scripts used during previous troubleshooting sessions:
+- `diag.ps1`
+- `diagnose_remote.ps1`
+- `tmp_remote_check.ps1`
+- `verify_remote.ps1`
+
+### 3. Build Artifacts & Temporary Files
+Cleaned up old build outputs and temporary metadata:
+- `.zip` and `.tar` files (`backend.zip`, `frontend.zip`, `src.tar`, etc.)
+- Vite configuration timestamp files (`.mjs`)
+- Temporary PDF samples and test directories (`.tmp_pdf_sample`, `test_deploy`, etc.)
+
+## Current Primary Tools
+The following scripts have been **preserved** as they are critical for your current workflow:
+- [deploy-v2.ps1](file:///c:/Apps/Leave%20Tracker/deploy-v2.ps1): Primary production deployment script.
+- [probe_vms_v2.ps1](file:///c:/Apps/Leave%20Tracker/probe_vms_v2.ps1): Current VM status and connectivity prober.
+- `setup-*.ps1`: VM environment setup scripts.
+
+## Verification
+- Verified that the current dev server processes are still running stable.
+- Root directory is now significantly cleaner, reducing cognitive load for future development.

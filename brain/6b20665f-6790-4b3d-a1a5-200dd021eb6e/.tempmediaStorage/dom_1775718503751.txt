@@ -1,0 +1,110 @@
+AlanDick East Africa
+Leave Management System
+Dashboard
+Requests
+My History
+Calendar
+Notifications
+Employees
+Reports
+Logs
+User Guide
+My Profile
+Settings
+Logout
+Anthony Kimeu
+Operations Manager
+Leave Requests
+Manage employee leave applications
+New Request
+All Requests
+Export All
+All Types
+From Date
+To Date
+All Employees
+Clear Filters
+Employee
+Type
+Duration
+Days
+Status
+Actions
+Eric Kariri
+It Developer
+ANNUAL
+4/3/2026
+to
+4/24/2026
+5
+days
+(Scattered)
+Awaiting OM Approval
+View
+Approve (OM)
+Reject
+Eric Kariri
+It Developer
+ANNUAL
+3/31/2026
+to
+4/6/2026
+3
+days
+(Scattered)
+Fully Approved
+View
+[0] (500,500)<div class='fixed left-[50%] top-[50%] z-50 grid w-full translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg glass border-border/50 max-h-[85vh] overflow-y-auto max-w-3xl' id='radix-:r6:' role='dialog' scrollable='true' />
+	Leave Request Details
+	Request ID:
+	2219812a-2324-4efe-8f77-cdfd69bfa4eb
+	[1] (642,128)<button class='inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 gap-2'>Download PDF />
+	LEAVE APPLICATION FORM
+	AlanDick & Company (East Africa) Ltd
+	Employee Name
+	Eric Kariri
+	It Developer
+	Leave Type
+	ANNUAL
+	Submitted:
+	01 Apr 2026
+	Start Date
+	03 Apr 2026
+	End Date
+	24 Apr 2026
+	Duration
+	5
+	Day
+	s
+	(Scattered)
+	Scattered Leave Dates
+	Sat 11 Apr
+	Thu 16 Apr
+	Fri 17 Apr
+	Sat 18 Apr
+	Thu 23 Apr
+	Reason for Leave
+	"
+	eertyujk
+	"
+	Contact & Handover
+	Contact While Away
+	12345678
+	Line Manager
+	Dedan Ongara
+	Handed Over To
+	Davis Kiprotich
+	Department
+	IOT
+	Handover Report Details
+	Background & Work Status
+	werty
+	Required Actions/Follow Up
+	werty
+	Stakeholder Management
+	werty
+	Official Approval
+	Pending Operations Manager Approval
+	Awaiting management decision
+	[2] (679,102)<button class='absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity data-[state=open]:bg-accent data-[state=open]:text-muted-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none'>Close />
+		Close

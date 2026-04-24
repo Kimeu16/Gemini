@@ -1,0 +1,6 @@
+# Task: Update Nginx Server Name
+
+- [ ] Update `nginx.conf` with IP and Hostname
+- [ ] Update `nginx-windows.conf` with IP and Hostname
+- [ ] Verify changes locally
+- [ ] Create walkthrough

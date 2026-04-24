@@ -1,0 +1,40 @@
+# Explicit Working Days Layout Redesign
+
+The goal is to update the Leave Application PDF to act as an undisputed audit trail by explicitly listing each working day rather than just a total count. This protects against disputes regarding public holidays or weekends falling within a leave range.
+
+## Proposed Changes
+
+### [MODIFY] `src/lib/corporatePdf.ts`
+
+**1. Dependency Imports**
+I will import date/holiday utilities from `holidays.ts` to evaluate each date's status:
+```typescript
+import { getDatesInRange, isSunday, isSaturday, isKenyanPublicHoliday } from './holidays';
+```
+
+**2. Architecture Split for Leave Periods**
+The logic for rendering the top section (right after employee details) will branch based on `req.isScattered`:
+
+*   **Consecutive Block:**
+    *   The existing modern 3-box hero layout (*Start Date, End Date, Leave Duration*) will remain as the "quick read" strip.
+    *   Directly below the strip, a new minimal grid table will list every day within the range.
+    *   Each row will display the `Date`, `Day Name`, and `Status` (e.g., *Working Day*, *Weekend*, *Public Holiday*).
+
+*   **Scattered Days:**
+    *   The 3-box hero layout will be **removed entirely**.
+    *   It will immediately render an auditable table listing only the selected `req.scatteredDates`.
+    *   A small corporate disclaimer will be added at the bottom: *"Note: Standard weekends and recognized public holidays are systematically excluded from the working day count to prevent disputes."*
+
+**3. Minimal Table Renderer**
+I'll create a small internal helper within `corporatePdf.ts` to draw a sleek, B&W table using exact coordinate math (consistent padding, fixed column widths, and `0.3mm` subtle horizontal dividers) to ensure it aligns perfectly with the brand modernization we just did.
+
+## Open Questions
+
+> [!WARNING]
+> **Work Schedule Constraints**
+> Currently, the PDF data (`LeaveRequestPdfData`) does not include the employee's `workSchedule` (whether they are `MON_FRI` or `MON_SAT`). 
+> Because of this, my table logic will accurately flag Sundays and Holidays, but how should I label **Saturdays** in the table? Should I just label it as "Weekend" generic, or label it "Weekend / Half-Day" depending on the employee? 
+
+> [!NOTE]
+> **Preview Modal UI**
+> Do you want me to also update the React UI preview modal (in `Requests.tsx`) to show this new table approach, or should I focus strictly on the downloaded PDF layout first?

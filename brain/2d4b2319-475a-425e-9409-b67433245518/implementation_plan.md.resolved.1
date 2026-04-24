@@ -1,0 +1,44 @@
+# VM Status Verification & Fix Plan
+
+The user reports that the backend and frontend are on different VMs. We are currently seeing a **502 Bad Gateway** on the frontend (`10.172.19.16`) because it cannot reach the backend service on `10.172.19.15:5000`. This plan uses existing diagnostic scripts to SSH into both VMs and resolve the connectivity issue.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **SSH Credentials**: We will use the credentials found in `probe-vms.ps1` (`anthony.kimeu` / `Adc123@#`) to connect. Please confirm if these are the correct and current credentials for both VMs.
+
+> [!WARNING]
+> **Posh-SSH Requirement**: The diagnostic scripts depend on the `Posh-SSH` PowerShell module. If not installed, we will attempt to install it or use the native `ssh` client.
+
+## Proposed Changes
+
+### 1. Diagnostic Phase
+- **Run `probe-vms.ps1`**: This script will perform a comprehensive check of:
+    - Node.js and PM2 versions on both VMs.
+    - Directory contents on `C:\` and `D:\`.
+    - Verification of where the `server` code is located on the backend VM.
+
+### 2. Backend Service Verification
+- **Check PM2 Status**: On `10.172.19.15`, run `pm2 status` to see if the `server` process is online.
+- **Port Check**: On `10.172.19.15`, run `netstat -ano | findstr :5000` to confirm the backend is listening.
+
+### 3. Frontend Proxy Verification
+- **Nginx Config Check**: On `10.172.19.16`, verify the active Nginx configuration files to ensure they point to the correct Backend VM IP.
+
+### 4. Resolution
+- **Restart Services**: If the backend is down, start it using `pm2 start dist/server.js --name "leave-tracker-api"`.
+- **Update Config**: If the IP or port is mismatched in Nginx, update the configuration.
+
+## Open Questions
+
+- **Is the Backend on D:?** Previous deployments often use `D:\` drives for applications on Windows Server. We will check both `C:` and `D:`.
+- **Firewall Restrictions?** If services are running but unreachable, we may need to check the Windows Firewall on the Backend VM.
+
+## Verification Plan
+
+### Automated Tests
+- Re-run `probe-vms.ps1` after fixes to confirm all services are "OUT" as expected.
+- `Invoke-WebRequest` from the Dev machine to the Backend health check (`http://10.172.19.15:5000/health`).
+
+### Manual Verification
+- Attempt login via the UI at `http://10.172.19.16/login` and verify that the request succeeds (returning a 200/201 instead of 502).

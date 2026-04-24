@@ -1,0 +1,23 @@
+# Fix Frontend Build Error: Restore `generateReportPdf`
+
+The frontend build failed because `src/pages/Reports.tsx` attempts to import `generateReportPdf` from `src/lib/corporatePdf.ts`, but this function was missing. This plan restores the function while updating it to match the new monochrome corporate design system.
+
+## Proposed Changes
+
+### [Component: PDF Library]
+
+#### [MODIFY] [corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
+
+- Re-introduce `ReportPdfData` interface based on usage in `Reports.tsx`.
+- Re-introduce `generateReportPdf` function.
+- Update the restored function to use the new `drawHeader` and monochrome `BRAND` palette.
+- Implement the `hexToRgb` helper for leave type distribution bars.
+
+## Verification Plan
+
+### Automated Tests
+- Run `npm run build` locally in the project root to ensure the import error is resolved.
+- Re-run the deployment script `.\deploy-posh.ps1 -SkipConfirm`.
+
+### Manual Verification
+- Test the "Export PDF" button in the Analytics dashboard once deployed.

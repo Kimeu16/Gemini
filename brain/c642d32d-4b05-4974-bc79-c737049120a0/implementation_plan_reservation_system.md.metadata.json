@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Detailed plan for implementing the 'Reserve Leave Days' feature. includes database schema additions, backend management routes, and a high-fidelity calendar integration that visually distinguishes tentative plans from formal leaves.",
+  "updatedAt": "2026-04-10T08:31:11.470625800Z",
+  "requestFeedback": true
+}

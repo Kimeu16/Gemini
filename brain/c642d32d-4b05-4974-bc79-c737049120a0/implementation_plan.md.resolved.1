@@ -1,0 +1,33 @@
+# Migrate to FullCalendar
+
+This plan details the migration to FullCalendar for all calendar views (Yearly, Monthly, Weekly, Daily), replacing custom legacy calendar grids to match the standard required by AlanDick & Co.
+
+## Proposed Changes
+
+### 1. Dependencies [NEW]
+- Run `npm install @fullcalendar/multimonth` to add support for the Yearly view.
+
+### 2. Update `src/components/FullCalendarView.tsx`
+#### [MODIFY] `FullCalendarView.tsx`
+- **Plugin Addition:** Import `multiMonthPlugin` and add it to the FullCalendar `plugins` array.
+- **Support Scattered Leaves:** Update the `events = useMemo(...)` block. If `leave.isScattered` is true, map `scatteredDates` into individual 1-day events rather than a single contiguous block.
+- **Toolbar Configuration:** Add `multiMonthYear` alongside `dayGridMonth,dayGridWeek,dayGridDay,listMonth` in `headerToolbar` so users can seamlessly switch across all views from within FullCalendar's UI.
+- **Redundant Titles:** Remove the inner "Leave Calendar" container block so it doesn't duplicate the page header.
+
+### 3. Update `src/pages/CalendarView.tsx`
+#### [MODIFY] `CalendarView.tsx`
+- **Remove Manual Views:** Delete `renderYearlyView()`, `renderWeeklyView()`, and `renderDailyView()` logic which is bulky and redundant.
+- **Remove Custom View Buttons:** Remove the `Year`, `Month`, `Week`, `Day` `<Button>` switches in the top header. FullCalendar will handle its own view routing directly.
+- **Consolidate Rendering:** Update `renderView()` to purely return `<FullCalendarViewComponent ... />`.
+- **Cleanup:** Remove unused state like `viewMode`, helpers like `navigateDate` and day index creation `leaveDateIndex` since FullCalendar internally manages event projection efficiently.
+
+## Verification Plan
+
+### Automated Tests
+- Build verification using `npm run build:dev` or Vite dev server to verify TS compatibility for `@fullcalendar/multimonth`.
+
+### Manual Verification
+- Render the Calendar page.
+- Switch to "Year" view utilizing FullCalendar.
+- Click an event to ensure the rich Details Modal pop up still accurately populates.
+- Check a "scattered" leave to ensure its individual days are accurately reflected on the correct dates.  

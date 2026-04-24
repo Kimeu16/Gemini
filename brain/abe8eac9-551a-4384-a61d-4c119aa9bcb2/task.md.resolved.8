@@ -1,0 +1,5 @@
+- [x] Create `calendar.tsx` UI component
+- [x] Configure Popover and import existing standard UI modules
+- [x] Update `Requests.tsx` to replace start/end date logic with DateRangePicker
+- [x] Implement Kenyan Holiday and Work Schedule modifiers in `calendar.tsx`
+- [x] Convert "Scattered Leaves" form into a `Calendar mode="multiple"` UI

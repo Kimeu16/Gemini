@@ -1,0 +1,15 @@
+- `[/]` **Global Setup**
+  - `[ ]` Update `tailwind.config.ts` and `index.css` with the Cosmic Glass palette.
+- `[ ]` **Core Infrastructure**
+  - `[ ]` Create `AuroraBackgroundPremium.tsx`.
+  - `[ ]` Update `CustomCursor.tsx` to a magnetic/blend cursor.
+- `[ ]` **Layout Overhaul**
+  - `[ ]` Refactor `VCardLayout.tsx` for extreme glassmorphism.
+  - `[ ]` Refactor `VCardNavbar.tsx` to a floating pill dock.
+  - `[ ]` Enhance `VCardSidebar.tsx` with spotlight hover effects.
+- `[ ]` **Content Modules**
+  - `[ ]` Apply bento styling to `About.tsx`, `ResumeModule.tsx`, and `Contact.tsx`.
+  - `[ ]` Apply premium card glowing to `PortfolioTab.tsx`.
+- `[ ]` **Verification**
+  - `[ ]` Test dev server for clean compilation.
+  - `[ ]` Verify responsiveness.

@@ -1,0 +1,904 @@
+# PDF Layout Adjustments Walkthrough
+
+I have updated the vertical layout of the Leave Request PDF to reduce excessive empty space and provide a more balanced, professional appearance.
+
+## Changes Made
+
+### 1. Header Volume & Spacing Increase
+- **NEW**: Enlarged the **Company Logo** dimensions by **~25%** (from 28x9mm to 35x11.5mm) for better brand visibility.
+- Moved the thick black separator line down by **6mm** (from 14mm to 20mm below company details).
+- **NEW**: Added **4mm** of extra spacing between the **Company Logo** and the Company Name.
+- **NEW**: Increased the vertical spacing between the company details (Address and Contact lines) by **2mm** each for better legibility.
+- Increased the overall spacing before the first content section by **14mm** total (includes all shifts).
+
+### 2. Page 1: Content Balancing
+- Increased the vertical gap between Sections 1, 2, 3, and 4.
+- Specifically shifted Section 4 (Contact & Handover) further down the page to occupy the previously empty bottom area.
+
+### 3. Page 2: Handover & Authorization
+- Increased the top margin for Section 5 by **5mm**.
+- Added more breathing room between handover report items.
+- Increased the gap between Section 5 and Section 6 (Authorization) to **10mm**.
+
+## Verification Results
+
+The document now feels more "filled" and balanced.
+- **Section 4** no longer has a massive empty gap below it.
+- **Section 6** on Page 2 is now better separated from the handover details.
+- **CEO Date Format**: Fixed the date format in Section 6 to match the rest of the document (e.g., `30 Mar 2026` instead of ISO string).
+
+```diff:corporatePdf.ts
+/**
+ * ╔══════════════════════════════════════════════════════════════╗
+ * ║  AlanDick & Company — Modern Black & White PDF Generator    ║
+ * ║  Palette: Black · Dark Gray · Medium Gray · Light Gray      ║
+ * ║  Two-page layout with embedded company logo                 ║
+ * ╚══════════════════════════════════════════════════════════════╝
+ *
+ * Programmatic jsPDF rendering for crisp, vector text output.
+ * Professional grayscale palette for modern corporate documents.
+ */
+
+import jsPDF from 'jspdf';
+import { COMPANY_LOGO_BASE64 } from './companyLogoBase64';
+
+/* ───────── Brand Palette (Black & White, Posh) ───────── */
+export const BRAND = {
+    black: [0, 0, 0] as [number, number, number],
+    charcoal: [25, 25, 25] as [number, number, number],
+    darkGray: [60, 60, 60] as [number, number, number],
+    midGray: [100, 100, 100] as [number, number, number],
+    lightGray: [210, 210, 210] as [number, number, number],
+    offWhite: [248, 248, 248] as [number, number, number],
+    white: [255, 255, 255] as [number, number, number],
+    fieldBg: [252, 252, 252] as [number, number, number],
+    border: [180, 180, 180] as [number, number, number],
+    slip: [242, 242, 242] as [number, number, number],
+    accent: [0, 0, 0] as [number, number, number],
+    danger: [40, 40, 40] as [number, number, number], // Using dark for "danger" in B&W
+    success: [20, 20, 20] as [number, number, number],
+    accentBlack: [0, 0, 0] as [number, number, number],
+} as const;
+
+/* ───────── Page Constants (A4 Portrait mm) ───────── */
+const PAGE = {
+    w: 210,
+    h: 297,
+    marginX: 16,
+    marginY: 16,
+    contentW: 178,  // 210 - 16*2
+} as const;
+
+/* ───────── Footer height reserved at the bottom ───────── */
+const FOOTER_H = 14;
+const FOOTER_Y = PAGE.h - FOOTER_H;
+
+/* ───────── Helpers ───────── */
+function setColor(doc: jsPDF, c: [number, number, number], type: 'fill' | 'text' | 'draw' = 'text') {
+    if (type === 'fill') doc.setFillColor(...c);
+    else if (type === 'draw') doc.setDrawColor(...c);
+    else doc.setTextColor(...c);
+}
+
+function drawFooter(doc: jsPDF, pageNumber: number, totalPages: number, typeLabel: string) {
+    const M = PAGE.marginX;
+    const y = FOOTER_Y;
+    
+    // Subtle Top Line
+    setColor(doc, BRAND.lightGray, 'draw');
+    doc.setLineWidth(0.2);
+    doc.line(M, y, PAGE.w - M, y);
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(7.5);
+    doc.setCharSpace(0.1);
+    setColor(doc, BRAND.charcoal);
+    
+    // Left: Document Type
+    doc.text(typeLabel.toUpperCase(), M, y + 5);
+
+    // Center: Company Copyright
+    doc.setFont('times', 'normal');
+    const text = `© ${new Date().getFullYear()} ALANDICK & CO (EA) LTD. ALL RIGHTS RESERVED.`;
+    doc.text(text, PAGE.w / 2, y + 5, { align: 'center' });
+
+    // Right: Page Counter
+    doc.setFont('times', 'bold');
+    doc.text(`PAGE ${pageNumber} OF ${totalPages}`, PAGE.w - M, y + 5, { align: 'right' });
+    doc.setCharSpace(0);
+}
+
+function fmtDate(d: string | null | undefined): string {
+    if (!d) return '—';
+    return new Date(d).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+/* ── Draw the common page header with logo ── */
+function drawHeader(doc: jsPDF, title: string, docRef?: string, dateStr?: string): number {
+    const M = PAGE.marginX;
+    const RightX = PAGE.w - M;
+
+    // 1. TOP ROW: Logo (Left) and Title/Ref (Right)
+    const topY = 16;
+    
+    // Logo (Left)
+    try {
+        doc.addImage(COMPANY_LOGO_BASE64, 'JPEG', M, topY, 28, 9);
+    } catch {
+        doc.setFont('times', 'bold'); doc.setFontSize(14); setColor(doc, BRAND.black);
+        doc.text('AD', M, topY + 6);
+    }
+
+    // Title & Reference (Right)
+    doc.setFont('times', 'bold');
+    doc.setFontSize(18);
+    setColor(doc, BRAND.accentBlack);
+    doc.text(title.toUpperCase(), RightX, topY + 4, { align: 'right' });
+    
+    doc.setFont('times', 'normal');
+    doc.setFontSize(8);
+    setColor(doc, BRAND.darkGray);
+    doc.text(`No: ${docRef || '—'} | Date: ${dateStr || '—'}`, RightX, topY + 9, { align: 'right' });
+
+    // 2. BOTTOM ROW: Company Details (Below Logo)
+    const detailsY = topY + 14;
+    doc.setFont('times', 'bold');
+    doc.setFontSize(10.5);
+    setColor(doc, BRAND.black);
+    doc.text('AlanDick East Africa Ltd.', M, detailsY);
+    
+    doc.setFont('times', 'normal');
+    doc.setFontSize(8.5);
+    setColor(doc, BRAND.darkGray);
+    doc.text('P.O Box 12907, Muthithi Rd, Nairobi, Kenya.', M, detailsY + 5);
+    doc.text('Tel: 254 722 570 112 | Email: admin@alandick.co.ke', M, detailsY + 9);
+
+    // 3. Thick Black Separator
+    setColor(doc, BRAND.accentBlack, 'draw');
+    doc.setLineWidth(1.0); // Thick line as per image
+    doc.line(M, detailsY + 14, RightX, detailsY + 14);
+
+    return detailsY + 22; 
+}
+
+/* ════════════════════════════════════════════════════════════════
+     LEAVE REQUEST PDF  —  Two-page A4 corporate document
+   ════════════════════════════════════════════════════════════════ */
+
+export interface LeaveRequestPdfData {
+    id: string;
+    requestNumber?: number;
+    employeeName: string;
+    employeePosition: string;
+    leaveType: string;
+    startDate: string;
+    endDate: string;
+    days: number;
+    reason: string;
+    submittedDate: string;
+    status: string;
+    isScattered?: boolean;
+    scatteredDates?: string[];
+    contactWhileOnLeave?: string;
+    handoverLineManager?: string;
+    handoverCC?: string;
+    handoverDepartment?: string;
+    handoverWorkStatus?: string;
+    handoverActions?: string;
+    handoverRelationships?: string;
+    omApprover?: { name: string, signature?: string | null } | null;
+    omApprovalDate?: string | null;
+    gmApprover?: { name: string, signature?: string | null } | null;
+    gmApprovalDate?: string | null;
+    rejectionReason?: string;
+    approverName?: string;
+    approverSignatureDate?: string;
+}
+
+export function generateLeaveRequestPdf(req: LeaveRequestPdfData) {
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+    const M = PAGE.marginX;
+    const W = PAGE.contentW;
+
+    const isoMonth = new Date(req.submittedDate).toISOString().substring(0,7).replace('-', '');
+    const seqText = req.requestNumber ? String(req.requestNumber).padStart(2, '0') : '01';
+    const lveId = `ADC-LVE-${isoMonth}-A${seqText}`;
+
+    // --- PAGE 1 ---
+    let y = drawHeader(doc, 'LEAVE APPLICATION FORM', lveId, fmtDate(req.submittedDate));
+
+    // Section: Employee Details
+    doc.setFont('times', 'bold');
+    doc.setFontSize(11);
+    setColor(doc, BRAND.black);
+    doc.text('1. EMPLOYEE DETAILS', M, y);
+    y += 2;
+    setColor(doc, BRAND.black, 'draw');
+    doc.setLineWidth(0.4);
+    doc.line(M, y, PAGE.w - M, y);
+    y += 10;
+
+    // Employee Box
+    const boxH = 18;
+    setColor(doc, BRAND.white, 'fill');
+    doc.rect(M, y, W, boxH, 'F');
+    doc.setLineWidth(0.2);
+    doc.rect(M, y, W, boxH, 'D');
+
+    doc.setFont('times', 'normal');
+    doc.setFontSize(9);
+    setColor(doc, BRAND.charcoal);
+    doc.text('FULL NAME OF APPLICANT', M + 4, y + 6);
+    doc.text('POSITION / DESIGNATION', M + (W/2) + 4, y + 6);
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(11);
+    setColor(doc, BRAND.black);
+    doc.text(req.employeeName.toUpperCase(), M + 4, y + 13);
+    doc.text(req.employeePosition.toUpperCase(), M + (W/2) + 4, y + 13);
+    y += boxH + 8;
+
+    // Leave Types & Period
+    doc.setFont('times', 'bold');
+    doc.setFontSize(11);
+    setColor(doc, BRAND.black);
+    doc.text('2. LEAVE DETAILS', M, y);
+    y += 2;
+    doc.line(M, y, PAGE.w - M, y);
+    y += 8;
+
+    const thirdW = (W - 8) / 3;
+    
+    // Leave Type
+    setColor(doc, BRAND.white, 'fill');
+    doc.rect(M, y, thirdW, boxH, 'F');
+    doc.rect(M, y, thirdW, boxH, 'D');
+    doc.setFont('times', 'normal'); doc.setFontSize(8.5); doc.text('CATEGORY', M + 4, y + 6);
+    doc.setFont('times', 'bold'); doc.setFontSize(10.5); doc.text(req.leaveType.replace(/_/g, ' '), M + 4, y + 13);
+
+    // Period
+    setColor(doc, BRAND.white, 'fill');
+    const pX = M + thirdW + 4;
+    doc.rect(pX, y, thirdW, boxH, 'F');
+    doc.rect(pX, y, thirdW, boxH, 'D');
+    doc.setFont('times', 'normal'); doc.setFontSize(8.5); doc.text('LEAVE PERIOD', pX + 4, y + 6);
+    doc.setFont('times', 'bold'); doc.setFontSize(10); doc.text(`${fmtDate(req.startDate)} — ${fmtDate(req.endDate)}`, pX + 4, y + 13);
+
+    // Days
+    const dX = M + (thirdW + 4) * 2;
+    setColor(doc, BRAND.white, 'fill');
+    doc.rect(dX, y, thirdW, boxH, 'F');
+    doc.rect(dX, y, thirdW, boxH, 'D');
+    doc.setFont('times', 'normal'); doc.setFontSize(8.5); doc.text('DAYS', dX + 4, y + 6);
+    doc.setFont('times', 'bold'); doc.setFontSize(11); doc.text(`${req.days} DAY${req.days !== 1 ? 'S' : ''}`, dX + 4, y + 13);
+    
+    y += boxH + 8;
+
+    // Reason
+    doc.setFont('times', 'bold');
+    doc.setFontSize(10.5);
+    doc.text('3. DECLARATION OF REASON', M, y);
+    y += 2;
+    doc.line(M, y, PAGE.w - M, y);
+    y += 6;
+    
+    const reasonLines = doc.splitTextToSize(req.reason || 'N/A', W - 10);
+    const rH = Math.max(14, 6 + reasonLines.length * 5);
+    setColor(doc, BRAND.white, 'fill');
+    doc.rect(M, y, W, rH, 'F');
+    doc.rect(M, y, W, rH, 'D');
+    doc.setFont('times', 'normal');
+    doc.setFontSize(11);
+    doc.text(reasonLines, M + 5, y + 8);
+    y += rH + 10;
+
+    // Contact & Handover
+    doc.setFont('times', 'bold');
+    doc.setFontSize(11);
+    doc.text('4. CONTACT & HANDOVER', M, y);
+    y += 2;
+    doc.line(M, y, PAGE.w - M, y);
+    y += 8;
+
+    const fields = [
+        { l: 'CONTACT', v: req.contactWhileOnLeave },
+        { l: 'LINE MANAGER', v: req.handoverLineManager },
+        { l: 'HANDOVER TO', v: req.handoverCC },
+        { l: 'DEPARTMENT', v: req.handoverDepartment },
+    ];
+    const qW = (W - 12) / 4;
+    fields.forEach((f, i) => {
+        const fx = M + i * (qW + 4);
+        setColor(doc, BRAND.white, 'fill');
+        doc.rect(fx, y, qW, 16, 'F');
+        doc.rect(fx, y, qW, 16, 'D');
+        doc.setFont('times', 'normal'); doc.setFontSize(7.5); doc.text(f.l, fx + 2, y + 5);
+        doc.setFont('times', 'bold'); doc.setFontSize(9); doc.text(f.v || '—', fx + 2, y + 11, { maxWidth: qW - 4 });
+    });
+
+    drawFooter(doc, 1, 2, 'OFFICIAL DOCUMENT');
+
+    // --- PAGE 2 ---
+    doc.addPage();
+    y = PAGE.marginY + 10;
+
+    // Handover Details
+    const handoverItems = [
+        { label: 'BACKGROUND & WORK STATUS', value: req.handoverWorkStatus },
+        { label: 'REQUIRED ACTIONS / FOLLOW UP', value: req.handoverActions },
+        { label: 'STAKEHOLDER MANAGEMENT', value: req.handoverRelationships },
+    ].filter(h => h.value);
+
+    if (handoverItems.length > 0) {
+        doc.setFont('times', 'bold'); doc.setFontSize(11); doc.text('5. HANDOVER REPORT DETAILS', M, y);
+        y += 2; doc.line(M, y, PAGE.w - M, y); y += 8;
+
+        handoverItems.forEach(item => {
+            const lines = doc.splitTextToSize(item.value!, W - 10);
+            const bH = 10 + lines.length * 5;
+            setColor(doc, BRAND.white, 'fill');
+            doc.rect(M, y, W, bH, 'F');
+            setColor(doc, BRAND.lightGray, 'draw');
+            doc.rect(M, y, W, bH, 'D');
+            
+            doc.setFont('times', 'bold'); doc.setFontSize(9); setColor(doc, BRAND.charcoal); doc.text(item.label, M + 4, y + 6);
+            doc.setFont('times', 'normal'); doc.setFontSize(11); setColor(doc, BRAND.black); doc.text(lines, M + 4, y + 12);
+            y += bH + 6;
+        });
+    }
+
+    y += 6;
+
+    // Authorization
+    doc.setFont('times', 'bold'); doc.setFontSize(11); doc.text('6. AUTHORIZATION SIGNATURES', M, y);
+    y += 2; doc.line(M, y, PAGE.w - M, y); y += 8;
+
+    const sigLabelW = 40;
+    const sigMainW = (W - sigLabelW) / 2;
+    const sH = 22;
+
+    // Total Sig Block
+    setColor(doc, BRAND.lightGray, 'draw');
+    doc.rect(M, y, W, sH * 3);
+
+    // Row 1: OM
+    drawSignatureRow(doc, M, y, sigLabelW, sigMainW, W, sH, {
+        label: '1. OM',
+        labelBg: BRAND.white,
+        roleTitle: 'Operations Manager',
+        signaturePresent: !!req.omApprovalDate,
+        signatureImage: req.omApprover?.signature,
+        signatureName: req.omApprover?.name || '',
+        date: fmtDate(req.omApprovalDate),
+        accentColor: BRAND.black,
+        statusIndicator: req.omApprovalDate ? 'APPROVED' : (req.status === 'REJECTED_OM' ? 'REJECTED' : undefined)
+    });
+    y += sH;
+
+    // Row 2: GM
+    drawSignatureRow(doc, M, y, sigLabelW, sigMainW, W, sH, {
+        label: '2. GM',
+        labelBg: BRAND.white,
+        roleTitle: 'General Manager',
+        signaturePresent: !!req.gmApprovalDate,
+        signatureImage: req.gmApprover?.signature,
+        signatureName: req.gmApprover?.name || '',
+        date: fmtDate(req.gmApprovalDate),
+        accentColor: BRAND.black,
+        statusIndicator: req.gmApprovalDate ? 'APPROVED' : (req.status === 'REJECTED_GM' ? 'REJECTED' : undefined)
+    });
+    y += sH;
+
+    // Row 3: CEO
+    const isCeoApproved = req.status === 'APPROVED';
+    drawSignatureRow(doc, M, y, sigLabelW, sigMainW, W, sH, {
+        label: '3. CEO',
+        labelBg: BRAND.white,
+        roleTitle: 'Chief Executive Officer',
+        signaturePresent: isCeoApproved,
+        signatureName: req.approverName || 'CEO',
+        date: req.approverSignatureDate || (isCeoApproved ? fmtDate(new Date().toISOString()) : '—'),
+        accentColor: BRAND.black,
+        statusIndicator: isCeoApproved ? 'APPROVED' : (req.status === 'REJECTED_CEO' ? 'REJECTED' : undefined)
+    });
+
+    drawFooter(doc, 2, 2, 'OFFICIAL DOCUMENT');
+
+    const filename = `leave-request-${req.employeeName.replace(/\s+/g, '-')}-${req.id.substring(0, 8)}.pdf`;
+    doc.save(filename);
+    return filename;
+}
+
+interface SignatureRowOpts {
+    label: string;
+    labelBg: [number, number, number];
+    roleTitle: string;
+    signaturePresent: boolean;
+    signatureImage?: string | null;
+    signatureName: string;
+    date: string;
+    accentColor: [number, number, number];
+    statusIndicator?: 'APPROVED' | 'REJECTED';
+}
+
+function drawSignatureRow(doc: jsPDF, x: number, y: number, labelW: number, mainW: number, totalW: number, rowH: number, opts: SignatureRowOpts) {
+    setColor(doc, BRAND.black, 'draw');
+    doc.setLineWidth(0.2);
+    doc.rect(x, y, labelW, rowH, 'D');
+
+    doc.setFont('times', 'bold'); doc.setFontSize(8.5); setColor(doc, BRAND.black);
+    doc.text(opts.label, x + 4, y + (rowH / 2) + 2);
+
+    const sigX = x + labelW;
+    doc.rect(sigX, y, mainW, rowH, 'D');
+    doc.setFont('times', 'normal'); doc.setFontSize(7); setColor(doc, BRAND.charcoal);
+    doc.text('SIGNATURE', sigX + 2, y + 4);
+
+    if (opts.signaturePresent) {
+        if (opts.signatureImage) {
+            try {
+                const fmt = opts.signatureImage.startsWith('data:image/png') ? 'PNG' : 'JPEG';
+                doc.addImage(opts.signatureImage, fmt, sigX + 5, y + 4, 30, 14);
+            } catch { doc.text(opts.signatureName, sigX + 5, y + 10); }
+        } else {
+            doc.setFont('times', 'bolditalic'); doc.setFontSize(10); doc.text(opts.signatureName, sigX + 5, y + 12);
+        }
+    }
+
+    const dateX = sigX + mainW;
+    doc.rect(dateX, y, totalW - labelW - mainW, rowH, 'D');
+    doc.text('DATE', dateX + 2, y + 4);
+    doc.setFont('times', 'bold'); doc.setFontSize(9); setColor(doc, BRAND.black);
+    doc.text(opts.date || '—', dateX + 4, y + 12);
+
+    if (opts.statusIndicator) {
+        doc.setFontSize(7);
+        doc.text(opts.statusIndicator, dateX + 4, y + 18);
+    }
+}
+
+export function generateSignatureFormPdf(approverName: string = '', role: string = '') {
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+    drawHeader(doc, 'CONSENT AGREEMENT');
+    // ... Simplified mock for now to keep it consistent ...
+    doc.save('signature-consent.pdf');
+    return 'signature-consent.pdf';
+}
+===
+/**
+ * ╔══════════════════════════════════════════════════════════════╗
+ * ║  AlanDick & Company — Modern Black & White PDF Generator    ║
+ * ║  Palette: Black · Dark Gray · Medium Gray · Light Gray      ║
+ * ║  Two-page layout with embedded company logo                 ║
+ * ╚══════════════════════════════════════════════════════════════╝
+ *
+ * Programmatic jsPDF rendering for crisp, vector text output.
+ * Professional grayscale palette for modern corporate documents.
+ */
+
+import jsPDF from 'jspdf';
+import { COMPANY_LOGO_BASE64 } from './companyLogoBase64';
+
+/* ───────── Brand Palette (Black & White, Posh) ───────── */
+export const BRAND = {
+    black: [0, 0, 0] as [number, number, number],
+    charcoal: [25, 25, 25] as [number, number, number],
+    darkGray: [60, 60, 60] as [number, number, number],
+    midGray: [100, 100, 100] as [number, number, number],
+    lightGray: [210, 210, 210] as [number, number, number],
+    offWhite: [248, 248, 248] as [number, number, number],
+    white: [255, 255, 255] as [number, number, number],
+    fieldBg: [252, 252, 252] as [number, number, number],
+    border: [180, 180, 180] as [number, number, number],
+    slip: [242, 242, 242] as [number, number, number],
+    accent: [0, 0, 0] as [number, number, number],
+    danger: [40, 40, 40] as [number, number, number], // Using dark for "danger" in B&W
+    success: [20, 20, 20] as [number, number, number],
+    accentBlack: [0, 0, 0] as [number, number, number],
+} as const;
+
+/* ───────── Page Constants (A4 Portrait mm) ───────── */
+const PAGE = {
+    w: 210,
+    h: 297,
+    marginX: 16,
+    marginY: 16,
+    contentW: 178,  // 210 - 16*2
+} as const;
+
+/* ───────── Footer height reserved at the bottom ───────── */
+const FOOTER_H = 14;
+const FOOTER_Y = PAGE.h - FOOTER_H;
+
+/* ───────── Helpers ───────── */
+function setColor(doc: jsPDF, c: [number, number, number], type: 'fill' | 'text' | 'draw' = 'text') {
+    if (type === 'fill') doc.setFillColor(...c);
+    else if (type === 'draw') doc.setDrawColor(...c);
+    else doc.setTextColor(...c);
+}
+
+function drawFooter(doc: jsPDF, pageNumber: number, totalPages: number, typeLabel: string) {
+    const M = PAGE.marginX;
+    const y = FOOTER_Y;
+    
+    // Subtle Top Line
+    setColor(doc, BRAND.lightGray, 'draw');
+    doc.setLineWidth(0.2);
+    doc.line(M, y, PAGE.w - M, y);
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(7.5);
+    doc.setCharSpace(0.1);
+    setColor(doc, BRAND.charcoal);
+    
+    // Left: Document Type
+    doc.text(typeLabel.toUpperCase(), M, y + 5);
+
+    // Center: Company Copyright
+    doc.setFont('times', 'normal');
+    const text = `© ${new Date().getFullYear()} ALANDICK & CO (EA) LTD. ALL RIGHTS RESERVED.`;
+    doc.text(text, PAGE.w / 2, y + 5, { align: 'center' });
+
+    // Right: Page Counter
+    doc.setFont('times', 'bold');
+    doc.text(`PAGE ${pageNumber} OF ${totalPages}`, PAGE.w - M, y + 5, { align: 'right' });
+    doc.setCharSpace(0);
+}
+
+function fmtDate(d: string | null | undefined): string {
+    if (!d) return '—';
+    return new Date(d).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+/* ── Draw the common page header with logo ── */
+function drawHeader(doc: jsPDF, title: string, docRef?: string, dateStr?: string): number {
+    const M = PAGE.marginX;
+    const RightX = PAGE.w - M;
+
+    // 1. TOP ROW: Logo (Left) and Title/Ref (Right)
+    const topY = 16;
+    
+    // Logo (Left)
+    try {
+        doc.addImage(COMPANY_LOGO_BASE64, 'JPEG', M, topY, 35, 11.5); // Enlarged from 28x9
+    } catch {
+        doc.setFont('times', 'bold'); doc.setFontSize(14); setColor(doc, BRAND.black);
+        doc.text('AD', M, topY + 6);
+    }
+
+    // Title & Reference (Right)
+    doc.setFont('times', 'bold');
+    doc.setFontSize(18);
+    setColor(doc, BRAND.accentBlack);
+    doc.text(title.toUpperCase(), RightX, topY + 4, { align: 'right' });
+    
+    doc.setFont('times', 'normal');
+    doc.setFontSize(8);
+    setColor(doc, BRAND.darkGray);
+    doc.text(`No: ${docRef || '—'} | Date: ${dateStr || '—'}`, RightX, topY + 9, { align: 'right' });
+
+    // 2. BOTTOM ROW: Company Details (Below Logo)
+    const detailsY = topY + 18; // Increased from +14 to add space below logo
+    doc.setFont('times', 'bold');
+    doc.setFontSize(10.5);
+    setColor(doc, BRAND.black);
+    doc.text('AlanDick East Africa Ltd.', M, detailsY);
+    
+    doc.setFont('times', 'normal');
+    doc.setFontSize(8.5);
+    setColor(doc, BRAND.darkGray);
+    doc.text('P.O Box 12907, Muthithi Rd, Nairobi, Kenya.', M, detailsY + 7); // Increased from +5
+    doc.text('Tel: 254 722 570 112 | Email: admin@alandick.co.ke', M, detailsY + 13); // Increased from +9
+
+    // 3. Thick Black Separator
+    setColor(doc, BRAND.accentBlack, 'draw');
+    doc.setLineWidth(1.0); // Thick line as per image
+    doc.line(M, detailsY + 20, RightX, detailsY + 20);
+
+    return detailsY + 32; 
+}
+
+/* ════════════════════════════════════════════════════════════════
+     LEAVE REQUEST PDF  —  Two-page A4 corporate document
+   ════════════════════════════════════════════════════════════════ */
+
+export interface LeaveRequestPdfData {
+    id: string;
+    requestNumber?: number;
+    employeeName: string;
+    employeePosition: string;
+    leaveType: string;
+    startDate: string;
+    endDate: string;
+    days: number;
+    reason: string;
+    submittedDate: string;
+    status: string;
+    isScattered?: boolean;
+    scatteredDates?: string[];
+    contactWhileOnLeave?: string;
+    handoverLineManager?: string;
+    handoverCC?: string;
+    handoverDepartment?: string;
+    handoverWorkStatus?: string;
+    handoverActions?: string;
+    handoverRelationships?: string;
+    omApprover?: { name: string, signature?: string | null } | null;
+    omApprovalDate?: string | null;
+    gmApprover?: { name: string, signature?: string | null } | null;
+    gmApprovalDate?: string | null;
+    rejectionReason?: string;
+    approverName?: string;
+    approverSignatureDate?: string;
+}
+
+export function generateLeaveRequestPdf(req: LeaveRequestPdfData) {
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+    const M = PAGE.marginX;
+    const W = PAGE.contentW;
+
+    const isoMonth = new Date(req.submittedDate).toISOString().substring(0,7).replace('-', '');
+    const seqText = req.requestNumber ? String(req.requestNumber).padStart(2, '0') : '01';
+    const lveId = `ADC-LVE-${isoMonth}-A${seqText}`;
+
+    // --- PAGE 1 ---
+    let y = drawHeader(doc, 'LEAVE APPLICATION FORM', lveId, fmtDate(req.submittedDate));
+
+    // Section: Employee Details
+    doc.setFont('times', 'bold');
+    doc.setFontSize(11);
+    setColor(doc, BRAND.black);
+    doc.text('1. EMPLOYEE DETAILS', M, y);
+    y += 2;
+    setColor(doc, BRAND.black, 'draw');
+    doc.setLineWidth(0.4);
+    doc.line(M, y, PAGE.w - M, y);
+    y += 10;
+
+    // Employee Box
+    const boxH = 18;
+    setColor(doc, BRAND.white, 'fill');
+    doc.rect(M, y, W, boxH, 'F');
+    doc.setLineWidth(0.2);
+    doc.rect(M, y, W, boxH, 'D');
+
+    doc.setFont('times', 'normal');
+    doc.setFontSize(9);
+    setColor(doc, BRAND.charcoal);
+    doc.text('FULL NAME OF APPLICANT', M + 4, y + 6);
+    doc.text('POSITION / DESIGNATION', M + (W/2) + 4, y + 6);
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(11);
+    setColor(doc, BRAND.black);
+    doc.text(req.employeeName.toUpperCase(), M + 4, y + 13);
+    doc.text(req.employeePosition.toUpperCase(), M + (W/2) + 4, y + 13);
+    y += boxH + 12; // Increased spacing
+
+    // Leave Types & Period
+    doc.setFont('times', 'bold');
+    doc.setFontSize(11);
+    setColor(doc, BRAND.black);
+    doc.text('2. LEAVE DETAILS', M, y);
+    y += 2;
+    doc.line(M, y, PAGE.w - M, y);
+    y += 8;
+
+    const thirdW = (W - 8) / 3;
+    
+    // Leave Type
+    setColor(doc, BRAND.white, 'fill');
+    doc.rect(M, y, thirdW, boxH, 'F');
+    doc.rect(M, y, thirdW, boxH, 'D');
+    doc.setFont('times', 'normal'); doc.setFontSize(8.5); doc.text('CATEGORY', M + 4, y + 6);
+    doc.setFont('times', 'bold'); doc.setFontSize(10.5); doc.text(req.leaveType.replace(/_/g, ' '), M + 4, y + 13);
+
+    // Period
+    setColor(doc, BRAND.white, 'fill');
+    const pX = M + thirdW + 4;
+    doc.rect(pX, y, thirdW, boxH, 'F');
+    doc.rect(pX, y, thirdW, boxH, 'D');
+    doc.setFont('times', 'normal'); doc.setFontSize(8.5); doc.text('LEAVE PERIOD', pX + 4, y + 6);
+    doc.setFont('times', 'bold'); doc.setFontSize(10); doc.text(`${fmtDate(req.startDate)} — ${fmtDate(req.endDate)}`, pX + 4, y + 13);
+
+    // Days
+    const dX = M + (thirdW + 4) * 2;
+    setColor(doc, BRAND.white, 'fill');
+    doc.rect(dX, y, thirdW, boxH, 'F');
+    doc.rect(dX, y, thirdW, boxH, 'D');
+    doc.setFont('times', 'normal'); doc.setFontSize(8.5); doc.text('DAYS', dX + 4, y + 6);
+    doc.setFont('times', 'bold'); doc.setFontSize(11); doc.text(`${req.days} DAY${req.days !== 1 ? 'S' : ''}`, dX + 4, y + 13);
+    
+    y += boxH + 12; // Increased spacing
+
+    // Reason
+    doc.setFont('times', 'bold');
+    doc.setFontSize(10.5);
+    doc.text('3. DECLARATION OF REASON', M, y);
+    y += 2;
+    doc.line(M, y, PAGE.w - M, y);
+    y += 6;
+    
+    const reasonLines = doc.splitTextToSize(req.reason || 'N/A', W - 10);
+    const rH = Math.max(14, 6 + reasonLines.length * 5);
+    setColor(doc, BRAND.white, 'fill');
+    doc.rect(M, y, W, rH, 'F');
+    doc.rect(M, y, W, rH, 'D');
+    doc.setFont('times', 'normal');
+    doc.setFontSize(11);
+    doc.text(reasonLines, M + 5, y + 8);
+    y += rH + 14; // Increased spacing
+
+    // Contact & Handover
+    doc.setFont('times', 'bold');
+    doc.setFontSize(11);
+    doc.text('4. CONTACT & HANDOVER', M, y);
+    y += 2;
+    doc.line(M, y, PAGE.w - M, y);
+    y += 8;
+
+    const fields = [
+        { l: 'CONTACT', v: req.contactWhileOnLeave },
+        { l: 'LINE MANAGER', v: req.handoverLineManager },
+        { l: 'HANDOVER TO', v: req.handoverCC },
+        { l: 'DEPARTMENT', v: req.handoverDepartment },
+    ];
+    const qW = (W - 12) / 4;
+    fields.forEach((f, i) => {
+        const fx = M + i * (qW + 4);
+        setColor(doc, BRAND.white, 'fill');
+        doc.rect(fx, y, qW, 16, 'F');
+        doc.rect(fx, y, qW, 16, 'D');
+        doc.setFont('times', 'normal'); doc.setFontSize(7.5); doc.text(f.l, fx + 2, y + 5);
+        doc.setFont('times', 'bold'); doc.setFontSize(9); doc.text(f.v || '—', fx + 2, y + 11, { maxWidth: qW - 4 });
+    });
+
+    drawFooter(doc, 1, 2, 'OFFICIAL DOCUMENT');
+
+    // --- PAGE 2 ---
+    doc.addPage();
+    y = PAGE.marginY + 15; // Increased top padding
+
+    // Handover Details
+    const handoverItems = [
+        { label: 'BACKGROUND & WORK STATUS', value: req.handoverWorkStatus },
+        { label: 'REQUIRED ACTIONS / FOLLOW UP', value: req.handoverActions },
+        { label: 'STAKEHOLDER MANAGEMENT', value: req.handoverRelationships },
+    ].filter(h => h.value);
+
+    if (handoverItems.length > 0) {
+        doc.setFont('times', 'bold'); doc.setFontSize(11); doc.text('5. HANDOVER REPORT DETAILS', M, y);
+        y += 2; doc.line(M, y, PAGE.w - M, y); y += 8;
+
+        handoverItems.forEach(item => {
+            const lines = doc.splitTextToSize(item.value!, W - 10);
+            const bH = 10 + lines.length * 5;
+            setColor(doc, BRAND.white, 'fill');
+            doc.rect(M, y, W, bH, 'F');
+            setColor(doc, BRAND.lightGray, 'draw');
+            doc.rect(M, y, W, bH, 'D');
+            
+            doc.setFont('times', 'bold'); doc.setFontSize(9); setColor(doc, BRAND.charcoal); doc.text(item.label, M + 4, y + 6);
+            doc.setFont('times', 'normal'); doc.setFontSize(11); setColor(doc, BRAND.black); doc.text(lines, M + 4, y + 12);
+            y += bH + 8; // Increased gap
+        });
+    }
+
+    y += 10; // Increased spacing before signatures
+
+    // Authorization
+    doc.setFont('times', 'bold'); doc.setFontSize(11); doc.text('6. AUTHORIZATION SIGNATURES', M, y);
+    y += 2; doc.line(M, y, PAGE.w - M, y); y += 8;
+
+    const sigLabelW = 40;
+    const sigMainW = (W - sigLabelW) / 2;
+    const sH = 22;
+
+    // Total Sig Block
+    setColor(doc, BRAND.lightGray, 'draw');
+    doc.rect(M, y, W, sH * 3);
+
+    // Row 1: OM
+    drawSignatureRow(doc, M, y, sigLabelW, sigMainW, W, sH, {
+        label: '1. OM',
+        labelBg: BRAND.white,
+        roleTitle: 'Operations Manager',
+        signaturePresent: !!req.omApprovalDate,
+        signatureImage: req.omApprover?.signature,
+        signatureName: req.omApprover?.name || '',
+        date: fmtDate(req.omApprovalDate),
+        accentColor: BRAND.black,
+        statusIndicator: req.omApprovalDate ? 'APPROVED' : (req.status === 'REJECTED_OM' ? 'REJECTED' : undefined)
+    });
+    y += sH;
+
+    // Row 2: GM
+    drawSignatureRow(doc, M, y, sigLabelW, sigMainW, W, sH, {
+        label: '2. GM',
+        labelBg: BRAND.white,
+        roleTitle: 'General Manager',
+        signaturePresent: !!req.gmApprovalDate,
+        signatureImage: req.gmApprover?.signature,
+        signatureName: req.gmApprover?.name || '',
+        date: fmtDate(req.gmApprovalDate),
+        accentColor: BRAND.black,
+        statusIndicator: req.gmApprovalDate ? 'APPROVED' : (req.status === 'REJECTED_GM' ? 'REJECTED' : undefined)
+    });
+    y += sH;
+
+    // Row 3: CEO
+    const isCeoApproved = req.status === 'APPROVED';
+    drawSignatureRow(doc, M, y, sigLabelW, sigMainW, W, sH, {
+        label: '3. CEO',
+        labelBg: BRAND.white,
+        roleTitle: 'Chief Executive Officer',
+        signaturePresent: isCeoApproved,
+        signatureName: req.approverName || 'CEO',
+        date: req.approverSignatureDate ? fmtDate(req.approverSignatureDate) : (isCeoApproved ? fmtDate(new Date().toISOString()) : '—'),
+        accentColor: BRAND.black,
+        statusIndicator: isCeoApproved ? 'APPROVED' : (req.status === 'REJECTED_CEO' ? 'REJECTED' : undefined)
+    });
+
+    drawFooter(doc, 2, 2, 'OFFICIAL DOCUMENT');
+
+    const filename = `leave-request-${req.employeeName.replace(/\s+/g, '-')}-${req.id.substring(0, 8)}.pdf`;
+    doc.save(filename);
+    return filename;
+}
+
+interface SignatureRowOpts {
+    label: string;
+    labelBg: [number, number, number];
+    roleTitle: string;
+    signaturePresent: boolean;
+    signatureImage?: string | null;
+    signatureName: string;
+    date: string;
+    accentColor: [number, number, number];
+    statusIndicator?: 'APPROVED' | 'REJECTED';
+}
+
+function drawSignatureRow(doc: jsPDF, x: number, y: number, labelW: number, mainW: number, totalW: number, rowH: number, opts: SignatureRowOpts) {
+    setColor(doc, BRAND.black, 'draw');
+    doc.setLineWidth(0.2);
+    doc.rect(x, y, labelW, rowH, 'D');
+
+    doc.setFont('times', 'bold'); doc.setFontSize(8.5); setColor(doc, BRAND.black);
+    doc.text(opts.label, x + 4, y + (rowH / 2) + 2);
+
+    const sigX = x + labelW;
+    doc.rect(sigX, y, mainW, rowH, 'D');
+    doc.setFont('times', 'normal'); doc.setFontSize(7); setColor(doc, BRAND.charcoal);
+    doc.text('SIGNATURE', sigX + 2, y + 4);
+
+    if (opts.signaturePresent) {
+        if (opts.signatureImage) {
+            try {
+                const fmt = opts.signatureImage.startsWith('data:image/png') ? 'PNG' : 'JPEG';
+                doc.addImage(opts.signatureImage, fmt, sigX + 5, y + 4, 30, 14);
+            } catch { doc.text(opts.signatureName, sigX + 5, y + 10); }
+        } else {
+            doc.setFont('times', 'bolditalic'); doc.setFontSize(10); doc.text(opts.signatureName, sigX + 5, y + 12);
+        }
+    }
+
+    const dateX = sigX + mainW;
+    doc.rect(dateX, y, totalW - labelW - mainW, rowH, 'D');
+    doc.text('DATE', dateX + 2, y + 4);
+    doc.setFont('times', 'bold'); doc.setFontSize(9); setColor(doc, BRAND.black);
+    doc.text(opts.date || '—', dateX + 4, y + 12);
+
+    if (opts.statusIndicator) {
+        doc.setFontSize(7);
+        doc.text(opts.statusIndicator, dateX + 4, y + 18);
+    }
+}
+
+export function generateSignatureFormPdf(approverName: string = '', role: string = '') {
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
+    drawHeader(doc, 'CONSENT AGREEMENT');
+    // ... Simplified mock for now to keep it consistent ...
+    doc.save('signature-consent.pdf');
+    return 'signature-consent.pdf';
+}
+```

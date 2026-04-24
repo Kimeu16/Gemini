@@ -1,0 +1,10 @@
+- [ ] Update README.md
+    - [ ] Remove Google OAuth references
+    - [ ] Update DB to SQL Server 2022
+    - [ ] Update Leave Types
+    - [ ] Update Deployment instructions
+- [ ] Update TECHNICAL_DOCS.md
+    - [ ] Synchronize tech stack
+    - [ ] Confirm 3-VM architecture details
+    - [ ] Remove legacy OAuth descriptions
+- [ ] Final Proofread & Cross-check

@@ -1,0 +1,11 @@
+- [x] Replace custom calendar with FullCalendar
+  - [x] Install `@fullcalendar/multimonth` package
+  - [x] Update `src/components/FullCalendarView.tsx`
+    - [x] Import and integrate `multiMonthPlugin`
+    - [x] Add `multiMonthYear` to header toolbar options
+    - [x] Implement `isScattered` support in `events` generation mapping
+    - [x] Remove duplicate 'Leave Calendar' heading section
+  - [x] Clean up `src/pages/CalendarView.tsx`
+    - [x] Remove complex legacy layout UI & states (`renderYearlyView`, `renderWeeklyView`, `renderDailyView`)
+    - [x] Remove duplicate `Year/Month/Week/Day` custom logic
+    - [x] Delegate all view rendering directly to `<FullCalendarViewComponent>`

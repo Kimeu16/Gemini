@@ -1,0 +1,4 @@
+- [x] Fix Sidebar Legend Count in `CalendarView.tsx`
+- [x] Add `RESERVED` status to `statusLabelMap` in `FullCalendarView.tsx`
+- [x] Update `eventContent` in `FullCalendarView.tsx` to handle `RESERVED` styling
+- [x] Verify reservation visibility on the calendar

@@ -1,0 +1,32 @@
+# Update Nginx Server Name with Hostname and IP
+
+This plan outlines the steps to add the VM's default name and IP address to the Nginx configuration.
+
+## User Review Required
+
+> [!NOTE]
+> **Hostname Discovered**: I have successfully retrieved the VM's default name using a NetBIOS lookup. The Frontend VM (`10.172.19.16`) is identified as **`ADCERPWEB`**.
+
+
+## Proposed Changes
+
+### Configuration Updates
+
+#### [MODIFY] [nginx.conf](file:///c:/Apps/Leave%20Tracker/nginx.conf)
+- Update the `server_name` directive to include both the IP address (`10.172.19.16`) and the discovered hostname (`ADCERPWEB`).
+
+
+#### [MODIFY] [nginx-windows.conf](file:///c:/Apps/Leave%20Tracker/nginx-windows.conf)
+- Keep this file in sync with `nginx.conf` as it is used by the `deploy-v2.ps1` script to update the remote VM.
+
+## Open Questions
+
+None currently. The hostname has been identified.
+
+
+## Verification Plan
+
+### Manual Verification
+1.  **Local Check**: Verify the `nginx.conf` file contains both entries (e.g., `server_name 10.172.19.16 <hostname>;`).
+2.  **Deployment**: The user will need to run `.\deploy-v2.ps1` to push the updated configuration to the remote server.
+3.  **Remote Verification**: Once deployed, verify that the site is accessible via both the IP and the hostname.

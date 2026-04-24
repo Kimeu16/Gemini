@@ -1,0 +1,14 @@
+# Login Testing Task
+
+## Plan
+1. [ ] Navigate to http://10.172.19.16/login
+2. [ ] Enter email: tkymeu@gmail.com
+3. [ ] Enter password: 0714229987
+4. [ ] Click 'Sign In'
+5. [ ] Capture screenshot of the result
+6. [ ] Capture browser console logs
+7. [ ] Capture network request for /api/auth/login
+8. [ ] Report findings
+
+## Progress
+- Initialized scratchpad

@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_TASK",
+  "summary": "Tracking the implementation of SMTP configuration updates and the test user filtering logic. This includes code refactoring, database migrations, and credential updates.",
+  "updatedAt": "2026-04-17T12:36:12.119974600Z",
+  "version": "4"
+}

@@ -1,0 +1,35 @@
+# Implementation Plan - Handover Report Refinements
+
+This plan focuses on improving the contrast and spacing of the "Handover Report Details" section to ensure high readability and a professional, non-synthetic appearance.
+
+## User Review Required
+
+> [!IMPORTANT]
+> - **Contrast**: I will change all 'Handover' labels and text to pure black/near-black.
+> - **Aesthetics**: I will replace the thick vertical accent bars with a more standard "boxed container" style (subtle borders) to move away from the overly stylized layout.
+> - **Spacing**: Padding inside the handover blocks will be increased to improve "breathability".
+
+## Proposed Changes
+
+### [PDF Generation] (corporatePdf.ts)
+
+#### [MODIFY] [corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
+- Change title and item label colors to `BRAND.black`.
+- Replace the 2mm solid black rectangle with a simple 0.35mm border for the handover boxes.
+- Increase spacing between handover items from 3mm to 6mm.
+
+---
+
+### [UI Preview] (Requests.tsx)
+
+#### [MODIFY] [Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)
+- Change label color from `#666666` to `#444444` (Darker Grey).
+- Change field value color from `#333` to `#111111` (Near Black).
+- Replace `borderLeft: "2px solid #666666"` with a full `1px solid #e5e7eb` border for a more traditional form look.
+- Increase `gap` between handover items.
+
+## Verification Plan
+
+### Manual Verification
+- Generate PDF and verify that text is sharp and dark.
+- Open UI preview and verify that labels are clearly distinguishable and spacing is balanced.

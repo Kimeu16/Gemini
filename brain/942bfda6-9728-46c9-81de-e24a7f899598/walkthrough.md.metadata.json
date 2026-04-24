@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Finalized the Projects Department leave approval flow by restoring the email service and verifying all notification triggers. The system now supports a complete hierarchical cycle for Projects employees, properly notifying HODs, GMs, and the CEO at each stage. Fixed several syntax and logical errors to ensure a stable production environment.",
+  "updatedAt":  "2026-04-07T07:20:05.919706500Z",
+  "version":  "4"
+}

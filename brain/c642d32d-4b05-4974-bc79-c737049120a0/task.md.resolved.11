@@ -1,0 +1,8 @@
+- [x] Cleanup previous obsolete files (frontend & backend roots)
+- [ ] Execute Deep Cleanup
+  - [ ] Modify `App.tsx` to remove `AuthCallback` route
+  - [ ] Delete `AuthCallback.tsx`
+  - [ ] Delete backend helper scripts (`check-*.ts`, `create_*.ts`, etc.)
+  - [ ] Delete disabled backend controller
+  - [ ] Delete legacy bulk-upload and verification scripts
+- [ ] Verify build integrity (`tsc --noEmit`)

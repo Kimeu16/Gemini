@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Implementation plan to fix the 500 Internal Server Error by generating and applying the missing Prisma migration for the Reservation model.",
+  "updatedAt": "2026-04-10T10:45:25.205998Z",
+  "requestFeedback": true
+}

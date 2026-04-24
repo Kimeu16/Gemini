@@ -1,0 +1,75 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<div  />
+	AlanDick East Africa
+	Leave Management System
+	[1] (66,170)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/dashboard' />
+		[2] (75,170)<span >Dashboard />
+	[3] (66,218)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 bg-white/15 text-white' href='/requests' />
+		[4] (75,218)<span >Requests />
+	[5] (66,265)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/my-history' />
+		[6] (75,265)<span >My History />
+	[7] (66,312)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/calendar' />
+		[8] (75,312)<span >Calendar />
+	[9] (66,359)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/notifications' />
+		[10] (75,359)<span >Notifications />
+	[11] (66,406)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/employees' />
+		[12] (75,406)<span >Employees />
+	[13] (66,453)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/reports' />
+		[14] (75,453)<span >Reports />
+	[15] (66,501)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/logs' />
+		[16] (75,501)<span >Logs />
+	[17] (66,548)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/guide' />
+		[18] (75,548)<span >User Guide />
+	[19] (66,595)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/profile' />
+		[20] (75,595)<span >My Profile />
+	[21] (66,642)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/settings' />
+		[22] (75,642)<span >Settings />
+	[23] (66,966)<button class='flex items-center gap-3 px-3 py-2.5 w-full rounded-xl text-sm font-medium transition-all duration-200 hover:bg-red-500/20 hover:text-red-300' />
+		[24] (41,966)<span >Logout />
+	[25] (849,34)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 rounded-xl text-white hover:bg-white/10' />
+	[26] (876,34)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 relative text-white hover:bg-white/10' id='radix-:r35:' />
+	Anthony Kimeu
+	Operations Manager
+	[27] (978,34)<span  />
+		[28] (978,34)<img  />
+	Leave Requests
+	Manage employee leave applications
+	[29] (945,126)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary w-full sm:w-auto'>New Request />
+	[30] (208,197)<button class='flex h-10 items-center justify-between rounded-md border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full sm:w-40 glass border-border/50' role='combobox'>All Requests />
+		All Requests
+	[31] (288,197)<button class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-2 border-border/50 w-full sm:w-auto'>Export All />
+	[32] (237,284)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-3' placeholder='Search by employee name...' />
+	[33] (402,284)<button class='flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1' role='combobox'>All Types />
+		All Types
+	[34] (503,277)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs text-muted-foreground'>From Date />
+	[35] (567,314)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
+	[36] (664,277)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs text-muted-foreground'>To Date />
+	[37] (731,314)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
+	[38] (896,284)<button class='flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1' role='combobox'>All Employees />
+		All Employees
+	[39] (237,373)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 h-full'>Clear Filters />
+	[40] (163,466)<input class='w-4 h-4 rounded border-border' />
+	Employee
+	Type
+	Duration
+	Days
+	Status
+	Actions
+	[41] (163,536)<input class='w-4 h-4 rounded border-border' />
+	Eric Kariri
+	It Developer
+	ANNUAL
+	3/31/2026
+	to
+	4/6/2026
+	3
+	days
+	(Scattered)
+	Fully Approved
+	[42] (892,538)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground rounded-md h-9 px-3 border-border/50 hover:bg-accent/50 transition-all duration-200' />
+		[43] (899,538)<span >View />
+
+</current_dom>

@@ -1,0 +1,3 @@
+- [ ] Update `NOC_OFFICE` to `NOC_OFFICER` in `Employees.tsx`
+- [ ] Remove **Ronald Chola** and **Eric Nyakundi** from the CSV file
+- [ ] Verify CSV structure and frontend consistency

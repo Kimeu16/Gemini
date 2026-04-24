@@ -1,0 +1,25 @@
+# Plan: Fix Prisma "undefined@P1" Error (SQL Server)
+
+The login failure is caused by a `PrismaClientKnownRequestError` indicating that a column named `undefined` does not exist. This is a common issue when using Prisma 7 with the SQL Server driver adapter (`@prisma/adapter-mssql`) without the required `driverAdapters` preview feature enabled, or when the generated client is out of sync.
+
+## Proposed Changes
+
+### [Component] Prisma Configuration
+
+#### [MODIFY] [schema.prisma](file:///c:/Apps/Leave%20Tracker/server/prisma/schema.prisma)
+- Add `previewFeatures = ["driverAdapters"]` to the `generator client` block. This is required for the custom SQL Server adapter to function correctly.
+
+### [Component] Server Maintenance
+
+#### [RUN] Client Generation
+- Run `npx prisma generate` in the `server` directory to rebuild the client with the new feature flag.
+
+## Verification Plan
+
+### Automated Tests
+- Run the recently created debug script: `npx tsx scratch/debug_prisma.ts`
+- Expect `prisma.user.count()` and `prisma.user.findFirst()` to succeed.
+
+### Manual Verification
+- Attempt to login via the application UI (which uses `tkymeu@gmail.com`).
+- Check server logs for successful login info.

@@ -1,0 +1,7 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Implementation plan for email and in-app notifications for the Projects Department approval flow. This includes updating email templates to support the HOD role and adding notification triggers after HOD approval. Next: User approval.",
+  "updatedAt":  "2026-04-07T07:04:21.150782600Z",
+  "version":  "4",
+  "requestFeedback":  true
+}

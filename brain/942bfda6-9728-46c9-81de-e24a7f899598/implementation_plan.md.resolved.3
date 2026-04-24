@@ -1,0 +1,77 @@
+# Implementation Plan: Projects Department Custom Approval Flow
+
+Customizing the leave approval process for the **Projects** department to follow a specialized hierarchy: **HOD Projects → GM → CEO**, bypassing the Operations Manager (OM).
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Role Definition**: I will formally add the `HOD_PROJECTS` role to the system. Users with this role will have the authority to perform the first-level approval for any employee in the "Projects" department.
+> 
+> **Dashboard Visibility**: The HOD Projects will receive a specialized dashboard view (similar to the OM) but restricted only to "Projects" department data.
+> 
+> **Rejection Logic**: If an HOD Projects rejects a request, it will terminate the flow immediately, identical to how OM rejection works today.
+
+## Proposed Changes
+
+### 1. Backend Constants & Schema
+
+#### [MODIFY] [constants.ts](file:///c:/Apps/Leave%20Tracker/server/src/utils/constants.ts)
+- Add `HOD_PROJECTS: 'HOD_PROJECTS'` to `APP_CONSTANTS.ROLES`.
+
+#### [MODIFY] [schema.prisma](file:///c:/Apps/Leave%20Tracker/server/prisma/schema.prisma)
+- *Note*: No database migration is strictly required as status and role are strings, but I will add comments to the schema for documentation of the new `PENDING_HOD_PROJECTS` status.
+
+---
+
+### 2. Business Logic (Leave Controller)
+
+#### [MODIFY] [leave.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/leave.controller.ts)
+- **`createLeaveRequest`**:
+    - Logic change: If `department === 'Projects'`, set status to `PENDING_HOD_PROJECTS`.
+    - Exception: If the applicant *is* the `HOD_PROJECTS`, set status to `PENDING_GM`.
+- **`hodApproveLeaveRequest` [NEW]**:
+    - New endpoint to handle HOD approval. It will transition the status to `PENDING_GM` and record the HOD's ID/date.
+- **`omApproveLeaveRequest`**:
+    - Add a safeguard to ensure OM cannot approve requests from the Projects department (these must go through HOD).
+
+---
+
+### 3. Dashboard and Stats
+
+#### [MODIFY] [stats.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/stats.controller.ts)
+- Update `getOverviewStats` to include `pendingHODRequests` count.
+- Ensure HOD Projects see department-specific stats when logged in.
+
+#### [MODIFY] [notification.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/notification.controller.ts)
+- Ensure "New Leave Request" notifications for Projects department go to users with the `HOD_PROJECTS` role instead of `OPERATIONS_MANAGER`.
+
+---
+
+### 4. Frontend Integration
+
+#### [MODIFY] [Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)
+- Add a new "HOD Approval" tab/filter.
+- Update the approval button logic: Show the "Approve" button to `HOD_PROJECTS` for requests in `PENDING_HOD_PROJECTS` status.
+- Update the status badges to display "Pending HOD" for these requests.
+
+#### [MODIFY] [Dashboard.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Dashboard.tsx)
+- Route `HOD_PROJECTS` to the `OMDashboard` component (or a similar specialized view) but ensure it's filtered to their department.
+
+---
+
+## Open Questions
+
+1. **Multiple HODs?**: Is there only one HOD Projects, or can multiple people hold this role? My logic will notify *all* users with the `HOD_PROJECTS` role in the system.
+2. **OM Visibility**: Should the Operations Manager still be able to *see* Projects leaves in their "All Requests" view, even if they can't approve them?
+
+## Verification Plan
+
+### Automated Tests
+- Test 1: Create a regular employee in "Projects" -> Verify status is `PENDING_HOD_PROJECTS`.
+- Test 2: Log in as HOD Projects -> Verify request is visible and approvable.
+- Test 3: Approve as HOD -> Verify status moves to `PENDING_GM`.
+- Test 4: Create request as HOD Projects -> Verify status skips to `PENDING_GM`.
+
+### Manual Verification
+- Check the "Projects" department stats on the HOD dashboard.
+- Verify email notifications are sent to HOD instead of OM for Projects department.

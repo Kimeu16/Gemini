@@ -1,0 +1,5 @@
+- [ ] Update `deploy-v2.ps1` to generate `src/version.json` during build
+- [ ] Create initial `src/version.json` placeholder
+- [ ] Update `src/pages/Login.tsx` with modern version branding in the footer
+- [ ] Update `src/components/layout/Sidebar.tsx` with a version tag
+- [ ] Run `.\ship.ps1 -DryRun` to verify automation

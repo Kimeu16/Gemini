@@ -1,0 +1,8 @@
+- [x] Create directory `docs` if it doesn't exist
+- [x] Implement `src/docs/OpManager-Guide.html`
+- [x] Verify visual fidelity in browser
+- [x] Create Walkthrough artifact
+- [x] Implement OpManager Audit Monitoring Endpoint
+    - [x] Add `getAuditLogsForMonitoring` to `audit.controller.ts`
+    - [x] Register public `/monitor` route in `audit.routes.ts`
+    - [x] Verify endpoint with public request

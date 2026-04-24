@@ -1,0 +1,49 @@
+# Implementation Plan - Push to GitHub
+
+The goal is to commit and push all current changes to the remote repository. Based on the `git status`, there are significant changes beyond the Leave Request UI modernization, including a broad cleanup of migrations and setup scripts on the `preprod-cleanup-audit` branch.
+
+## Current State Analysis
+
+### Modified Files (UI & Logic)
+*   **Leave Request Modernization**: `src/lib/corporatePdf.ts`, `src/pages/Requests.tsx`.
+*   **Supporting Types/Components**: `src/types/leave.ts`, `src/components/StatusBadge.tsx`, etc.
+*   **Core Systems**: `server/src/services/email.service.ts`, `server/prisma/schema.prisma`.
+
+### Cleanup Actions (Branch: preprod-cleanup-audit)
+*   **Deletions**: All previous Prisma migrations and several shell setup scripts have been removed.
+*   **Infrastructure**: Nginx configurations and environment examples have been updated.
+
+## Proposed Commitment Strategy
+
+We will organize the changes into a cohesive commit on the `preprod-cleanup-audit` branch.
+
+### 1. Stage Changes
+*   Stage all modified and deleted files.
+*   **Crucial**: We will **EXCLUDE** local temporary files and untracked artifacts (e.g., `backend.zip`, `frontend.zip`, `leave-request-*.pdf`) to keep the repository clean.
+
+### 2. Commit Message
+**Suggested Message**: 
+`feat: modernize leave request UI & pre-prod infrastructure cleanup`
+
+*   Refined Leave Request PDF and UI preview with 1:1 parity.
+*   Implemented 3-tier authorization grid (OM, GM, CEO).
+*   Consolidated company header information and optimized logo placement.
+*   Cleaned up legacy migrations and internal setup scripts for pre-prod audit.
+
+### 3. Push to Remote
+*   `git push origin preprod-cleanup-audit`
+
+## User Review Required
+
+> [!WARNING]
+> You are currently on the `preprod-cleanup-audit` branch. This push involves **deleting all legacy Prisma migrations** and several setup scripts. 
+> 
+> **Please confirm if you want to:**
+> 1.  Commit **everything** shown in `git status` (excluding temporary PDFs/zips).
+> 2.  Or, only commit the **Leave Request UI** files we worked on recently.
+
+## Verification Plan
+
+### Manual Verification
+*   Verify that the branch `preprod-cleanup-audit` is correctly updated on GitHub.
+*   Ensure that no sensitive `.env` files or temporary PDFs are accidentally included.

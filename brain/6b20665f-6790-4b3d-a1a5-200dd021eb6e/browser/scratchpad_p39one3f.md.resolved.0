@@ -1,0 +1,13 @@
+# Deployment Verification Task - VM1 (10.172.19.16)
+
+## Progress Checklist
+- [ ] Navigate to http://10.172.19.16/requests
+- [ ] Verify page loads without 404 errors for JS files
+- [ ] Open a leave request details modal
+- [ ] Verify "Contact while on leave" label is present
+- [ ] Verify logo size in the modal header
+- [ ] Verify "Stakeholder Management" label is gone
+- [ ] Final report generation
+
+## Observations
+- No browser pages open yet.

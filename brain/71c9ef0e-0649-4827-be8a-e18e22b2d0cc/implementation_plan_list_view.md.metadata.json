@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Adding a toggleable List View to the Team Directory to provide a more compact and scannable overview of the 50+ employees. This includes a UI mode switch and a table-based layout.",
+  "updatedAt": "2026-04-14T09:52:22.436065Z",
+  "requestFeedback": true
+}

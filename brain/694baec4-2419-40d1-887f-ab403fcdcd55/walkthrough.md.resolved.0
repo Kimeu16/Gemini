@@ -1,0 +1,86 @@
+# VM Disk Space Management — Fix & Strategy
+
+## Problem
+
+Every deployment creates a `leave-tracker-old-HHmm` folder on both VMs via the junction swap at **lines 706–707** (frontend) and **839–840** (backend) in `deploy-v2.ps1`. These folders were **never cleaned up**, accumulating ~20+ orphan copies on VM2 (10.172.19.15) as shown in your screenshot.
+
+Additionally, `C:\deploy.log` and `C:\ops\leave-tracker-monitor\watchdog.log` grow indefinitely with no rotation.
+
+## Root Cause
+
+```powershell
+# deploy-v2.ps1 lines 706-707 & 839-840 — runs EVERY deployment
+$oldName = 'C:\leave-tracker' + '-old-' + (Get-Date -Format 'HHmm')
+Rename-Item -Path 'C:\leave-tracker' -NewName $oldName -Force
+```
+
+The old Step 10 cleanup only pruned `C:\releases\v*` folders — it completely ignored the `leave-tracker-old-*` leftovers.
+
+## What Changed
+
+### 1. [deploy-v2.ps1](file:///c:/Apps/Leave%20Tracker/deploy-v2.ps1) — Step 10 Enhanced
+
+The cleanup step now handles **4 things** instead of 1:
+
+| Task | Retention | Before |
+|------|-----------|--------|
+| Clear `C:\deploy\` staging | 0 (always clear) | ✅ Already existed |
+| Prune `C:\releases\v*` | Keep last 5 | ✅ Already existed |
+| **Remove `leave-tracker-old-*`** | **Keep last 2** | ❌ **Was missing** |
+| **Rotate logs** | **Keep last 500 lines** | ❌ **Was missing** |
+
+> [!IMPORTANT]
+> Future deployments will now auto-clean. But you still need a **one-time cleanup** of the 20+ folders already on VM2.
+
+### 2. [NEW] [cleanup-vm.ps1](file:///c:/Apps/Leave%20Tracker/ops/cleanup-vm.ps1) — On-Demand Cleanup Script
+
+A standalone script you can run directly on any VM to reclaim space immediately.
+
+## How to Clean Up Right Now
+
+### Step 1: Preview (Safe — changes nothing)
+
+SSH into VM2 (10.172.19.15) and run:
+
+```powershell
+# Copy the script to the VM first (from your dev machine):
+scp "C:\Apps\Leave Tracker\ops\cleanup-vm.ps1" anthony.kimeu@10.172.19.15:C:\ops\cleanup-vm.ps1
+
+# Then on VM2:
+powershell -ExecutionPolicy Bypass -File C:\ops\cleanup-vm.ps1 -DryRun
+```
+
+This will show you exactly what would be deleted and how much space you'd save.
+
+### Step 2: Execute the Cleanup
+
+```powershell
+# On VM2:
+powershell -ExecutionPolicy Bypass -File C:\ops\cleanup-vm.ps1
+```
+
+### Step 3: Repeat for VM1 (10.172.19.16)
+
+```powershell
+scp "C:\Apps\Leave Tracker\ops\cleanup-vm.ps1" anthony.kimeu@10.172.19.16:C:\ops\cleanup-vm.ps1
+ssh anthony.kimeu@10.172.19.16 "powershell -ExecutionPolicy Bypass -File C:\ops\cleanup-vm.ps1"
+```
+
+## Going Forward
+
+| Concern | Solution |
+|---------|----------|
+| Old junction folders piling up | ✅ Auto-cleaned every deploy (keep 2) |
+| Too many release versions | ✅ Auto-pruned every deploy (keep 5) |
+| Logs growing forever | ✅ Auto-rotated every deploy (500 lines) |
+| Need manual cleanup between deploys? | Run `ops\cleanup-vm.ps1` on the VM |
+| Want to schedule it? | Create a weekly scheduled task (see below) |
+
+### Optional: Schedule Weekly Cleanup
+
+```powershell
+# Run on each VM to auto-clean every Sunday at 2 AM:
+schtasks /Create /F /RU SYSTEM /RL HIGHEST /SC WEEKLY /D SUN /ST 02:00 `
+  /TN "LeaveTrackerDiskCleanup" `
+  /TR "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\ops\cleanup-vm.ps1"
+```

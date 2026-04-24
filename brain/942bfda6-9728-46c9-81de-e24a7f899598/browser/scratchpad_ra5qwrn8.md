@@ -1,0 +1,16 @@
+# Projects Department Leave Approval Flow Testing
+
+## Plan
+1. [ ] Login as `projects_emp@test.com`
+2. [ ] Create a leave request and verify status is "Awaiting HOD Approval"
+3. [ ] Logout
+4. [ ] Login as `projects_hod@test.com`
+5. [ ] Verify "Approve" button exists for the request
+6. [ ] Verify "Pending HOD Actions" stat on dashboard
+7. [ ] Summary of findings
+
+## Progress
+- [x] Navigated to login page
+## Progress
+- [x] Navigated to login page
+- [/] Logging in as `projects_emp@test.com` (typing credentials)

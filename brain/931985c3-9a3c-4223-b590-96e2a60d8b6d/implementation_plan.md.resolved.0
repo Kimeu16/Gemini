@@ -1,0 +1,34 @@
+# Local Database Setup via Docker
+
+The main database VM (`10.172.19.33`) is currently offline. To enable local development and testing, we will spin up a local SQL Server instance using Docker. This ensures compatibility with the existing Prisma schema without requiring modifications to the code.
+
+## Proposed Changes
+
+### 1. Docker
+- Run a SQL Server container locally using `mcr.microsoft.com/mssql/server`.
+- Configure the container to listen on port `1433` and use the credentials found in the current `.env`.
+
+### 2. server/.env [MODIFY]
+- Update `DATABASE_URL` to point to `localhost` instead of `10.172.19.33`.
+- Keep the same database name (`leave_tracker`), username (`leave_app_user`), and password (`H0rs3br1dg3@2`).
+
+### 3. Database Initialization
+- Use Prisma to push the schema to the new local instance.
+- Run `seed-prod.js` to populate the database with initial users (CEO, OM, GM) and roles.
+
+## Verification Plan
+
+### Automated Tests
+- `npx prisma db push`: Verify schema is successfully applied.
+- `node seed-prod.js`: Verify initial data is inserted.
+- Check the `nodemon` server terminal to ensure the `ConnectionError` is resolved.
+
+### Manual Verification
+- Attempt to log in with `ceo@company.com` / `Admin123!` (from seed script).
+- Verify navigation to "Requests" and "Employees" pages works without database errors.
+
+## Open Questions
+
+- Do you have enough disk space (~2GB) for the SQL Server Docker image?
+- Would you prefer a lightweight **SQLite** solution instead? 
+    - *Note: SQLite would require modifying the Prisma schema and some code because it doesn't support all MSSQL features used in this project.*

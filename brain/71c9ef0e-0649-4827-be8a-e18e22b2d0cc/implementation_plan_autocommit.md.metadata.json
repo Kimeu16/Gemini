@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Technical plan to enhance 'ship.ps1' with automated commit message generation. The script will be updated to analyze the local git status, extract the list of modified/new files, and construct a descriptive commit message automatically, eliminating the need for manual user input during the delivery process.",
+  "updatedAt": "2026-04-14T06:01:27.809620600Z",
+  "requestFeedback": true
+}

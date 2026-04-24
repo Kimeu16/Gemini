@@ -1,0 +1,13 @@
+- [ ] Refactor cleanup-vm.ps1 for new root and daily log folder pruning
+- [ ] Refactor watchdog scripts (backend & nginx) for daily logging and new root
+- [ ] Refactor deploy-v2.ps1 for unified paths and log folder retention
+- [ ] Refactor ship.ps1 for unified paths
+- [ ] Perform VM migration (VM1: 10.172.19.16)
+    - [ ] Create C:\AlanDick-LeaveTracker hierarchy
+    - [ ] Migrate and cleanup scattered files
+    - [ ] Re-register Scheduled Tasks
+- [ ] Perform VM migration (VM2: 10.172.19.15)
+    - [ ] Create C:\AlanDick-LeaveTracker hierarchy
+    - [ ] Migrate and cleanup scattered files
+    - [ ] Re-register Scheduled Tasks
+- [ ] Final verification (Dry-run cleanup and health checks)

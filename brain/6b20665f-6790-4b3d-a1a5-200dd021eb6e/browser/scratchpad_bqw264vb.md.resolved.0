@@ -1,0 +1,8 @@
+# Production Verification Plan - 10.172.19.16
+
+- [ ] Navigate to http://10.172.19.16/requests
+- [ ] Perform hard reload (Ctrl+Shift+R)
+- [ ] Open a leave request details modal
+- [ ] Confirm label "Contact while on leave" is visible
+- [ ] Confirm logo in modal header is enlarged
+- [ ] Report findings to the user

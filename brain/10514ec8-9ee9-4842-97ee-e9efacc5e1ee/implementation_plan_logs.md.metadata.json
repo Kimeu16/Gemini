@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Implementing an automated log rotation and retention system for VM1 and VM2.\n1. Create a log-manager script for archive/cleanup.\n2. Integrate with Task Scheduler via the deployment pipeline.\n3. Standardize log paths.",
+  "updatedAt": "2026-04-15T09:11:48.519059200Z",
+  "requestFeedback": true
+}

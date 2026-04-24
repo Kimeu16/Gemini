@@ -1,0 +1,12 @@
+# Task: Restructure Deployment Script
+
+- [/] Create `deploy-v2.ps1` with:
+  - [/] Complete file staging (no more cherry-picking)
+  - [/] Blue-green backend deployment
+  - [/] Atomic frontend swap
+  - [/] Pre-flight health check on temp port 5001
+  - [/] Auto-rollback on failure
+  - [/] Descriptive step-by-step logging
+  - [/] Deployment manifest with git info
+- [ ] Verify with `-DryRun`
+- [ ] Create walkthrough

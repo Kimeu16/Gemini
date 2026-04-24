@@ -1,0 +1,4 @@
+- [ ] Update `deploy-posh.ps1` with `-MigrateDb` switch and safety prompts
+- [ ] Implement conditional Prisma migration logic in `deploy-posh.ps1`
+- [ ] Add Section 9 (Database & Infrastructure Safety) to `TECHNICAL_DOCS.md`
+- [ ] Run a Dry Run to verify compliance with new safety gates

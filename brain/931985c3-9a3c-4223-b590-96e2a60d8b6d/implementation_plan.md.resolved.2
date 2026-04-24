@@ -1,0 +1,38 @@
+# Dual Database Environment Strategy
+
+We will configure two distinct database environments:
+1.  **Production (Remote VM)**: The database at `10.172.19.33` will be reserved for production use.
+2.  **Local Testing (Docker)**: A local SQL Server instance running in Docker will be used for local testing and development.
+
+## Proposed Changes
+
+### 1. Docker Environment [NEW]
+- Create `docker-compose.yml` to launch a local SQL Server.
+- Configured to run on port `1433` with the same credentials as production to minimize config changes.
+
+### 2. server/.env Configuration [MODIFY]
+- **VM Link Preservation**: The `.env` file will maintain both connection strings.
+- **Production Mode**: When `NODE_ENV=production` is unset or set to development, we'll default to the local DB.
+- **Toggling**: We'll set up the `.env` file so you can easily switch by commenting/uncommenting the `DATABASE_URL`.
+
+### 3. Localization Tasks
+- **Prisma Migrations**: We will push the current schema to the local Docker database.
+- **Data Seeding**: Populate the local database with essential test data (using `seed-prod.js`) so it's ready for immediate use.
+
+
+## Verification Plan
+
+### Automated Tests
+- `npx prisma db push`: Verify schema is successfully applied.
+- `node seed-prod.js`: Verify initial data is inserted.
+- Check the `nodemon` server terminal to ensure the `ConnectionError` is resolved.
+
+### Manual Verification
+- Attempt to log in with `ceo@company.com` / `Admin123!` (from seed script).
+- Verify navigation to "Requests" and "Employees" pages works without database errors.
+
+## Open Questions
+
+- Do you have enough disk space (~2GB) for the SQL Server Docker image?
+- Would you prefer a lightweight **SQLite** solution instead? 
+    - *Note: SQLite would require modifying the Prisma schema and some code because it doesn't support all MSSQL features used in this project.*

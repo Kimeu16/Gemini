@@ -1,0 +1,11 @@
+- [ ] **Phase 1: Immediate Parity Recovery**
+    - [ ] Manually swap junction on VM1 (10.172.19.16) to `v20260409-0918`
+    - [ ] Verify UI labels on VM1 via browser
+- [ ] **Phase 2: Deployment Script Hardening (v2.4)**
+    - [ ] Modify `deploy-v2.ps1` to use Rename-then-Create strategy for junctions
+    - [ ] Add post-swap verification logic to the script
+- [ ] **Phase 3: Pipeline Validation**
+    - [ ] Execute a full deployment: `.\deploy-v2.ps1`
+    - [ ] Verify both Frontend (VM1) and Backend (VM2) junctions are correctly updated
+- [ ] **Phase 4: Final Walkthrough**
+    - [ ] Create walkthrough documenting the fix and proof of parity

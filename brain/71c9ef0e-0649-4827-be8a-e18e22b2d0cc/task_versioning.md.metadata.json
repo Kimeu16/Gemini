@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_TASK",
+  "summary": "Automatically inject and display the application's version and git hash into the login page and dashboard sidebar, enhancing professional branding and auditability after every deployment.",
+  "updatedAt": "2026-04-14T06:21:31.016219300Z"
+}

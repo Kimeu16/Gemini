@@ -1,0 +1,7 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Detailed plan to replace the CEO role with the existing ADMINISTRATOR role across the entire codebase. Covers database schema changes, backend controllers/routes, frontend pages/components, and verification steps. PDF labels for 'Chief Executive Officer' are preserved per user requirement.",
+  "updatedAt": "2026-04-20T11:52:38.917464300Z",
+  "version": "3",
+  "requestFeedback": true
+}

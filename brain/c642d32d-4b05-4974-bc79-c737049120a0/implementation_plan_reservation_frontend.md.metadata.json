@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Implementation plan for the frontend portion of the reservation approval workflow, including status visualization and managerial decision controls.",
+  "updatedAt": "2026-04-10T11:07:11.156530500Z",
+  "requestFeedback": true
+}

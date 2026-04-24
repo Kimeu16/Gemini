@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Summary of frontend performance optimizations made to Leave Tracker, detailing fixes for duplicate fetching, waterfall rendering, and polling.",
+  "updatedAt": "2026-03-31T13:43:31.459486400Z"
+}

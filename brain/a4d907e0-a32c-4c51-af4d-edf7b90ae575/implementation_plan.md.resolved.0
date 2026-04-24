@@ -1,0 +1,74 @@
+# Titan Aurora — World-Class Portfolio Implementation Plan
+
+This plan outlines the transformation of the current portfolio into a "Titan Aurora" themed masterpiece, designed to impress recruiters at top-tier companies like Google and Microsoft. We will leverage advanced React patterns, Framer Motion, and high-end CSS to create a disruptive, premium experience.
+
+## Design Vision
+- **Theme**: Obsidian Aurora (Deep noir + Electric Cyan + Royal Purple + Warm Gold).
+- **Aesthetic**: Premium glassmorphism, depth-focused layouts, and organic motion.
+- **Target**: High-end software engineering roles (Senior/Architect level).
+
+![Titan Aurora Mockup](file:///C:/Users/kymeu/.gemini/antigravity/brain/a4d907e0-a32c-4c51-af4d-edf7b90ae575/titan_aurora_portfolio_hero_1776760125778.png)
+
+## Proposed Changes
+
+---
+
+### [Refining the Design System]
+Enhance the core CSS tokens to support elite-level aesthetics.
+
+#### [MODIFY] [index.css](file:///c:/Apps/spark-portfolio-main/src/index.css)
+- Implement more complex gradients (multi-stop).
+- Add "Aurora" specific keyframes for organic, varied movement.
+- Refine `.glass` and `.glass-strong` with better backdrop filters and box-shadows.
+
+---
+
+### [Immersive Hero & Background]
+Upgrade the initial impact of the site.
+
+#### [MODIFY] [AuroraBackground.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/AuroraBackground.tsx)
+- Add mouse-parallax to the aurora blobs for a sense of depth.
+- Enhance the grain layer for a cinematic texture.
+
+#### [MODIFY] [Hero.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Hero.tsx)
+- Upgrade the `Typewriter` to be more fluid.
+- Implement "Staggered Reveal" for headings (letter-by-letter spring animation).
+- Add a "magnetic field" to the hero section that subtly influences nearby text.
+
+---
+
+### [Advanced Interactive Components]
+Increase the "tactile" feel of the interface.
+
+#### [MODIFY] [CustomCursor.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/CustomCursor.tsx)
+- Create an "Intelligent Cursor" that reacts to different element types (e.g., changes to "View" on projects, "Link" on socials).
+- Add a "speed" based lag effect for a fluid, high-end feel.
+
+#### [MODIFY] [Projects.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Projects.tsx)
+- Refine the `TiltCard` with even smoother physics.
+- Add a "Glare" effect that follows the cursor across the card.
+
+---
+
+### [Professional Polish]
+Ensure the details meet Google/Microsoft standards.
+
+#### [MODIFY] [Experience.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Experience.tsx)
+- Implement a "Vertical Timeline" with scroll-triggered line growth.
+- Use glassmorphic nodes for milestones.
+
+#### [MODIFY] [Navbar.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Navbar.tsx)
+- Ensure the navbar uses a "Dock" metaphor for mobile.
+- Add active link highlighting with a sliding underline animation.
+
+## Verification Plan
+
+### Automated Tests
+- `npm run lint` to ensure code quality.
+- `npm run build` to verify production readiness and image optimization.
+
+### Manual Verification
+- **Visual Audit**: Verify the aurora blobs move organically without jitter.
+- **Interactive Check**: Test the "Magnetic" pull on various screen sizes.
+- **Accessibility**: Ensure contrast ratios on glass elements remain readable.
+- **Cursor Check**: Confirm the cursor transforms correctly over buttons and cards.

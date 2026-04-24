@@ -1,0 +1,6 @@
+- [x] Disable caching in `nginx-windows.conf` (`expires -1`)
+- [x] Harden remote cleanup in `deploy-posh.ps1`
+- [x] Perform clean local build (`rm -rf dist && npm run build`)
+- [x] Re-run deployment script `.\deploy-posh.ps1 -SkipConfirm`
+- [x] Verify remote asset hashes
+- [x] Re-enable caching (optional, or set to short duration)

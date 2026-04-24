@@ -1,0 +1,30 @@
+# AlanDick Leave Tracker - Infrastructure Hardening
+
+## 🎯 Final Outcome
+The Leave Tracker infrastructure has been unified and hardened against disk bloat and connectivity failures. All components now reside within `C:\AlanDick-LeaveTracker`, and a strict automated maintenance policy is integrated into the core delivery pipeline.
+
+## 🛠️ Infrastructure Optimizations
+
+### 1. Unified Production Root
+Both the Frontend (VM1) and Backend (VM2) now follow an identical directory structure:
+*   `C:\AlanDick-LeaveTracker\app` — The active production environment.
+*   `C:\AlanDick-LeaveTracker\versions` — Clean versioning with a **3-release limit**.
+*   `C:\AlanDick-LeaveTracker\logs` — Partitioned daily logs with a **3-day retention policy**.
+*   `C:\AlanDick-LeaveTracker\ops` — Monitoring and recovery watchdogs.
+
+### 2. Automated Disk Maintenance
+The `ship.ps1` and `deploy-v2.ps1` scripts have been synchronized to enforce the following limits automatically on every deployment:
+*   **Release Pruning**: Keeps exactly the last 3 versions (reduced from 5).
+*   **Log Rotation**: Prunes date-partitioned log folders older than 3 days.
+*   **Remnant Cleanup**: Only 1 `app-old-*` junction backup is kept (reduced from 2) to maintain a tidy root directory while preserving a safety net for rollbacks.
+
+### 3. Service Reliability
+*   **Nginx Restoration**: Corrected `nginx-windows.conf` root pathing to resolve the 500 Interner Server Error.
+*   **Non-Interactive Shipping**: `npm run ship` now supports `-SkipConfirm` for faster, reliable recoveries and CI/CD operations.
+*   **Watchdog Sync**: Monitoring agents are updated to the new unified pathing and daily log format.
+
+## ✅ Final Verification
+> [!SUCCESS]
+> **Site Status**: ONLINE (http://10.172.19.16/login)
+> **Health Check**: 200 OK / HTML Document Served
+> **Maintenance**: Step 10 Cleanup confirmed 100% successful on all VMs.

@@ -1,0 +1,53 @@
+[0] (500,500)<div  />
+	AlanDick East Africa
+	Leave Management System
+	[1] (66,170)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/dashboard' />
+		[2] (75,170)<span >Dashboard />
+	[3] (66,218)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/requests' />
+		[4] (75,218)<span >Requests />
+	[5] (66,265)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 bg-white/15 text-white' href='/my-history' />
+		[6] (75,265)<span >My History />
+	[7] (66,312)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/calendar' />
+		[8] (75,312)<span >Calendar />
+	[9] (66,359)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/notifications' />
+		[10] (75,359)<span >Notifications />
+	[11] (66,406)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/employees' />
+		[12] (75,406)<span >Employees />
+	[13] (66,453)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/reports' />
+		[14] (75,453)<span >Reports />
+	[15] (66,501)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/logs' />
+		[16] (75,501)<span >Logs />
+	[17] (66,548)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/guide' />
+		[18] (75,548)<span >User Guide />
+	[19] (66,595)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/profile' />
+		[20] (75,595)<span >My Profile />
+	[21] (66,642)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/settings' />
+		[22] (75,642)<span >Settings />
+	[23] (66,966)<button class='flex items-center gap-3 px-3 py-2.5 w-full rounded-xl text-sm font-medium transition-all duration-200 hover:bg-red-500/20 hover:text-red-300' />
+		[24] (41,966)<span >Logout />
+	[25] (849,34)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 rounded-xl text-white hover:bg-white/10' />
+	[26] (876,34)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 relative text-white hover:bg-white/10' id='radix-:r4a:' />
+	Anthony Kimeu
+	Operations Manager
+	[27] (978,34)<span  />
+		[28] (978,34)<img  />
+	My Leave History
+	Comprehensive log of all your leave applications and their status
+	1
+	2
+	3
+	0
+	Requests
+	Total history depth
+	Lifetime Total
+	0
+	Successfully Approved
+	0
+	Currently Pending
+	0
+	Total Declined
+	0
+	[29] (509,341)<input class='flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10 bg-background/50 border-border/50' placeholder='Search by leave type or description...' />
+	[30] (928,341)<button class='flex h-10 items-center justify-between rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full md:w-[180px] bg-background/50 border-border/50' role='combobox'>All Statuses />
+		All Statuses
+	No leave requests found matching your filters

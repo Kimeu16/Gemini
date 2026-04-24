@@ -1,0 +1,6 @@
+- [x] Cleanup legacy frontend scripts and build artifacts
+- [x] Cleanup legacy backend scripts and artifacts
+  - [x] Delete legacy scripts (`check-*.js`, `test-*.js`, `diag-*.js`, etc.)
+  - [x] Delete database backups (`.sql`, `.dump`)
+  - [x] Delete log files (`.log`, `.txt`)
+- [x] Verify backend stability

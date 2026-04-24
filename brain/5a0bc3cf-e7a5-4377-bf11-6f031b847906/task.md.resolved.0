@@ -1,0 +1,10 @@
+- [ ] Fix signature overflow (widen labels)
+    - [ ] Update `corporatePdf.ts` (`sigLabelW: 40`)
+    - [ ] Update `Requests.tsx` (signature grid: `150px`)
+- [ ] Remove background shading in 'Contact & Handover'
+    - [ ] Update `corporatePdf.ts`
+    - [ ] Update `Requests.tsx`
+- [ ] Fix PDF page numbering
+    - [ ] Add Page 1 footer in `corporatePdf.ts`
+    - [ ] Update Page 2 footer to 'PAGE 2 OF 2'
+- [ ] Synchronize layout spacing and final polish

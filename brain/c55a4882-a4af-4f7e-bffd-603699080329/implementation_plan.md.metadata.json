@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan to modify the bulk upload system to support:\n1. Custom leave balances (annual_leave, sick_leave columns in Excel)\n2. Email suppression during bulk import (checkbox, on by default)\n3. A manual 'Send Welcome Emails' button to trigger notifications after data verification\n\nCovers backend changes to employee.controller.ts and employee.routes.ts, plus frontend changes to Employees.tsx.",
+  "updatedAt": "2026-04-13T08:43:43.645796200Z",
+  "requestFeedback": true
+}

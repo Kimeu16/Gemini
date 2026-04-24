@@ -1,0 +1,48 @@
+# Goal Description
+
+The user wants the portfolio to visually resemble the [Blocksy Codespot Starter Site](https://creativethemes.com/blocksy/starter-site/codespot/). This involves a shift from the current "Structural Premium" (Cyan/Gold/Purple with Syne font) to a sleek, dark mode tech aesthetic characterized by **vibrant neon green accents**, clean sans-serif typography, and a tech-agency layout.
+
+## User Review Required
+
+> [!IMPORTANT]  
+> Please review the proposed changes. The primary visual change is shifting the entire color palette to focus on a high-contrast Neon Green against a deep dark background, which is the signature look of the Codespot theme. 
+
+## Proposed Changes
+
+---
+
+### [Design System & CSS] [index.css](file:///c:/Apps/spark-portfolio-main/src/index.css)
+- **Palette Update:** Change `--primary` to a vibrant Neon Green (e.g., `hsl(145 100% 50%)`). Adjust secondary accents to support this without clashing (likely moving to a more stealthy monochrome palette with just the green popping).
+- **Typography:** Replace the display font `Syne` with a robust geometric sans-serif (e.g., `Inter` or `Space Grotesk`) combined with `JetBrains Mono` for a true developer feel.
+- **Glass/Borders:** Simplify the heavy glassmorphism to flatter, solid dark backgrounds with very subtle, sharp borders and pronounced neon green hover effects.
+
+---
+
+### [Components]
+
+#### [MODIFY] [KineticWave.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/KineticWave.tsx)
+- Shift the multi-colored waves to variations of Neon Green and faint white/cyan. 
+- Tone down the wave density to make it feel more like a subtle high-tech matrix pattern behind the content.
+
+#### [MODIFY] [Hero.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Hero.tsx)
+- Change text gradients to favor stark white and neon green.
+- Adjust button styles to match Codespot (typically flat dark buttons with green borders, or solid green buttons with dark text).
+
+#### [MODIFY] [Projects.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Projects.tsx) & [Skills.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Skills.tsx) & [Experience.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Experience.tsx)
+- Update gradient backgrounds on cards to use the new stark, high-contrast tech theme.
+- Replace cyan/gold highlights with neon green.
+- Simplify card hovers to focus on border illumination rather than heavy drop shadows.
+
+---
+
+## Open Questions
+
+- Since I cannot directly load the live Codespot demo (it blocks automated fetching), my understanding is based on its core template description: **"Sleek dark mode design theme complemented by vibrant neon green accents."** Does this align with what you liked most about the theme, or were there specific UI elements (like a specific layout for the projects or hero) you want me to replicate meticulously?
+- Should we replace the `KineticWave` background entirely with a static tech-mesh background, or just color-shift it to green?
+
+## Verification Plan
+
+### Manual Verification
+- Visual audit of the color palette to ensure the Neon Green pops correctly against the dark mode.
+- Verify typography alignment (predominantly Inter/Monospace without Syne).
+- Run the dev server (`npm run dev`) to confirm visual changes.

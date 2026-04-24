@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Merge the refined PDF layout changes from `preprod-cleanup-audit` into the `main` branch.",
+  "updatedAt":  "2026-04-08T13:44:21.271120900Z",
+  "requestFeedback":  true
+}

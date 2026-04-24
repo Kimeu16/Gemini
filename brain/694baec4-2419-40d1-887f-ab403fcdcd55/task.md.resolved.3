@@ -1,0 +1,7 @@
+- [x] Refactor `generateLeaveRequestPdf` to use dynamic `y` cursor
+- [x] Remove hardcoded Y-coordinates for Sections 2 and 3
+- [x] Modernize `drawFieldBox` by removing the border rectangle
+- [x] Implement subtle `fieldBg` shading for section content areas
+- [x] Adjust spacing between sections to a consistent 12mm gutter
+- [/] Restore boxed style for Section 6 (Authorization Signatures) only
+- [ ] Verify PDF generation math for overflow and collision prevention

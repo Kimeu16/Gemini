@@ -1,0 +1,68 @@
+# Portfolio Redesign: vCard Theme
+
+Transform the existing portfolio into a premium, centered vCard layout inspired by [codewithsadee](https://codewithsadee.github.io/vcard-personal-portfolio/).
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Layout Shift**: Moving from a scrolling single-page to a **tab-based single-page**. This means users will navigate between "About", "Resume", "Portfolio", and "Contact" via tabs inside the main card, rather than scrolling down.
+> **Icons**: I will be integrating **Ionicons** (via CDN) to match the requested theme's icon style.
+
+## Proposed Changes
+
+### Foundation
+
+#### [MODIFY] [index.html](file:///c:/Apps/spark-portfolio-main/index.html)
+- Add `Poppins` font from Google Fonts.
+- Add `Ionicons` CDN scripts.
+
+#### [MODIFY] [index.css](file:///c:/Apps/spark-portfolio-main/src/index.css)
+- Redefine CSS variables for the vCard color palette:
+  - `--smoky-black`: `hsl(0, 0%, 7%)` (Main BG)
+  - `--eerie-black-2`: `hsl(240, 2%, 12%)` (Card BG)
+  - `--orange-yellow-crayola`: `hsl(45, 100%, 72%)` (Gold accent)
+- Implement valid vCard layout classes (centered container, Sidebar, Article transitions).
+
+### Layout & Navigation
+
+#### [NEW] [VCardLayout.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/VCardLayout.tsx)
+- Create the centered 2-column grid (Sidebar on left, Main content on right).
+- Implement responsive behavior (Sidebar on top, content below for mobile).
+
+#### [NEW] [VCardSidebar.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/VCardSidebar.tsx)
+- Dynamic sidebar with profile picture, Name, Job Title, and contact details (Email, Phone, Location).
+
+#### [NEW] [VCardNavbar.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/VCardNavbar.tsx)
+- Desktop/Tablet: Absolute positioned top-right tabs.
+- Mobile: Fixed bottom navigation bar.
+
+### Content Migration
+
+#### [MODIFY] [About.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/About.tsx)
+- Reformat current "Bio" into the "About" article.
+- Add "What I'm Doing" cards using current stats/skills.
+
+#### [MODIFY] [Experience.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Experience.tsx) -> [NEW] [ResumeModule.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/ResumeModule.tsx)
+- Convert experience data into 1-column timeline format.
+- Integrate "Skills" into the bottom of the Resume tab with progress bars.
+
+#### [MODIFY] [Projects.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Projects.tsx) -> [NEW] [PortfolioTab.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/PortfolioTab.tsx)
+- Grid gallery for projects with "eye" hover effect and link/modal previews.
+
+#### [MODIFY] [Contact.tsx](file:///c:/Apps/spark-portfolio-main/src/components/portfolio/Contact.tsx)
+- Reformat contact form to match the premium dark theme input style.
+
+#### [MODIFY] [Index.tsx](file:///c:/Apps/spark-portfolio-main/src/pages/Index.tsx)
+- Wire up the main page to use `VCardLayout` and handle active tab state.
+
+## Verification Plan
+
+### Automated Tests
+- Build check: `npm run build`
+- Lint check: `npm run lint`
+
+### Manual Verification
+- **Visual Check**: Open in browser via `npm run dev`.
+- **Interactivity**: Verify tab switching works smoothly.
+- **Responsiveness**: Check mobile layout (bottom navbar appears, sidebar collapses).
+- **Icons**: Ensure all Ionicons render correctly.

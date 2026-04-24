@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Proposed stabilization plan for the deployment pipeline (v2.4) to resolve the production parity issue and harden the junction cutover logic on Windows.",
+  "updatedAt": "2026-04-09T07:21:21.435473500Z",
+  "requestFeedback": true
+}

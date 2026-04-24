@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Successfully diagnosed and resolved the 502 Bad Gateway login issue. The fix involved SSHing into the backend VM (10.172.19.15), correcting the .env file encoding (re-written as UTF-8), and starting the backend service via PM2. Connectivity was restored, allowing the user to successfully log in and access the dashboard at 10.172.19.16.",
+  "updatedAt": "2026-03-31T12:29:26.782488400Z"
+}

@@ -1,0 +1,13 @@
+# Debugging Login Issue on http://10.172.19.16/login
+
+## Plan
+1. [ ] Navigate to http://10.172.19.16/login.
+2. [ ] Fill in email (test@alandick.co.ke) and password.
+3. [ ] Click login.
+4. [ ] Check browser console logs for errors.
+5. [ ] Check network requests for /api/auth/login.
+6. [ ] Report status code and error messages.
+7. [ ] Identify any UI issues or JS errors blocking execution.
+
+## Findings
+- 

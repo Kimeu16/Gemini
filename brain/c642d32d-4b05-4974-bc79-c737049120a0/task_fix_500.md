@@ -1,0 +1,9 @@
+- [ ] Fix 500 Internal Server Error
+    - [ ] Run Prisma migration `add_reservation_system`
+    - [ ] Verify backend stability and data fetching
+- [ ] Resolve Frontend Warnings
+    - [ ] Opt-in to React Router v7 future flags
+- [ ] Implement Reservation Notifications & Approvals (Planning Phase)
+    - [ ] Define Approval Workflow policy
+    - [ ] Update Schema for Approval fields
+    - [ ] Implement Backend Logic & Email Templates

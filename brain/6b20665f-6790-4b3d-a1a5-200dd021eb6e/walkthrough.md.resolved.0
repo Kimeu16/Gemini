@@ -1,0 +1,101 @@
+# Deployment Script Restructure - Walkthrough
+
+## What Changed
+
+Replaced `deploy-posh.ps1` (cherry-pick deployment with downtime) with `deploy-v2.ps1` (blue-green zero-downtime deployment).
+
+### Root causes fixed
+
+| Problem | Old Script (v1) | New Script (v2) |
+|---------|----------------|-----------------|
+| **Missing files** | Cherry-picked specific folders, missed `prisma.config.ts`, `nodemon.json` etc. | Uses a **complete production manifest** at top of script. Add new files there. |
+| **25+ sec downtime** | Stopped service *before* `npm ci` + `prisma generate` | Installs deps in parallel dir while old version **stays live** |
+| **File lock errors** | `Move-Item` failed because Node held locks | Uses `Rename-Item` (atomic NTFS rename, no locks) |
+| **No rollback** | Failed deployments left broken state | **Automatic rollback** if health check fails after cutover |
+
+---
+
+## Files Created/Modified
+
+### [NEW] [deploy-v2.ps1](file:///c:/Apps/Leave%20Tracker/deploy-v2.ps1)
+
+The complete zero-downtime deployment script (1013 lines). Key sections:
+
+#### 10-Step Flow
+
+| Step | What it does | Impact |
+|------|-------------|--------|
+| 1/10 | **Deployment Guards** | Confirms user tested locally, asks before production push |
+| 2/10 | **Pre-Flight Validation** | Verifies ALL required files exist locally before building |
+| 3/10 | **Authentication** | SSH credentials for VM1 + VM2 (env vars or interactive) |
+| 4/10 | **Build Artifacts** | Vite frontend build + TypeScript backend build |
+| 5/10 | **Stage & Package** | Copies all manifest items, verifies, creates zip archives |
+| 6/10 | **Connect to VMs** | SSH sessions to Frontend (VM1) + Backend (VM2) |
+| 7/10 | **Deploy Frontend** | Atomic swap: dist-next -> dist + Nginx reload (zero downtime) |
+| 8/10 | **Deploy Backend** | Blue-green: install in -next, pre-flight on port 5001, atomic cutover (<3s) |
+| 9/10 | **Final Health Checks** | Backend API, Frontend root, API proxy through Nginx |
+| 10/10 | **Cleanup** | Remove old backups and staging files |
+
+#### Production File Manifest (line ~114)
+
+```powershell
+$BackendProductionFiles = @(
+    @{ Name = "dist";              IsDir = $true;  SourceDir = "server" },
+    @{ Name = "prisma";            IsDir = $true;  SourceDir = "server" },
+    @{ Name = "public";            IsDir = $true;  SourceDir = "root"   },
+    @{ Name = "package.json";      IsDir = $false; SourceDir = "server" },
+    @{ Name = "package-lock.json"; IsDir = $false; SourceDir = "server" },
+    @{ Name = "prisma.config.ts";  IsDir = $false; SourceDir = "server" }
+)
+```
+
+> [!TIP]
+> When you add a new file/directory the backend needs, just add it to this manifest. The script will automatically include it in staging, verify it, and deploy it.
+
+---
+
+## Bugs Fixed During Development
+
+1. **Unicode parsing errors** - PowerShell couldn't parse em-dashes and box-drawing characters. Replaced with ASCII.
+2. **`$TestPort:` drive reference** - `$TestPort:` was parsed as a variable drive. Fixed with `${TestPort}`.
+3. **`ForEach-Object` in here-string** - `$_.Name` inside a here-string broke parsing. Changed to `foreach` loop.
+4. **`Select-Object -ExpandProperty` on hashtable** - Hashtables don't support this. Changed to `ForEach-Object { $_.Name }`.
+5. **`public/` source directory** - Located at project root, not `server/`. Added `SourceDir` property to manifest.
+
+---
+
+## How to Deploy
+
+```powershell
+# Safe test (builds locally, skips all remote operations)
+.\deploy-v2.ps1 -DryRun
+
+# Full production deployment
+.\deploy-v2.ps1
+
+# With database migration
+.\deploy-v2.ps1 -MigrateDb
+
+# CI/CD mode (no prompts)
+.\deploy-v2.ps1 -SkipConfirm
+```
+
+---
+
+## Validation
+
+Dry run completed successfully with exit code 0:
+
+```
+[1/10] Deployment Guards         -> [OK] Guards bypassed
+[2/10] Pre-Flight Validation     -> [OK] All required files are present
+[3/10] Authentication            -> [OK] Credentials obtained
+[4/10] Build Artifacts           -> [OK] Frontend + Backend built
+[5/10] Stage and Package         -> [OK] All 6 production items verified
+[6/10] Connect to VMs            -> [OK] Connected to both VMs
+[7/10] Deploy Frontend           -> [OK] [DRY RUN] Skipped
+[8/10] Deploy Backend            -> [OK] [DRY RUN] Skipped (all substeps)
+[9/10] Final Health Checks       -> [OK] [DRY RUN] Skipped
+[10/10] Cleanup and Summary      -> [OK] [DRY RUN] Skipped
+DEPLOYMENT SUCCESSFUL
+```

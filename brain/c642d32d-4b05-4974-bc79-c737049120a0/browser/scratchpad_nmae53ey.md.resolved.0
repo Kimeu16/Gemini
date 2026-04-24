@@ -1,0 +1,8 @@
+# Tasks
+- [ ] Navigate to http://localhost:8080/calendar
+- [ ] Switch to 'Year' view
+- [ ] Verify months are in 3 columns
+- [ ] Verify events are small colored dots
+- [ ] Verify "+more" clutter is minimized
+- [ ] Verify Month titles are large and centered
+- [ ] Take screenshot for confirmation

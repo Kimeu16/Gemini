@@ -1,0 +1,27 @@
+{
+	"mcpServers": {
+		"Snyk": {
+			"args": [
+				"mcp",
+				"-t",
+				"stdio"
+			],
+			"command": "C:\\Users\\kymeu\\AppData\\Local\\snyk\\vscode-cli\\snyk-win.exe",
+			"env": {
+				"IDE_CONFIG_PATH": "Antigravity",
+				"SNYK_API":        "https://api.snyk.io",
+				"TRUSTED_FOLDERS": "c:\\Users\\kymeu\\Apps\\Leave Tracker"
+			}
+		},
+		"GitKraken": {
+			"args": [
+				"mcp",
+				"--host=antigravity",
+				"--source=gitlens",
+				"--scheme=antigravity"
+			],
+			"command": "c:\\Users\\kymeu\\AppData\\Roaming\\Antigravity\\User\\globalStorage\\eamodio.gitlens\\gk.exe",
+			"type":    "stdio"
+		}
+	}
+}

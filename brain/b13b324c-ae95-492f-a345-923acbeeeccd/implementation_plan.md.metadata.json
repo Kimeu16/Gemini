@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Detailed analysis of 6 performance bottlenecks causing slow page loads:\n1. Duplicate /employees API calls in Requests page\n2. CalendarView pagination loop for managers\n3. Reports fetching 1000 records at once\n4. Dashboard waterfall pattern blocking all rendering\n5. Sidebar notification 30s polling overhead\n6. Staggered animations causing perceived slowness\n\nProposed fixes for each issue with specific file and line references.",
+  "updatedAt": "2026-03-31T12:59:45.815838600Z"
+}

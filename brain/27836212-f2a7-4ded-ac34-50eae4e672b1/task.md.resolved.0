@@ -1,0 +1,17 @@
+# Redesign Tasks: vCard Theme
+
+- [ ] **Phase 1: Foundation**
+    - [ ] Add Poppins font and Ionicons to `index.html`
+    - [ ] Update `index.css` with vCard design tokens (gradients, colors, layout)
+- [ ] **Phase 2: Core Components**
+    - [ ] Create `VCardSidebar.tsx` (Profile, Contact, Socials)
+    - [ ] Create `VCardNavbar.tsx` (Tab navigation)
+    - [ ] Create `VCardLayout.tsx` (Main 2-column grid container)
+- [ ] **Phase 3: Content Migration & Refactoring**
+    - [ ] Refactor `About.tsx` (Bio + Service cards)
+    - [ ] Create `ResumeModule.tsx` (Timeline + Skills)
+    - [ ] Create `PortfolioTab.tsx` (Project grid with hover effects)
+    - [ ] Refactor `Contact.tsx` (Form styling)
+- [ ] **Phase 4: Assembly & Polish**
+    - [ ] Update `pages/Index.tsx` to use the new layout and tab state
+    - [ ] Final visual polish and responsiveness check

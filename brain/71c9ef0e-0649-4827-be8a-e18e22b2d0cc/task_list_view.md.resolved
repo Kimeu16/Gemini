@@ -1,0 +1,5 @@
+- [ ] Add `viewMode` state and `lucide-react` icons to `Employees.tsx`
+- [ ] Implement View Switcher UI (Grid/List buttons)
+- [ ] Implement `ListView` component using Shadcn `Table`
+- [ ] Integrate `ListView` into the directory tab with department grouping
+- [ ] Verify functionality and responsive layout

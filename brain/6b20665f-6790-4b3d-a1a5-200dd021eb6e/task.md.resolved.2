@@ -1,0 +1,30 @@
+- [ ] **Infrastructure & Setup**
+    - [ ] Update header & version to v2.2
+    - [ ] Remove hardcoded username `anthony.kimeu`
+    - [ ] Add `-Mode` and `-Rollback` parameters
+    - [ ] Implement `Write-Log` helper with level support
+- [ ] **Step 1: Guard Improvements**
+    - [ ] Add deployment lock check (`C:\deploy.lock`)
+    - [ ] Skip credential prompt in `-DryRun`
+- [ ] **Step 4: Build Metrics**
+    - [ ] Track build duration for frontend/backend
+- [ ] **Step 5: Packaging & Integrity**
+    - [ ] Calculate SHA256 hashes for zips
+- [ ] **Step 6: Connection & Validation**
+    - [ ] Scope `$ProgressPreference` locally
+- [ ] **Step 7: Frontend Versioning**
+    - [ ] Implement versioned folder structure on VM1
+    - [ ] Add integrity check (hash comparison)
+    - [ ] Implement Junction swap logic
+- [ ] **Step 8: Backend Hardening**
+    - [ ] Kill process on port 5001 before pre-flight
+    - [ ] Implement versioned folder structure on VM2
+    - [ ] Preserve Scheduled Task history (Set-ScheduledTask)
+    - [ ] Remove fixed 6s sleep
+- [ ] **Step 9: Health Metrics**
+    - [ ] Record cutover window duration
+- [ ] **Manual Rollback Mode**
+    - [ ] Implement standalone rollback logic skipping Step 2-5
+- [ ] **Verification**
+    - [ ] Success dry-run
+    - [ ] Verify `C:\deploy.log` persists

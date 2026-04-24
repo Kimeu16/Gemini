@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Support suppressing welcome emails for both bulk imports and manual employee creation. This involves updating the backend to honor the suppression flag during individual employee creation and adding a corresponding UI toggle to the \"Add New Employee\" form.",
+  "updatedAt": "2026-04-14T08:26:05.850532100Z",
+  "requestFeedback": true
+}

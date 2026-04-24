@@ -1,0 +1,33 @@
+# Update Nginx Server Name with Hostname and IP
+
+This plan outlines the steps to add the VM's default name and IP address to the Nginx configuration.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **SSH Access Blocked**: Automatic SSH access to the VM (`10.172.19.16`) is currently unavailable because it requires a password that is not stored in the repository or environment. 
+> 
+> Please provide the **hostname** of the Frontend VM. You can find this by running the `hostname` command while logged into that VM.
+
+## Proposed Changes
+
+### Configuration Updates
+
+#### [MODIFY] [nginx.conf](file:///c:/Apps/Leave%20Tracker/nginx.conf)
+- Update the `server_name` directive to include both the IP address (`10.172.19.16`) and the hostname provided by the user.
+
+#### [MODIFY] [nginx-windows.conf](file:///c:/Apps/Leave%20Tracker/nginx-windows.conf)
+- Keep this file in sync with `nginx.conf` as it is used by the `deploy-v2.ps1` script to update the remote VM.
+
+## Open Questions
+
+> [!IMPORTANT]
+> **What is the VM Hostname?**
+> Please provide the name of the VM (e.g., `AD-LT-FRONT`, `VM1`, etc.).
+
+## Verification Plan
+
+### Manual Verification
+1.  **Local Check**: Verify the `nginx.conf` file contains both entries (e.g., `server_name 10.172.19.16 <hostname>;`).
+2.  **Deployment**: The user will need to run `.\deploy-v2.ps1` to push the updated configuration to the remote server.
+3.  **Remote Verification**: Once deployed, verify that the site is accessible via both the IP and the hostname.

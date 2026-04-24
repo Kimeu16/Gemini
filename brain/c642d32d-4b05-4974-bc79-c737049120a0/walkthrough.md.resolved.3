@@ -1,0 +1,38 @@
+# Global Codebase Cleanup: 79 Obsolete Files Removed
+
+The entire project has been thoroughly audited and streamlined. We have removed legacy scripts, temporary diagnostic tools, unused UI components, and old database backups across both the frontend and backend.
+
+## Cleanup Summary
+
+### 1. Backend (Server) — 41 Files Removed
+Cleaned up the `server` directory to remove clutter:
+- **Legacy Scripts**: 29 one-off testing and diagnostic scripts (`check-*.js`, `diag-*.js`, `test-*.js`).
+- **Database Backups**: 3 database dumps (`.sql`, `.dump`).
+- **Logs & Temp**: 9 log files and temporary JSON outputs.
+
+### 2. Frontend Root — 18 Files Removed
+Cleaned up the main project root:
+- **Deployment Scripts**: Legacy `deploy-posh.ps1` and `probe-vms.ps1`.
+- **Archives**: Old `.zip` and `.tar` build artifacts.
+- **Metadata**: Temporary Vite timestamp files and sample PDFs.
+
+### 3. UI Components — 20 Files Removed
+Removed unused shadcn UI components that were inflating the `src/components/ui` directory:
+- 19 components including `accordion`, `calendar`, `carousel`, and `sidebar` (shadcn version).
+- 1 unused `App.css` file.
+
+## Current State of Critical Tools
+The following **primary** tools have been preserved:
+- **[deploy-v2.ps1](file:///c:/Apps/Leave%20Tracker/deploy-v2.ps1)**: Main production deployment script.
+- **[probe_vms_v2.ps1](file:///c:/Apps/Leave%20Tracker/probe_vms_v2.ps1)**: Current VM status prober.
+- **Core Server Configs**: `.env` files and production configs.
+
+## Verification
+- **Frontend**: Dev server is stable; all active components are confirmed used.
+- **Backend**: Server processes remain active and connected to the database.
+- **Storage**: Project footprint is now smaller and easier to navigate.
+
+---
+
+> [!NOTE]
+> All employee "photos" are stored as Base64 strings in your database, so no physical image files were deleted or needed for the application to display them.

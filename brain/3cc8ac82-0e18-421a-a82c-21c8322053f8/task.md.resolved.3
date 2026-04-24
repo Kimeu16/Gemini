@@ -1,0 +1,9 @@
+- [x] Implement sequential `requestNumber` in Prisma schema
+- [x] Update `corporatePdf.ts` with sequential reference format
+- [x] Update `Requests.tsx` with sequential reference in UI preview
+- [x] Resolve `any` type errors in `Reports.tsx`
+- [x] Reduce cognitive complexity in `stats.controller.ts`
+- [x] Refactor `bulk-upload-leave.ts` for lint and readability
+- [x] Polish `TECHNICAL_DOCS.md` formatting
+- [x] Add non-interactive safety to `deploy-posh.ps1`
+- [x] Verify local builds (Frontend & Backend)

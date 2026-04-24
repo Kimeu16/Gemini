@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Electronic Signature Consent - AlanDick</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page {
+    size: A4;
+    margin: 15mm 20mm 15mm 20mm;
+  }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 9pt;
+    color: #111111;
+    background: #f0f0f0;
+    line-height: 1.5;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    background: white;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  /* ─── HEADER ─── */
+  .letterhead {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #12004c;
+    margin-bottom: 6px;
+  }
+  .letterhead img {
+    height: 54px;
+    width: auto;
+    object-fit: contain;
+  }
+  .letterhead-right {
+    text-align: right;
+  }
+  .letterhead-right .company {
+    font-family: 'Arial', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #12004c;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+  .letterhead-right .contacts {
+    font-size: 7.8pt;
+    color: #555;
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+
+  /* ─── DOCUMENT CLASSIFICATION BAR ─── */
+  .classification-bar {
+    background: #12004c;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 4px 0;
+    margin-bottom: 18px;
+  }
+
+  /* ─── DOCUMENT TITLE BLOCK ─── */
+  .title-block {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 10px;
+  }
+  .title-block .doc-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 14pt;
+    font-weight: 800;
+    color: #12004c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .title-block .doc-subtitle {
+    font-family: 'Arial', sans-serif;
+    font-size: 9pt;
+    color: #374151;
+    margin-top: 4px;
+  }
+
+  /* ─── ADDRESSEE BLOCK ─── */
+  .addressee-block {
+    border: 1px solid #12004c;
+    border-radius: 3px;
+    padding: 10px 16px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f8ff;
+  }
+  .addressee-block .to-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .addressee-block .name {
+    font-family: 'Arial', sans-serif;
+    font-size: 12pt;
+    font-weight: 800;
+    color: #12004c;
+  }
+  .addressee-block .role {
+    font-family: 'Arial', sans-serif;
+    font-size: 8.5pt;
+    color: #374151;
+    margin-top: 2px;
+  }
+  .addressee-block .ref-right {
+    text-align: right;
+  }
+  .addressee-block .ref-right .ref-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 7.5pt;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .addressee-block .ref-right .ref-value {
+    font-family: 'Arial', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #374151;
+    margin-top: 2px;
+  }
+
+  /* ─── BODY TEXT & SECTIONS ─── */
+  .preamble {
+    font-size: 9pt;
+    color: #1f2937;
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+
+  .section {
+    margin-bottom: 10px;
+  }
+
+  .section-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    color: #12004c;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .section-body {
+    font-size: 8.5pt;
+    color: #1f2937;
+    text-align: justify;
+  }
+
+  .section-body p {
+    margin-bottom: 4px;
+  }
+
+  .section-body ul {
+    padding-left: 15px;
+    margin-top: 2px;
+  }
+
+  .section-body li {
+    margin-bottom: 2px;
+  }
+
+  /* ─── TWO-COLUMN LAYOUT ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  /* ─── USER DETAILS TABLE ─── */
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+  }
+  .details-table th {
+    background: #12004c;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    text-align: left;
+  }
+  .details-table td {
+    padding: 6px 12px;
+    border: 1px solid #d1d5db;
+    color: #1f2937;
+  }
+  .details-table td.label {
+    background: #f9f8ff;
+    font-family: 'Arial', sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    width: 35%;
+    border-right: 2px solid #12004c;
+  }
+
+  /* ─── SPECIMEN SIGNATURE BOX ─── */
+  .sig-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 8pt;
+    font-weight: 700;
+    color: #12004c;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .sig-box-outer {
+    border: 1.5px solid #12004c;
+    width: 100%;
+    height: 70px;
+    background: #fafafa;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .sig-box-inner-label {
+    position: absolute;
+    bottom: 6px;
+    left: 10px;
+    font-size: 7pt;
+    color: #9ca3af;
+    font-style: italic;
+  }
+
+  /* ─── SIGNATURE LINES ─── */
+  .sig-lines {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 12px;
+  }
+  .sig-field { flex: 1; }
+  .sig-line {
+    border-bottom: 1px solid #374151;
+    height: 20px;
+    margin-bottom: 4px;
+  }
+  .sig-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 7pt;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+  }
+
+  /* ─── OFFICIAL USE BOX ─── */
+  .official-box {
+    border: 1px dashed #9ca3af;
+    padding: 10px 14px;
+    background: #f9fafb;
+    margin-bottom: 12px;
+  }
+  .official-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+  .official-fields {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+  }
+  .off-label {
+    font-family: 'Arial', sans-serif;
+    font-size: 6.5pt;
+    color: #9ca3af;
+    margin-top: 4px;
+  }
+
+  /* ─── NOTICE BOX ─── */
+  .notice-box {
+    border-left: 3px solid #12004c;
+    background: #f9f8ff;
+    padding: 8px 12px;
+    font-size: 8.5pt;
+    color: #374151;
+    margin-bottom: 12px;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    border-top: 1px solid #d1d5db;
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    font-size: 7pt;
+    color: #9ca3af;
+  }
+
+  .print-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #12004c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+  }
+
+  @media print {
+    .print-btn { display: none; }
+    body { padding: 0; background: white; }
+    .container { box-shadow: none; padding: 10mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- LETTERHEAD -->
+  <div class="letterhead">
+    <img src="company-logo.jpg" alt="AlanDick East Africa Ltd." onerror="this.src='https://res.cloudinary.com/dpoqx18xw/image/upload/v1762940789/alandick-logo_2x_1_nti3m6.jpg'" />
+    <div class="letterhead-right">
+      <div class="company">AlanDick East Africa Limited</div>
+      <div class="contacts">
+        P.O. Box 12907, Muthithi Road, Nairobi, Kenya<br>
+        Tel: +254 722 570 112 &bull; admin@alandick.co.ke
+      </div>
+    </div>
+  </div>
+
+  <!-- CLASSIFICATION BAR -->
+  <div class="classification-bar">Internal Use Only &bull; Confidential &bull; Not for Public Distribution</div>
+
+  <!-- DOCUMENT TITLE -->
+  <div class="title-block">
+    <div class="doc-title">Electronic Signature Consent &amp; Compliance Agreement</div>
+    <div class="doc-subtitle">Leave Management System — Digital Authorization &amp; Accountability Framework</div>
+  </div>
+
+  <!-- ADDRESSEE BLOCK -->
+  <div class="addressee-block">
+    <div>
+      <div class="to-label">Issued To</div>
+      <div class="name">Joram Ndung'u</div> <!-- Dynamic in real PDF -->
+      <div class="role">Operations Manager &mdash; AlanDick East Africa Limited</div>
+    </div>
+    <div class="ref-right">
+      <div class="ref-label">Date Issued</div>
+      <div class="ref-value">March 30, 2026</div>
+    </div>
+  </div>
+
+  <!-- PREAMBLE -->
+  <p class="preamble">
+    This Electronic Signature Consent and Compliance Agreement (<strong>"Agreement"</strong>) is issued
+    by AlanDick East Africa Limited to the above-named individual as a condition of access to
+    the company's Leave Management system (<strong>"Leave Tracker"</strong>). Please review each clause
+    carefully. By providing your specimen signature at the end of this document, you confirm full
+    comprehension of and agreement to the terms set forth herein.
+  </p>
+
+  <!-- TWO-COLUMN SECTIONS -->
+  <div class="two-col">
+    <div class="col">
+      <div class="section">
+        <div class="section-heading">1. Purpose</div>
+        <div class="section-body">
+          <p>This Agreement establishes the legal recognition, use, and individual accountability
+          of electronic signatures within the AlanDick East Africa Leave Tracker.</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-heading">2. Scope of Application</div>
+        <div class="section-body">
+          <ul>
+            <li>Annual, Sick, and Compassionate Leave Approvals</li>
+            <li>Leave Balance Adjustments and Overrides</li>
+            <li>Departmental Leave Planning & Calendars</li>
+            <li>Official Leave Record Digitization</li>
+          </ul>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-heading">3. Legal Validity</div>
+        <div class="section-body">
+          <p>Treat as legally equivalent to a handwritten signature; admissible as evidence in audits.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="section">
+        <div class="section-heading">5. User Obligations</div>
+        <div class="section-body">
+          <p>Credentials shall not be shared. Signatory accepts full responsibility for all account actions.</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-heading">7. Data Privacy</div>
+        <div class="section-body">
+          <p>AlanDick ensures secure storage of the digitized specimen signature for operational use only.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTICE BOX -->
+  <div class="notice-box">
+    <strong>Important Notice:</strong> The specimen signature you provide below will be scanned,
+    digitized, and securely stored in the system. It will thereafter be
+    automatically embedded on all system-generated official documents that you approve.
+  </div>
+
+  <!-- SIGNATORY DETAILS TABLE -->
+  <div class="section">
+    <div class="section-heading">8. Signatory Details</div>
+    <table class="details-table">
+      <thead>
+        <tr>
+          <th colspan="2">To be completed by the signatory</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="label">Full Legal Name</td>
+          <td class="value">Joram Ndung'u</td>
+        </tr>
+        <tr>
+          <td class="label">Job Title / Designation</td>
+          <td class="value">Operations Manager</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SPECIMEN SIGNATURE -->
+  <div class="section">
+    <div class="sig-heading">9. Specimen Signature</div>
+    <div class="sig-box-outer">
+      <div class="sig-box-inner-label">Sign here &mdash; use dark ink. Keep within border.</div>
+    </div>
+  </div>
+
+  <!-- SIGNATURE LINES -->
+  <div class="sig-lines">
+    <div class="sig-field">
+      <div class="sig-line"></div>
+      <div class="sig-label">Signature of Signatory</div>
+    </div>
+    <div class="sig-field">
+      <div class="sig-line"></div>
+      <div class="sig-label">Date (DD / MM / YYYY)</div>
+    </div>
+  </div>
+
+  <!-- OFFICIAL USE -->
+  <div class="official-box">
+    <div class="official-title">Section 10 &mdash; For Official Use Only (IT / System Administrator)</div>
+    <div class="official-fields">
+      <div class="official-field"><div class="sig-line"></div><div class="off-label">Digitized By</div></div>
+      <div class="official-field"><div class="sig-line"></div><div class="off-label">Date</div></div>
+      <div class="official-field"><div class="sig-line"></div><div class="off-label">Linked Account</div></div>
+      <div class="official-field"><div class="sig-line"></div><div class="off-label">User ID</div></div>
+      <div class="official-field"><div class="sig-line"></div><div class="off-label">Initials</div></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>AlanDick East Africa Ltd. &bull; Nairobi, Kenya &bull; admin@alandick.co.ke</div>
+    <div style="text-align:right;">Confidential &bull; Internal Use</div>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+  Print to PDF
+</button>
+
+</body>
+</html>

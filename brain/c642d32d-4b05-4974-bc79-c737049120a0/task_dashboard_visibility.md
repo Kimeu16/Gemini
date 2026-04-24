@@ -1,0 +1,11 @@
+- [x] Backend: Update `stats.controller.ts` to include reservation metrics
+    - [x] Calculate `myActiveReservationsCount`
+    - [x] Calculate `planningForecastCount` (scoped by role)
+- [x] Frontend: Update Dashboards
+    - [x] Update `EmployeeDashboard.tsx` (Personal reservations)
+    - [x] Update `OMDashboard.tsx` (Departmental forecasting)
+    - [x] Update `GMDashboard.tsx` (Company forecasting)
+    - [x] Update `CEODashboard.tsx` (Company forecasting)
+- [x] Verification
+    - [x] Check API response in console
+    - [x] Verify StatCard visibility for each role

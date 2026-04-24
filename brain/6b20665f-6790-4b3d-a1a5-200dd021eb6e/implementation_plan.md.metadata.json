@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan to restructure deploy-posh.ps1 into deploy-v2.ps1 with two core fixes:\n1. Complete file staging instead of cherry-picking (fixes missing changes)\n2. Blue-green deployment pattern: install deps in a parallel directory while old version serves traffic, then atomic cutover in <3 seconds (fixes downtime)\nPreserves all existing professional standards (dry-run, guards, health checks) and adds automatic rollback on failure.",
+  "updatedAt": "2026-04-09T05:06:35.326793500Z",
+  "requestFeedback": true
+}

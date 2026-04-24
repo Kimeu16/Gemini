@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_TASK",
+  "summary":  "Hard redeploy to fix deployment synchronization issues.",
+  "updatedAt":  "2026-04-08T14:06:26.294477700Z",
+  "version":  "4"
+}

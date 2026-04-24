@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Overview of the v2.3 deployment pipeline update which resolved TypeScript build warnings and junction lock IOExceptions.",
+  "updatedAt": "2026-04-09T06:21:21.306274500Z"
+}

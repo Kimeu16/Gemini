@@ -1,0 +1,153 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+AD
+AlanDick
+Enterprise
+Main Menu
+[0] (73,177)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[1] (81,177)<span >Command Center />
+[2] (73,230)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[3] (81,230)<span >Site Inventory />
+[4] (73,284)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold bg-white/10 text-white shadow-[0_4px_12px_rgba(0,0,0,0.1)]' />
+	[5] (9,284)<div  />
+	[6] (76,284)<span >Users & Teams />
+	[7] (127,284)<div  />
+[8] (73,338)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[9] (81,338)<span >Escalation Matrix />
+[10] (73,391)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[11] (81,391)<span >Operations Checklists />
+[12] (73,445)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[13] (81,445)<span >Security & Access />
+Support
+[14] (73,559)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all text-sm font-semibold group' />
+	[15] (48,559)<span >Settings />
+[16] (73,613)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all text-sm font-semibold group' />
+	[17] (54,613)<span >Help Center />
+[18] (73,908)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-destructive hover:bg-destructive/10 transition-all text-sm font-bold group mb-2' />
+	[19] (49,908)<span >Sign Out />
+[20] (73,961)<button class='w-full flex items-center justify-center py-2.5 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all' />
+[21] (174,43)<button class='p-2.5 rounded-xl hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all duration-200 border border-transparent hover:border-border' />
+Users & Teams
+AlanDick East Africa Operations
+[22] (802,43)<input class='bg-transparent border-none focus:ring-0 text-sm ml-3 w-48 placeholder:text-muted-foreground/60' placeholder='Search command center...' />
+[23] (889,43)<button class='p-2.5 rounded-xl hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all relative group border border-transparent hover:border-border' />
+	[24] (892,36)<span  />
+[25] (943,43)<button class='flex items-center gap-3 p-1.5 pr-4 rounded-xl hover:bg-secondary/80 transition-all border border-transparent hover:border-border' />
+	[26] (916,43)<div  />
+		[27] (916,43)<span >AD />
+	[28] (953,43)<div  />
+		[29] (953,34)<p >Administrator />
+		[30] (953,50)<p >Ops Manager />
+Users & Teams
+70
+users across all departments
+[31] (915,146)<input class='flex rounded-md border border-input px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-8 h-8 text-sm w-56 bg-card' placeholder='Search users...' />
+Management & Office Support
+#
+Name
+Contact
+Department
+Access
+REON
+Role
+1
+Bhavik Patel
+bhavik@adcea.com
+254705808661
+Executive
+Operator 1
+Not Done
+Executive Officer - Chief Commercial & Strategy Officer
+2
+Willis Ochieng
+wochieng@adcea.com
+254722540984
+Executive
+Operator 1
+Done
+Senior Management - General Manager
+3
+Kinoti Mwenda
+kinoti.mwenda@alandick.co.ke
+254721467896
+Executive
+Operator 1
+Not Done
+Senior Management - Chief Technical Officer
+4
+Nicholas Mutuku
+Nicholas.Mutuku@alandick.co.ke
+254720456230
+Maintenance
+Admin
+Done
+Maintenance Assitant Manager
+5
+Alex Mbale
+alex.mbale@alandick.co.ke
+254720540005
+Maintenance
+Admin
+Not Done
+Maintenance Manager
+6
+Sarah Tarus
+sarah.tarus@alandick.co.ke
+254720206041
+NOC
+Admin
+Not Done
+Assistant NOC Manager
+7
+NOC Operations
+noc@alandick.co.ke
+254791447172
+NOC
+Admin
+Done
+NOC Operations
+8
+Joy Karimi
+joy.karimi@alandick.co.ke
+254703553103
+NOC
+Admin
+Not Done
+NOC Operations and Data Analytics
+9
+Joram Ndungu
+joram.n@adcea.com
+254716319456
+HODs Operations
+Admin
+Not Done
+HODs - Head of Operations
+10
+Davis Kiprotich
+davis.kiprotich@alandick.co.ke
+254727111264
+Power & IT Resources
+Admin
+Done
+Assitant Power plant maintenance & IT Manager
+11
+Dedan Ongara
+dedan.ongara@alandick.co.ke
+254721450241
+Power & IT Resources
+Admin
+Done
+Power plant maintenance support & IT Manager
+12
+Jared Nyakundi
+jared.nyakundi@adcea.com
+254112972989
+Maintenance
+Admin
+Done
+Assistant Maintenance Manager
+Updating Teams...
+
+</current_dom>

@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "I have created a unified 'ship.ps1' script that simplifies your delivery workflow. This script automates the cleanup of local temporary files, ensures your GitHub repository is synchronized with your latest changes, and triggers the full production deployment system with database migrations.",
+  "updatedAt": "2026-04-14T05:58:08.772143800Z"
+}

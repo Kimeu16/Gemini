@@ -1,0 +1,39 @@
+# Implementation Plan - Handover Report Refinements
+
+This plan focuses on improving the contrast and spacing of the "Handover Report Details" section, enlarging and centering the document header title, and using role initials in the signature grid to ensure a professional, clean, and highly readable document.
+
+## User Review Required
+
+> [!IMPORTANT]
+> - **Header**: The title "LEAVE APPLICATION FORM" will be **larger** and **centered** at the top of the page.
+> - **Signatures**: To prevent overflow and ensure a cleaner fit, I will use **Initials** (1. OM, 2. GM, 3. CEO) in the first column of the signature table.
+> - **Contrast**: I will change all 'Handover' labels and text to pure black/near-black.
+> - **Spacing**: Padding inside the handover blocks will be increased.
+
+## Proposed Changes
+
+### [PDF Generation] (corporatePdf.ts)
+
+#### [MODIFY] [corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
+- Update `drawHeader` to center the title and increase its font size.
+- Replace full role names with initials (1. OM, 2. GM, 3. CEO) in the signature grid.
+- Change title and item label colors to `BRAND.black`.
+- Replace the 2mm solid black rectangle with a simple 0.35mm border for the handover boxes.
+- Increase spacing between handover items.
+
+---
+
+### [UI Preview] (Requests.tsx)
+
+#### [MODIFY] [Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)
+- Update the header layout to center the "LEAVE APPLICATION FORM" title and increase size.
+- Update the signature grid to use initials (1. OM, 2. GM, 3. CEO).
+- Change label color to `#444444` and value color to `#111111`.
+- Replace `borderLeft` with a full light border for the handover sections.
+- Increase `gap` between handover items.
+
+## Verification Plan
+
+### Manual Verification
+- Generate PDF and verify that text is sharp and dark.
+- Open UI preview and verify that labels are clearly distinguishable and spacing is balanced.

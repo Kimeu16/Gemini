@@ -1,0 +1,7 @@
+# Task: Fix Prisma "undefined@P1" Error (SQL Server)
+
+- [ ] Add `driverAdapters` preview feature to `schema.prisma`
+- [ ] Regenerate Prisma client (`npx prisma generate`)
+- [ ] Verify fix with debug script
+- [ ] Verify fix with application login
+- [ ] Cleanup debug artifacts

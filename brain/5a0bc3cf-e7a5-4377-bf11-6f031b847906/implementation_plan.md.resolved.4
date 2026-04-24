@@ -1,0 +1,41 @@
+# Implementation Plan - Balanced Header Distribution
+
+The goal is to redistribute the header information (Company Name, Address, and Contact/Reference details) into a balanced, professional layout that "makes sense" visually. We will move away from the current clumped alignment and implement a horizontally distributed 3-column structure.
+
+## Proposed Changes
+
+### [Component] Header Design (PDF & UI)
+
+#### [MODIFY] [corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
+*   **3-Column Distribution**:
+    *   **Left Column**: Logo (anchored at the margin).
+    *   **Center Column**: Company name and Address (stacked for clarity).
+    *   **Right Column**: Contact details (Tel/Email) and Reference metadata (No/Date) in a compact, right-aligned block.
+*   **Vertical Balance**: Adjust the Y-coordinates to ensure all three columns align perfectly at the top and bottom.
+*   **Formatting**: Use refined font weights to create a hierarchy (Company Name in bold, others in normal/small).
+
+#### [MODIFY] [Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)
+*   **Grid Layout**: Use a CSS `grid` or `flexbox` with `justify-content: space-between` to mirror the PDF's 3-column distribution.
+*   **Parity**: Ensure font sizes and colors match the PDF exactly for a seamless transition between preview and final document.
+
+## User Review Required
+
+> [!IMPORTANT]
+> I am proposing a **Horizontal 3-Column Layout** as it is the most standard way to "evenly distribute" this much information without making it look cluttered. 
+> 
+> **Proposed Structure**:
+> | **Left** | **Center** | **Right** |
+> | :--- | :---: | ---: |
+> | **[Logo]** | **AlanDick East Africa Ltd.** | **Tel / Email** |
+> | | *P.O Box 12907...* | **Ref No / Date** |
+>
+> Does this 3-column structure align with your vision of "evenly distributed"?
+
+## Verification Plan
+
+### Automated Tests
+*   Run the PDF generator to verify that text does not overflow the margins in the 3-column setup.
+*   Inspect the UI preview to ensure responsiveness.
+
+### Manual Verification
+*   Visual comparison of the UI preview vs. the generated PDF to ensure 1:1 distribution parity.

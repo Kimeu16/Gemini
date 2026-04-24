@@ -1,0 +1,14 @@
+OpManager Setup Guide
+1. System Infrastructure
+The Leave Tracker system is a distributed application running across three specialized Windows Server Virtual Machines. Maintaining visibility across this stack is critical for ensuring zero-downtime availability for employee leave management.
+Frontend (VM1)
+10.172.19.16
+Backend (VM2)
+10.172.19.15
+Database (VM3)
+10.172.19.33
+Self-Healing Watchdogs
+Before manual intervention is required, the system employs primary self-healing scripts that run every 5 minutes on VM1 and VM2. These should be monitored as "Last-Line-of-Defense" tasks.
+Watchdog Log Locations
+Access these logs via RDP to verify recent auto-recovery events:
+C:\ops\leave-tracker-monitor\watchdog.log

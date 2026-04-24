@@ -1,0 +1,52 @@
+# Deployment Gating & PDF Layout Update
+
+This plan outlines the steps to introduce a mandatory check before deploying code, and to update the Leave Tracker PDF forms to match the requested corporate layout and styling.
+
+## User Review Required
+
+> [!IMPORTANT]
+> The deployment script (`deploy-posh.ps1`) will be modified to **pause and ask for your explicit confirmation** using `Read-Host` before making any changes to production. This ensures you manually verify that you have tested your changes locally. If the test prompt is not answered with "yes", the deployment will abort. Does this interactive prompting align with how you run your deployment script?
+> 
+> Also, for the PDF header, I will set the title text color and bottom underline to navy blue (`[24, 21, 69]`) to match the color seen in the photo. Let me know if you prefer a different color.
+
+## Proposed Changes
+
+---
+### 1. Deployment Guardrails
+
+#### [MODIFY] deploy-posh.ps1
+- Add script parameters to pause execution and prompt the user.
+- Ask: "Have you tested these changes locally? (yes/no)".
+- Ask: "Are you sure you want to deploy to PROD? This will override current services. (yes/no)".
+- Abort the command if the answers are not "yes". This effectively prevents any accidental or premature deployment of un-tested code.
+
+---
+### 2. PDF Formatting Updates
+
+#### [MODIFY] src/lib/corporatePdf.ts
+- **Color Theme**: Update `BRAND.accentNavy` to a deep blue color matching the provided photo.
+- **Header Structure**: Rewrite `drawHeader(doc, title, docRef, dateStr)` to implement the new layout:
+  - Top Left: Company Logo
+  - Bottom Left (below logo): 
+    - **AlanDick East Africa Ltd.**
+    - P.O Box 12907, Muthithi Rd, Nairobi, Kenya.
+    - Tel: 254 722 570 112 | Email: admin@alandick.co.ke
+  - Top Right: `title` string ("LEAVE TRACKER" instead of "MATERIAL ISSUANCE NOTE").
+  - Bottom Right (below title): `No: <docRef> | Date: <dateStr>`.
+  - Full-width navy divider line across the bottom of the header.
+- **Page 1 Modifications**: Call the updated `drawHeader` passing `'LEAVE TRACKER'`, the request ID, and the submitted date.
+- **Page 2 Modifications**: *Remove* the header code from the second page entirely so it starts immediately with the official approval section.
+- **Signature Form Fix**: Ensure `generateSignatureFormPdf` calls the new `drawHeader` correctly without the ID metadata since it's an internal template.
+
+## Open Questions
+
+- In the PDF header, you want "LEAVE TRACKER". Should the document reference number display as `No: MIN-<id>` to strictly match the photograph's format, or something like `No: LVE-<id>` since it's a leave form? The plan defaults to `No: MIN-LVE-<id>`, let me know if you only want `MIN-`.
+
+## Verification Plan
+
+### Automated Tests
+- I will run `npm run build` in the root repository to ensure TypeScript compilation passes for the PDF generator modifications.
+
+### Manual Verification
+- You will be asked to download a newly generated Leave Request PDF from the browser to verify it only has 1 header, the layout matches the photo provided (but says LEAVE TRACKER), and the 2nd page has no header.
+- You will be asked to execute `.\deploy-posh.ps1` to test the new interactive deployment gating structure to see if it blocks and warns you correctly.

@@ -1,0 +1,8 @@
+- [ ] Create directory `docs` if it doesn't exist
+- [ ] Implement `src/docs/OpManager-Guide.html`
+    - [ ] Set up structure (Cover, Contents, Sections)
+    - [ ] Embed Design System (CSS variables, Inter font, Animations)
+    - [ ] Add AlanDick Logo & Branding
+    - [ ] Populate content from Runbook & original PDF
+- [ ] Verify visual fidelity in browser
+- [ ] Create Walkthrough artifact

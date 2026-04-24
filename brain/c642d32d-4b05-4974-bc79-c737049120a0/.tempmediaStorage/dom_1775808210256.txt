@@ -1,0 +1,167 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<div  />
+	AlanDick East Africa
+	Leave Management System
+	[1] (66,170)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/dashboard' />
+		[2] (75,170)<span >Dashboard />
+	[3] (66,218)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/requests' />
+		[4] (75,218)<span >Requests />
+	[5] (66,265)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/my-history' />
+		[6] (75,265)<span >My History />
+	[7] (66,312)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 bg-white/15 text-white' href='/calendar' />
+		[8] (75,312)<span >Calendar />
+	[9] (66,359)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/notifications' />
+		[10] (75,359)<span >Notifications />
+	[11] (66,406)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/employees' />
+		[12] (75,406)<span >Employees />
+	[13] (66,453)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/reports' />
+		[14] (75,453)<span >Reports />
+	[15] (66,501)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/logs' />
+		[16] (75,501)<span >Logs />
+	[17] (66,548)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/guide' />
+		[18] (75,548)<span >User Guide />
+	[19] (66,595)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/profile' />
+		[20] (75,595)<span >My Profile />
+	[21] (66,642)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/settings' />
+		[22] (75,642)<span >Settings />
+	[23] (66,966)<button class='flex items-center gap-3 px-3 py-2.5 w-full rounded-xl text-sm font-medium transition-all duration-200 hover:bg-red-500/20 hover:text-red-300' />
+		[24] (41,966)<span >Logout />
+	[25] (859,34)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 rounded-xl text-white hover:bg-white/10' />
+	[26] (886,34)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 relative text-white hover:bg-white/10' id='radix-:r0:' />
+	Willis Ochieng
+	General Manager
+	[27] (978,34)<span  />
+		[28] (978,34)<img  />
+	[29] (567,534)<main class='flex-1 overflow-y-auto p-4 md:p-6 bg-muted/10' scrollable='true' />
+		Leave Calendar
+		Global visibility into employee availability and approval pipelines
+		Live Now
+		0
+		Active Leaves
+		[30] (167,244)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground hover:bg-background/80 transition-all rounded-lg h-9 w-9' />
+		[31] (186,244)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground hover:bg-background/80 transition-all rounded-lg h-9 w-9' />
+		[32] (223,244)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground px-3 rounded-xl border-border/50 font-semibold shadow-sm hover:shadow-md transition-all h-9'>Today />
+		April 2026
+		[33] (604,244)<button class='relative px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-muted-foreground hover:text-foreground' />
+			[34] (610,244)<span >Year />
+		[35] (649,244)<button class='relative px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-primary-foreground shadow-lg' />
+			[36] (654,244)<span >Month />
+		[37] (695,244)<button class='relative px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-muted-foreground hover:text-foreground' />
+			[38] (701,244)<span >Week />
+		[39] (736,244)<button class='relative px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-muted-foreground hover:text-foreground' />
+			[40] (742,244)<span >List />
+		[41] (206,387)<a aria-label='Sunday' class='fc-col-header-cell-cushion'>Sun />
+		[42] (289,387)<a aria-label='Monday' class='fc-col-header-cell-cushion'>Mon />
+		[43] (373,387)<a aria-label='Tuesday' class='fc-col-header-cell-cushion'>Tue />
+		[44] (456,387)<a aria-label='Wednesday' class='fc-col-header-cell-cushion'>Wed />
+		[45] (540,387)<a aria-label='Thursday' class='fc-col-header-cell-cushion'>Thu />
+		[46] (624,387)<a aria-label='Friday' class='fc-col-header-cell-cushion'>Fri />
+		[47] (707,387)<a aria-label='Saturday' class='fc-col-header-cell-cushion'>Sat />
+		[48] (235,455)<a aria-label='March 29, 2026' class='fc-daygrid-day-number' id='fc-dom-2'>29 />
+		[49] (318,455)<a aria-label='March 30, 2026' class='fc-daygrid-day-number' id='fc-dom-4'>30 />
+		[50] (403,455)<a aria-label='March 31, 2026' class='fc-daygrid-day-number' id='fc-dom-6'>31 />
+		[51] (373,496)<a class='fc-event fc-event-start fc-event-end fc-event-past premium-event type-annual status-approved fc-daygrid-event fc-daygrid-block-event fc-h-event' />
+			[52] (373,496)<div  />
+				Eric Kariri
+		[53] (488,455)<a aria-label='April 1, 2026' class='fc-daygrid-day-number' id='fc-dom-8'>1 />
+		[54] (456,496)<a class='fc-event fc-event-start fc-event-end fc-event-past premium-event type-annual status-approved fc-daygrid-event fc-daygrid-block-event fc-h-event' />
+			[55] (456,496)<div  />
+				Eric Kariri
+		[56] (571,455)<a aria-label='April 2, 2026' class='fc-daygrid-day-number' id='fc-dom-10'>2 />
+		[57] (655,455)<a aria-label='April 3, 2026' class='fc-daygrid-day-number' id='fc-dom-12'>3 />
+		[58] (739,455)<a aria-label='April 4, 2026' class='fc-daygrid-day-number' id='fc-dom-14'>4 />
+		[59] (708,496)<a class='fc-event fc-event-start fc-event-end fc-event-past premium-event type-annual status-approved fc-daygrid-event fc-daygrid-block-event fc-h-event' />
+			[60] (708,496)<div  />
+				Eric Kariri
+		[61] (237,565)<a aria-label='April 5, 2026' class='fc-daygrid-day-number' id='fc-dom-16'>5 />
+		[62] (320,565)<a aria-label='April 6, 2026' class='fc-daygrid-day-number' id='fc-dom-18'>6 />
+		[63] (404,565)<a aria-label='April 7, 2026' class='fc-daygrid-day-number' id='fc-dom-20'>7 />
+		[64] (488,565)<a aria-label='April 8, 2026' class='fc-daygrid-day-number' id='fc-dom-22'>8 />
+		[65] (571,565)<a aria-label='April 9, 2026' class='fc-daygrid-day-number' id='fc-dom-24'>9 />
+		[66] (653,563)<a aria-label='April 10, 2026' class='fc-daygrid-day-number' id='fc-dom-26'>10 />
+		[67] (738,565)<a aria-label='April 11, 2026' class='fc-daygrid-day-number' id='fc-dom-28'>11 />
+		[68] (708,606)<a class='fc-event fc-event-start fc-event-end fc-event-future premium-event type-annual status-pending_ceo fc-daygrid-event fc-daygrid-block-event fc-h-event' />
+			[69] (708,606)<div  />
+				Eric Kariri
+		[70] (235,676)<a aria-label='April 12, 2026' class='fc-daygrid-day-number' id='fc-dom-30'>12 />
+		[71] (319,676)<a aria-label='April 13, 2026' class='fc-daygrid-day-number' id='fc-dom-32'>13 />
+		[72] (403,676)<a aria-label='April 14, 2026' class='fc-daygrid-day-number' id='fc-dom-34'>14 />
+		[73] (486,676)<a aria-label='April 15, 2026' class='fc-daygrid-day-number' id='fc-dom-36'>15 />
+		[74] (570,676)<a aria-label='April 16, 2026' class='fc-daygrid-day-number' id='fc-dom-38'>16 />
+		[75] (540,717)<a class='fc-event fc-event-start fc-event-end fc-event-future premium-event type-annual status-pending_ceo fc-daygrid-event fc-daygrid-block-event fc-h-event' />
+			[76] (540,717)<div  />
+				Eric Kariri
+		[77] (654,676)<a aria-label='April 17, 2026' class='fc-daygrid-day-number' id='fc-dom-40'>17 />
+		[78] (624,717)<a class='fc-event fc-event-start fc-event-end fc-event-future premium-event type-annual status-pending_ceo fc-daygrid-event fc-daygrid-block-event fc-h-event' />
+			[79] (624,717)<div  />
+				Eric Kariri
+		[80] (737,676)<a aria-label='April 18, 2026' class='fc-daygrid-day-number' id='fc-dom-42'>18 />
+		[81] (708,717)<a class='fc-event fc-event-start fc-event-end fc-event-future premium-event type-annual status-pending_ceo fc-daygrid-event fc-daygrid-block-event fc-h-event' />
+			[82] (708,717)<div  />
+				Eric Kariri
+		[83] (235,786)<a aria-label='April 19, 2026' class='fc-daygrid-day-number' id='fc-dom-44'>19 />
+		[84] (318,786)<a aria-label='April 20, 2026' class='fc-daygrid-day-number' id='fc-dom-46'>20 />
+		[85] (403,786)<a aria-label='April 21, 2026' class='fc-daygrid-day-number' id='fc-dom-48'>21 />
+		[86] (486,786)<a aria-label='April 22, 2026' class='fc-daygrid-day-number' id='fc-dom-50'>22 />
+		[87] (569,786)<a aria-label='April 23, 2026' class='fc-daygrid-day-number' id='fc-dom-52'>23 />
+		[88] (540,827)<a class='fc-event fc-event-start fc-event-end fc-event-future premium-event type-annual status-pending_ceo fc-daygrid-event fc-daygrid-block-event fc-h-event' />
+			[89] (540,827)<div  />
+				Eric Kariri
+		[90] (653,786)<a aria-label='April 24, 2026' class='fc-daygrid-day-number' id='fc-dom-54'>24 />
+		[91] (737,786)<a aria-label='April 25, 2026' class='fc-daygrid-day-number' id='fc-dom-56'>25 />
+		[92] (235,897)<a aria-label='April 26, 2026' class='fc-daygrid-day-number' id='fc-dom-58'>26 />
+		[93] (318,897)<a aria-label='April 27, 2026' class='fc-daygrid-day-number' id='fc-dom-60'>27 />
+		[94] (402,897)<a aria-label='April 28, 2026' class='fc-daygrid-day-number' id='fc-dom-62'>28 />
+		[95] (486,897)<a aria-label='April 29, 2026' class='fc-daygrid-day-number' id='fc-dom-64'>29 />
+		[96] (569,897)<a aria-label='April 30, 2026' class='fc-daygrid-day-number' id='fc-dom-66'>30 />
+		[97] (655,897)<a aria-label='May 1, 2026' class='fc-daygrid-day-number' id='fc-dom-68'>1 />
+		[98] (739,897)<a aria-label='May 2, 2026' class='fc-daygrid-day-number' id='fc-dom-70'>2 />
+		3
+		4
+		5
+		6
+		7
+		8
+		9
+		Approval Stages
+		[99] (882,320)<button class='w-full flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all hover:bg-muted/40 cursor-pointer border border-transparent hover:border-border/50 group/item' />
+			[100] (805,320)<div  />
+			[101] (887,320)<div  />
+				[102] (887,312)<div  />
+					[103] (833,312)<span >Pending OM />
+					[104] (958,312)<span >0 />
+				[105] (887,334)<p >(Submitted) />
+		[106] (882,395)<button class='w-full flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all hover:bg-muted/40 cursor-pointer border border-transparent hover:border-border/50 group/item' />
+			[107] (806,395)<div  />
+			[108] (888,395)<div  />
+				[109] (888,386)<div  />
+					[110] (833,386)<span >Pending GM />
+					[111] (958,386)<span >0 />
+				[112] (888,409)<p >(OM Approved) />
+		[113] (882,469)<button class='w-full flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all hover:bg-muted/40 cursor-pointer border border-transparent hover:border-border/50 group/item' />
+			[114] (807,469)<div  />
+			[115] (888,469)<div  />
+				[116] (888,461)<div  />
+					[117] (835,461)<span >Pending CEO />
+					[118] (958,461)<span >1 />
+				[119] (888,483)<p >(GM Approved) />
+		[120] (882,544)<button class='w-full flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all hover:bg-muted/40 cursor-pointer border border-transparent hover:border-border/50 group/item' />
+			[121] (807,544)<div  />
+			[122] (889,544)<div  />
+				[123] (889,535)<div  />
+					[124] (832,535)<span >Approved />
+					[125] (958,535)<span >1 />
+				[126] (889,558)<p >(Fully Approved) />
+		[127] (882,610)<button class='w-full flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all hover:bg-muted/40 cursor-pointer border border-transparent hover:border-border/50 group/item' />
+			[128] (808,610)<div  />
+			[129] (889,610)<div  />
+				[130] (889,610)<div  />
+					[131] (831,610)<span >Rejected />
+					[132] (958,610)<span >0 />
+		Upcoming Feed
+		Quiet Horizon
+
+</current_dom>

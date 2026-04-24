@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Implementation plan for a sequential reservation approval chain (HOD -> OM -> GM -> CEO), echoing the formal leave request workflow.",
+  "updatedAt": "2026-04-10T11:30:22.747907900Z",
+  "requestFeedback": true
+}

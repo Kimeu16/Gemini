@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Walkthrough of the vertical spacing adjustments in the `corporatePdf.ts` generator to reduce empty space and improve layout.",
+  "updatedAt":  "2026-04-08T13:18:38.207086100Z"
+}

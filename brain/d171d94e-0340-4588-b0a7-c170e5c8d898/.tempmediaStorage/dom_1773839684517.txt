@@ -1,0 +1,621 @@
+AlanDick Organisation Structure and Escalation Matrix Ver 5.0.xlsx : Sites
+[0] (500,502)<div id='sheets-viewport' scrollable='true' />
+	Power Source
+	Router Installation Status
+	IP Address
+	Latitude
+	Longitude
+	On Air Date
+	Region
+	Rectifier Type
+	Tenants / Operators
+	REON Integration
+	Rectifier Installed Capacity (3KW Module)
+	Rectifier Max Capacity
+	Security Company
+	Site Type
+	Electronic Lock ID
+	Grid / Genset
+	Installed 2024
+	172.28.65.102
+	-1.293144
+	36.808639
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Safaricom IBS
+	Grid / Genset
+	Installed 2024
+	172.28.64.54
+	-1.299223
+	36.7811
+	24/12/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Rooftop
+	NA_INFILL_PLAN_4
+	Grid / Genset
+	Installed 2024
+	172.28.64.64
+	-1.262401
+	36.823266
+	24/05/2022
+	Nairobi
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Airtel IBS
+	Solar PV / Grid
+	Installed 2024
+	172.28.64.138
+	-1.31293
+	36.88977
+	23/03/2021
+	Nairobi
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Airtel Rooftop
+	Grid / Genset
+	Installed 2024
+	172.28.65.209
+	0.86493
+	35.21997
+	07/11/2021
+	Eldoret
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WU1290
+	Grid
+	Installed 2024
+	172.28.65.93
+	-1.274159
+	36.848385
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Safaricom IBS
+	Grid
+	Installed 2024
+	172.28.65.70
+	-1.45075
+	36.980656
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Rooftop
+	MOS066
+	Grid / Genset
+	Installed 2024
+	172.27.194.5
+	-0.24849
+	36.13041
+	25/08/2022
+	Nakuru
+	Megmeet
+	Dual Operator
+	Integrated
+	18KW
+	18KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WL1180
+	DG-Grid-Solar
+	Installed 2024
+	172.28.65.167
+	-0.12463
+	34.26473
+	31/05/2023
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Greenfield
+	WN1982
+	Grid / Genset
+	Installed 2024
+	172.28.65.166
+	0.2587019
+	34.295251
+	21/02/2023
+	Kisumu
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Airtel Greenfield
+	WN1120
+	Grid / Genset
+	Installed 2024
+	172.28.65.210
+	1.05113
+	35.01697
+	11/11/2021
+	Kitale
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WU1756
+	Grid / Genset/Solar
+	Installed 2024
+	172.28.65.211
+	0.99928
+	35.05806
+	06/11/2021
+	Kitale
+	ELTEK
+	Multi Vendor
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel JTL Greenfield
+	WU1757
+	Genset
+	Installed 2024
+	172.28.65.59
+	-0.7013332
+	34.7865439
+	22/01/2022
+	Kisii
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WL1078
+	Grid / Genset
+	Installed 2024
+	172.28.64.16
+	-0.877806
+	35.42241
+	15/01/2024
+	Bomet
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Airtel Greenfield
+	AKL109
+	Grid
+	Installed 2024
+	172.27.194.15
+	-0.779083
+	35.340983
+	04/03/2021
+	Bomet
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Rooftop
+	WL1557
+	Grid / Genset
+	Installed 2024
+	172.27.194.34
+	-0.78533
+	35.32441
+	14/02/2022
+	Bomet
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WL0984
+	Grid / Genset
+	Installed 2024
+	172.28.65.165
+	-0.09605
+	34.26882
+	25/01/2022
+	Kisumu
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Greenfield
+	WN1108
+	Grid / Genset/Solar
+	Installed 2024
+	172.28.65.47
+	-0.59577778
+	34.928333
+	19/01/2022
+	Kisii
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WL1964
+	Solar PV / Genset
+	Installed 2024
+	172.21.70.51
+	4.20162
+	36.683088
+	USF
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom USF Greenfield
+	EU1539
+	Grid / Genset
+	Installed 2024
+	172.28.65.117
+	0.44367
+	34.18276
+	19/02/2022
+	Kakamega
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WN1620
+	Grid / Genset
+	Installed 2024
+	172.28.64.93
+	0.592468
+	34.559648
+	27/01/2022
+	Kakamega
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WN0962
+	Grid / Genset
+	Installed 2024
+	172.28.65.181
+	0.5691
+	34.54904
+	27/02/2023
+	Kakamega
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Airtel Greenfield
+	WN0963
+	Grid / Genset
+	Installed 2024
+	172.28.65.182
+	0.187462159
+	34.68424057
+	23/04/2023
+	Kisumu
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WN1699
+	Grid / Genset/Solar
+	Installed 2024
+	172.28.65.141
+	0.45604
+	34.1372
+	17/03/2022
+	Kakamega
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom JTL Greenfield
+	WN1043
+	Grid / Genset
+	Installed 2024
+	172.28.65.164
+	0.45171
+	34.10287
+	29/03/2021
+	Kakamega
+	ELTEK
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom JTL Greenfield
+	WN1041
+	Grid / Genset
+	Installed 2024
+	172.28.65.163
+	0.4626
+	34.1325
+	22/04/2024
+	Kakamega
+	ELTEK
+	Dual Operator
+	Integrated
+	18KW
+	21KW
+	Serico
+	Safaricom Airtel Greenfield
+	WN1042
+	Solar PV / Grid
+	Installed 2024
+	172.28.64.137
+	-1.21357
+	36.91017
+	28/10/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Rooftop
+	NM1183
+	Grid / Genset
+	Installed 2024
+	172.28.65.56
+	-0.359548
+	37.0014499
+	07/03/2023
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Greenfield
+	Grid / Genset
+	Installed 2024
+	172.28.65.120
+	0.73627
+	34.41709
+	22/01/2022
+	Kakamega
+	Eltek
+	Dual Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Greenfield
+	WN0841
+	Grid / Genset
+	Installed 2024
+	172.27.194.44
+	-0.55001
+	35.18384
+	18/03/2021
+	Kericho
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Hatari
+	Safaricom Greenfield
+	WL0965
+	Grid / Genset
+	Installed 2024
+	172.27.194.17
+	-0.58886
+	35.18978
+	31/10/2021
+	Bomet
+	ELTEK
+	Multi Vendor
+	Integrated
+	18KW
+	21KW
+	Hatari
+	Safaricom Airtel JTL Greenfield
+	WL1127
+	Grid / Genset
+	Installed 2024
+	172.28.64.77
+	-1.508381
+	36.962958
+	25/06/2022
+	Nairobi
+	MEGMEET
+	Single Operator
+	Integrated
+	18KW
+	18KW
+	Serico
+	Airtel Greenfield
+	NA0201
+	Grid
+	Installed 2024
+	172.28.65.130
+	-1.274924
+	36.848121
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Safaricom IBS
+	Grid
+	Installed 2024
+	172.28.64.65
+	-0.283498
+	36.073944
+	03/04/2022
+	Nakuru
+	MEGMEET
+	Single Operator
+	Integrated
+	18KW
+	18KW
+	Hatari
+	Airtel Rooftop
+	Grid
+	Installed 2024
+	172.28.64.32
+	-1.468507
+	36.95727
+	12/12/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Rooftop
+	AD0169
+	Grid
+	Installed 2024
+	172.28.64.44
+	-1.2177
+	36.89595
+	17/09/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Airtel Rooftop
+	AD0103
+	Grid
+	Installed 2024
+	172.28.64.136
+	-1.226415051
+	36.93006437
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom Rooftop
+	NM0855
+	Grid / Genset
+	Installed 2024
+	172.28.64.86
+	-1.285733704
+	36.95044537
+	24/08/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Safaricom Greenfield
+	NM0084
+	Grid
+	Installed 2024
+	172.28.64.228
+	-1.2870483
+	36.6870621
+	19/06/2023
+	Nairobi
+	MEGMEET
+	Single Operator
+	Integrated
+	18KW
+	18KW
+	N/A
+	Airtel Street Pole
+	Grid
+	Installed 2024
+	172.28.64.30
+	-1.258892
+	36.888131
+	05/12/2021
+	Nairobi
+	Eltek
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	N/A
+	Airtel JTL Rooftop
+	NA0176
+	Solar PV / Genset
+	Installed 2024
+	172.28.65.180
+	3.656587
+	36.315126
+	USF
+	ELTEK
+	Single Operator
+	Integrated
+	12KW
+	21KW
+	Serico
+	Safaricom USF Greenfield
+	EU1492
+Sites
+[1] (997,979)<div  />
+	[2] (997,977)<b >> />
+[3] (997,993)<div  />
+	[4] (997,991)<b >< />

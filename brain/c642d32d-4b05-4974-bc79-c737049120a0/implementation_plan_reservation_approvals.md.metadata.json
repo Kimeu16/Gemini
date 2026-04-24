@@ -1,0 +1,7 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Implementation plan to add a 'Pending Reservations' card to management dashboards and implement deep-linking to the calendar with auto-selected reservation details.",
+  "updatedAt": "2026-04-10T12:44:02.923038200Z",
+  "version": "1",
+  "requestFeedback": true
+}

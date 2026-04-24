@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan to remove emojis from all system emails and ensure consistent corporate branding with the company logo. This involves updating all email templates in the backend.",
+  "updatedAt": "2026-04-14T11:56:26.565880400Z",
+  "requestFeedback": true
+}

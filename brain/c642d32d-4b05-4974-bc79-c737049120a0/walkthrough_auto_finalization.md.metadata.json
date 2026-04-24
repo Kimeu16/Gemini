@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Summary of the Reservation Auto-Finalization implementation. \nThe system now allows fully approved reservations to automatically inherit approval status when converted into formal leave applications. \nThis includes backend logic to map management signatures and frontend UI enhancements like the 'Pre-Approved' banner.",
+  "updatedAt": "2026-04-10T12:07:46.306993300Z"
+}

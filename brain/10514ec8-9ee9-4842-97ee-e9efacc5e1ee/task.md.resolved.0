@@ -1,0 +1,4 @@
+- [ ] Fix `AuthRequest` in `auth.ts`
+- [ ] Fix `replaceAll` in `leave.controller.ts`
+- [ ] Verify build locally
+- [ ] Provide log-clearing script for VM2

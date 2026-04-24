@@ -1,0 +1,109 @@
+[0] (500,500)<div  />
+	AlanDick East Africa
+	Leave Management System
+	[1] (66,170)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 bg-white/15 text-white' href='/dashboard' />
+		[2] (75,170)<span >Dashboard />
+	[3] (66,218)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/requests' />
+		[4] (75,218)<span >Requests />
+	[5] (66,265)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/my-history' />
+		[6] (75,265)<span >My History />
+	[7] (66,312)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/calendar' />
+		[8] (75,312)<span >Calendar />
+	[9] (66,359)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/notifications' />
+		[10] (75,359)<span >Notifications />
+	[11] (66,406)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/employees' />
+		[12] (75,406)<span >Employees />
+	[13] (66,453)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/reports' />
+		[14] (75,453)<span >Reports />
+	[15] (66,501)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/logs' />
+		[16] (75,501)<span >Logs />
+	[17] (66,548)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/guide' />
+		[18] (75,548)<span >User Guide />
+	[19] (66,595)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/profile' />
+		[20] (75,595)<span >My Profile />
+	[21] (66,642)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/settings' />
+		[22] (75,642)<span >Settings />
+	[23] (66,966)<button class='flex items-center gap-3 px-3 py-2.5 w-full rounded-xl text-sm font-medium transition-all duration-200 hover:bg-red-500/20 hover:text-red-300' />
+		[24] (41,966)<span >Logout />
+	[25] (849,34)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 rounded-xl text-white hover:bg-white/10' />
+	[26] (876,34)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 relative text-white hover:bg-white/10' id='radix-:r25:' />
+	Anthony Kimeu
+	Operations Manager
+	[27] (978,34)<span  />
+		[28] (978,34)<img  />
+	[29] (567,534)<main class='flex-1 overflow-y-auto p-4 md:p-6 bg-muted/10' scrollable='true' />
+		Operations Dashboard
+		Manage approvals and view team overview
+		[30] (924,126)<button class='inline-flex items-center justify-center whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 py-2 gradient-primary h-12 px-6 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 gap-2' id='apply-for-leave-btn-om'>Apply for Leave />
+		[31] (247,245)<div  />
+			[32] (247,245)<div  />
+				[33] (247,245)<div  />
+					[34] (185,245)<div  />
+						[35] (185,222)<p >Pending Actions />
+						[36] (185,260)<p >0 />
+					[37] (323,237)<div  />
+		[38] (458,245)<div  />
+			[39] (458,245)<div  />
+				[40] (458,245)<div  />
+					[41] (398,245)<div  />
+						[42] (398,222)<p >Approved in 2026 />
+						[43] (398,260)<p >1 />
+					[44] (533,237)<div  />
+		[45] (668,245)<div  />
+			[46] (668,245)<div  />
+				[47] (668,245)<div  />
+					[48] (606,245)<div  />
+						[49] (606,222)<p >Rejected in 2026 />
+						[50] (606,260)<p >0 />
+					[51] (743,237)<div  />
+		[52] (878,245)<div  />
+			[53] (878,245)<div  />
+				[54] (878,245)<div  />
+					[55] (806,245)<div  />
+						[56] (806,222)<p >Total Staff />
+						[57] (806,260)<p >6 />
+					[58] (954,237)<div  />
+		My Leave Balance
+		Leave Balance
+		[59] (316,527)<div  />
+			[60] (316,502)<div  />
+				[61] (201,502)<div  />
+					[62] (176,502)<div  />
+					[63] (213,502)<div  />
+						[64] (213,502)<span >Annual Leave />
+				[65] (450,502)<div  />
+					[66] (450,493)<div >21 />
+					[67] (450,519)<div >of
+24
+days />
+			[68] (316,547)<div  />
+				[69] (298,547)<div  />
+			[70] (316,570)<div  />
+				[71] (185,570)<span >Used:
+days />
+					[72] (187,570)<span >3 />
+				[73] (448,570)<span >21
+days left />
+		[74] (316,684)<div  />
+			[75] (316,658)<div  />
+				[76] (196,658)<div  />
+					[77] (176,658)<div  />
+					[78] (208,658)<div  />
+						[79] (208,659)<span >Sick Leave />
+				[80] (450,658)<div  />
+					[81] (450,650)<div >10 />
+					[82] (450,675)<div >of
+10
+days />
+			[83] (316,703)<div  />
+				[84] (316,703)<div  />
+			[85] (316,727)<div  />
+				[86] (185,727)<span >Used:
+days />
+					[87] (187,727)<span >0 />
+				[88] (448,727)<span >10
+days left />
+		Requests Awaiting Approval
+		All caught up! No pending requests.
+		Department Colleagues on Leave
+		All colleagues in your department are available today

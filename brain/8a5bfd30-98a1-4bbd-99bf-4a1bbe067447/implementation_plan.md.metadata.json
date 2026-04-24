@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Implementation plan for consolidating the Leave Tracker frontend and backend from two VMs (10.172.19.16 for frontend, 10.172.19.15 for backend) onto a single VM (10.172.19.15). Covers Nginx reconfiguration to proxy to localhost, deployment script rewrite for single-VM targeting, environment variable updates, watchdog consolidation, setup script merging, and comprehensive documentation updates. Includes open questions about DNS, Nginx installation on the target VM, firewall rules, and OpManager URL updates.",
+  "updatedAt":  "2026-04-23T06:39:21.656517800Z",
+  "requestFeedback":  true
+}

@@ -1,0 +1,9 @@
+# Login Debug & Fix Checklist
+
+- [ ] Run diagnostic probe on Frontend and Backend VMs (`probe-vms.ps1`)
+- [ ] Verify Backend process (Server) is running on `10.172.19.15`
+- [ ] Check if Backend is listening on port 5000
+- [ ] Inspect Nginx error logs on `10.172.19.16`
+- [ ] Restart/Start Backend service if necessary
+- [ ] Verify connectivity via `Invoke-WebRequest`
+- [ ] Final browser login test

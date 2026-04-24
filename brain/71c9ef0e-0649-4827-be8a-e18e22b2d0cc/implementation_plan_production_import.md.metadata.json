@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Executing a direct bulk import of 57 employees into the production database VM (10.172.19.33) using a custom script that mirrors the application's internal creation logic.",
+  "updatedAt": "2026-04-14T09:07:09.975448800Z",
+  "requestFeedback": true
+}

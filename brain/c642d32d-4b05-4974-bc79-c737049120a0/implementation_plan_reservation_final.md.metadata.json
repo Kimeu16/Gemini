@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Corrected the SQL Server unique constraint issue on the Reservation model and finalized the Notification/Approval workflow.",
+  "updatedAt": "2026-04-10T11:00:31.290227100Z",
+  "requestFeedback": true
+}

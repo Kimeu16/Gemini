@@ -1,0 +1,37 @@
+# Walkthrough: Balanced Header Distribution
+
+We have successfully implemented a professional **3-column horizontal distribution** for the Leave Request header, ensuring an "evenly distributed" and official look across both the UI preview and generated PDF.
+
+## 📐 Header Distribution Layout
+
+| Left Column | Center Column | Right Column |
+| :--- | :---: | ---: |
+| **Company Logo** | **AlanDick East Africa Ltd.** | **Tel / Email Details** |
+| | *P.O Box 12907...* | **Ref No / Date** |
+
+### 1. Document Title
+*   The "LEAVE APPLICATION FORM" remains the primary anchor at the **top center** of the page.
+*   Enlarged font and increased letter spacing (Tracking) ensure high visibility.
+
+### 2. PDF Implementation (`corporatePdf.ts`)
+*   **Horizontal Alignment**: Used precise millimeter coordinates to split the content into three distinct zones.
+*   **Vertical Consistency**: Aligned the baselines of the logo and text blocks for a unified horizontal flow.
+*   **Type Safety**: Replaced `any` types with the `SignatureRowOpts` interface to resolve code quality issues.
+
+### 3. UI Preview Implementation (`Requests.tsx`)
+*   **Grid System**: Leveraged CSS Grid (`grid-template-columns: 1fr 2fr 1fr`) to achieve a balanced distribution that matches the PDF layout.
+*   **High Contrast**: Maintained the pure white background for all header sections to ensure clarity.
+
+## ✅ Verification Success
+- [x] Stage all changes in the project root and server directory
+    - [x] Add modified code files
+    - [x] Add deleted files (migrations, scripts)
+    - [x] Exclude temporary artifacts (.zip, .pdf, .log)
+- [x] Commit all changes with a descriptive message
+- [x] Push to `origin preprod-cleanup-audit`
+- [x] Verify successful push on GitHub
+*   [x] **No PDF Crashing**: The "i is not defined" error has been completely resolved.
+*   [x] **Visual Parity**: The web preview and the downloaded PDF now share an identical header structure.
+*   [x] **Official Look**: The spacing between the company name, address, and reference info is now evenly distributed and balanced against the company logo.
+
+The system is now optimized for professional corporate use.

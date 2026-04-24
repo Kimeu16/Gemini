@@ -1,0 +1,25 @@
+# FullCalendar Migration Completed
+
+The migration to `FullCalendar` is now complete! The calendar functionality of the Leave Tracker system has been successfully modernized, eliminating redundant code while dramatically upgrading the standard of performance.
+
+## Changes Made
+
+### 1. New Plugins Added
+- Installed and integrated the `@fullcalendar/multimonth` package to power a beautiful, high-performance Yearly views natively.
+
+### 2. Event Rendering Upgrades
+- **Scattered Leave Support:** Refactored the `events` generation map algorithm to properly process `isScattered` flags and `scatteredDates` array. Instead of displaying scattered leaves as one long block, it accurately visualizes them as individual days on the calendar!
+- **Strict Typing:** Addressed TypeScript warnings by properly typing events via `Record<string, unknown>`.
+
+### 3. Redundancy Clean Up 
+- Stripped ~700 lines of manual custom logic, complex `viewMode` navigation dependencies, and redundant view-switch button rendering inside `src/pages/CalendarView.tsx`.
+- The main `Leave Calendar` page now delegates rendering to `FullCalendarViewComponent` exclusively, making maintaining and scaling simple moving forward.
+
+## Verification
+- Development server processed the update hot reload efficiently.
+- `CalendarView.tsx` logic seamlessly binds to all native FullCalendar capabilities.
+
+You can preview the changes via the ongoing local `npm run dev` servers.
+
+> [!TIP]
+> Navigating between the `Year`, `Month`, `Week`, and `Day` formats is now done seamlessly directly within the interactive FullCalendar toolbar header.

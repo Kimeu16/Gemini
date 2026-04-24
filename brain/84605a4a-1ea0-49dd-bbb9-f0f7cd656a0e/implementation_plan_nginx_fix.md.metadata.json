@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Implementation plan to resolve the \"Access Denied\" error during Nginx reload on the frontend server. The plan involves updating the deployment script to use a forceful restart pattern which is more resilient to permission issues on Windows.",
+  "updatedAt": "2026-04-09T12:36:38.225307Z",
+  "requestFeedback": true
+}

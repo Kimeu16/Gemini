@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "A plan to safely split the uploaded CSV leave durations into standard sick leave (10 days) and the true annual leave balance.",
+  "updatedAt": "2026-04-14T10:16:18.744693400Z",
+  "requestFeedback": true
+}

@@ -1,0 +1,59 @@
+# Implementation Plan - Modern Header Restructuring
+
+The goal is to implement a new header layout for both the PDF generator (`corporatePdf.ts`) and the UI preview (`Requests.tsx`), precisely following the corporate standard shown in the reference image.
+
+## Proposed Header Structure
+
+The header will be organized into a balanced four-quadrant distribution with a secondary bottom border.
+
+### 1. Top Section (Aligned at Y=10mm)
+*   **Top Left**: Company Logo (AlanDick)
+*   **Top Right**: 
+    *   **Document Title**: "LEAVE APPLICATION FORM" (Bold Navy Blue, 20-24pt)
+    *   **Metadata**: "No: [DocRef] | Date: [Date]" (Small Grey text, right-aligned)
+
+### 2. Bottom Section (Starting below the Logo)
+*   **Bottom Left**:
+    *   **Corporate Identity**: "AlanDick East Africa Ltd." (Bold Black)
+    *   **Address/Contact**: P.O Box info and Tel/Email (Normal Grey font)
+*   **Horizontal Separator**: High-contrast Navy Blue horizontal line (1mm thickness) at the base of the entire header section.
+
+## Proposed Changes
+
+### [Component] Header Design (PDF & UI)
+
+#### [MODIFY] [corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
+*   **Recalculate Y-Coordinates**:
+    *   Set `blockY` for the top row (Logo & Title).
+    *   Calculate `contentY` for the company details below the logo.
+    *   Draw the navy line at `bottomY` (base of header).
+*   **Refine Styling**: Explicitly set the Navy Blue color (`#181545`) for the title and the bottom border line.
+
+#### [MODIFY] [Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)
+*   **Update Layout**: Switch from the current centered title to a dual-row flex/grid layout.
+    *   **Top Flex Row**: Logo left, Title/Ref column right.
+    *   **Bottom Flex Row**: Detailed company info column left.
+*   **Visual Polish**: Match the border thickness and color exact to the reference image.
+
+## User Review Required
+
+> [!IMPORTANT]
+> To match the image exactly, I will be moving "LEAVE APPLICATION FORM" from the center to the **Top Right**. 
+> 
+> **Layout Preview**:
+> ```
+> [LOGO]                     [LEAVE APPLICATION FORM]
+>                            [No: XXX | Date: XXX]
+>
+> [AlanDick East Africa Ltd]
+> [Address Line]
+> [Tel/Email Line]
+> ---------------------------------------------------
+> ```
+> Does this alignment meet your expectations?
+
+## Verification Plan
+
+### Manual Verification
+*   Execute `npm run dev` and visually inspect the Preview Dialog to ensure no text overlap between columns.
+*   Generate a test PDF and verify that the navy line doesn't cut into the "Employee Details" header.

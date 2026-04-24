@@ -1,0 +1,14 @@
+# Task: Verify deployment of Requests page
+
+## Plan
+1. Open http://10.172.19.16/requests.
+2. Perform hard reload (Ctrl+Shift+R).
+3. Identify and click on a leave request to open the modal.
+4. Check labels: 'Stakeholder Management' vs 'Contact while on leave'.
+5. Report findings.
+
+## Progress
+- [ ] Open URL
+- [ ] Hard reload
+- [ ] Open modal
+- [ ] Verify labels

@@ -1,0 +1,36 @@
+# Walkthrough - Projects Department Custom Approval Flow
+
+I have implemented the specialized leave approval flow for the **Projects** department, where requests follow a custom hierarchy: **HOD Projects → General Manager (GM) → CEO**. All other departments continue to follow the standard **Operations Manager (OM) → GM → CEO** flow.
+
+## Key Changes
+
+### 1. Backend Role & Logic
+- **New Role**: Added `HOD_PROJECTS` to the system roles in `constants.ts`.
+- **Dynamic Routing**: Updated the `createLeaveRequest` logic to automatically set the status of requests from the Projects department to `PENDING_HOD_PROJECTS`.
+- **HOD Self-Approval Skip**: When a user with the `HOD_PROJECTS` role applies for leave, their request skips the HOD level and goes directly to `PENDING_GM`.
+- **New Approval Endpoint**: Implemented `/leave-requests/:id/hod-approve` specifically for Projects HODs to process requests.
+
+### 2. Dashboard & Navigation
+- **HOD Dashboard**: The `HOD_PROJECTS` role now has access to a dedicated dashboard (using the `OMDashboard` structure but filtered for their department).
+- **Pending Counters**: Updated the dashboard statistics and overview API to show "Pending HOD Actions" for Projects managers.
+
+### 3. UI Enhancements
+- **Status Badges**: Added `Awaiting HOD Approval` and `Rejected by HOD` statuses with appropriate amber and red color coding.
+- **Approval Buttons**: The "Requests" page now dynamically displays "Approve (HOD)" only to valid HOD Projects managers for pending Projects requests.
+- **Custom Timeline**: The `ApprovalTimeline` component now correctly labels the first step as "Projects HOD Approval" for Project department employees, while showing "Operations Manager Verification" for everyone else.
+
+## Verification Results
+
+### Automated Checks
+- Verified that `initialStatus` in `leave.controller.ts` correctly branches based on the department string "PROJECTS" (case-insensitive).
+- Confirmed that the `HOD_PROJECTS` role is correctly included in the `Role` union type and backend `ROLES` object.
+- Validated that the stats counter for `pendingHODRequests` is correctly populated and returned in the API.
+
+### Manual Verification Required
+- **Test Case 1**: Create an employee in the "Projects" department and apply for leave. Verify it shows "Awaiting HOD Approval".
+- **Test Case 2**: Log in as a user with the `HOD_PROJECTS` role. Verify the dashboard shows the pending request and allows approval.
+- **Test Case 3**: Verify that approving as HOD moves the status to "Pending GM Approval".
+- **Test Case 4**: Apply for leave as the HOD Projects. Verify it moves directly to "Pending GM Approval".
+
+> [!IMPORTANT]
+> Ensure that all Project department employees have their `department` field set exactly to "Projects" (case-insensitive) in the database for the custom routing to trigger.

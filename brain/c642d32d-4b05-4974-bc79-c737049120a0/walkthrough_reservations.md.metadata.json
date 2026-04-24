@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Documented the implementation of the Leave Reservation Feature, outlining database schema additions, backend endpoints, and the seamless \"Reserve -> Convert -> Apply\" frontend integration.",
+  "updatedAt": "2026-04-10T08:53:11.807823200Z"
+}

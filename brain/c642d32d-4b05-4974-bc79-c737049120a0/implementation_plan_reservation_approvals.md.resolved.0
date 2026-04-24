@@ -1,0 +1,55 @@
+# Implementation Plan - Reservation Approval Workflow & Notifications
+
+This plan upgrades the Reservation system from an informal planning tool into a **Managed Planning Lifecycle**. This allows employees to propose tentative dates that managers can explicitly "Acknowledge" or "Approve," providing high-level clearance before a formal leave application is submitted.
+
+## User Review Required
+
+> [!IMPORTANT]
+> This change introduces a new "Pending Approval" state for reservations.
+> - **Constraint**: Reservations will **not** deduct from leave balances even after approval.
+> - **Chain**: I am proposing a simplified **Single-Level Approval** (Direct Manager / OM) for reservations to keep them faster than formal requests. **Is a single-level approval sufficient for reservations?**
+
+## Proposed Changes
+
+### Database Schema
+
+#### [MODIFY] [schema.prisma](file:///c:/Apps/Leave%20Tracker/server/prisma/schema.prisma)
+- Add fields to `Reservation` model:
+    - `status`: Update to include `PENDING`, `APPROVED`, `REJECTED`.
+    - `approverId`: The ID of the manager who handled it.
+    - `handledAt`: Timestamp of decision.
+    - `rejectionReason`: Optional feedback.
+
+### Backend - Controller Improvements
+
+#### [MODIFY] [reservation.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/reservation.controller.ts)
+- Update `createReservation`: Set initial status to `PENDING`.
+- Add `approveReservation(id)` endpoint.
+- Add `rejectReservation(id)` endpoint.
+- Integrate Notification and Email triggers at each step.
+
+### Backend - Notification & Email Service
+
+#### [MODIFY] [email.service.ts](file:///c:/Apps/Leave%20Tracker/server/src/services/email.service.ts)
+- **Approver Notification**: Email sent to HOD/OM when a new reservation is "Available for Approval."
+- **Requester Update**: Email sent to Employee when their reservation is "Approved" or "Rejected."
+
+#### [MODIFY] [notification.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/notification.controller.ts)
+- Create in-app notifications for the same events.
+
+### Frontend - UI Updates
+
+#### [MODIFY] [CalendarView.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/CalendarView.tsx)
+- Update status colors for reservations (e.g., Orange for Pending, Green-Striped for Approved).
+- Add "Approval" action buttons for managers.
+
+## Verification Plan
+
+### Automated Tests
+- Postman test: Create reservation -> Check `Notification` table for manager alert.
+- Postman test: Approve reservation -> Check `Notification` table for employee update.
+
+### Manual Verification
+- Log in as Employee -> Create Reservation.
+- Log in as OM -> View dashboard notification -> Approve reservation.
+- Log back in as Employee -> Verify status change on calendar/dashboard.

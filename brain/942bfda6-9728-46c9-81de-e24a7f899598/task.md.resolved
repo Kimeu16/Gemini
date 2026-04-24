@@ -1,0 +1,24 @@
+# Implementation Tasks: Projects Approval Flow
+
+- [x] Backend Implementation
+    - [x] Add `HOD_PROJECTS` role to `constants.ts`
+    - [x] Modify `leave.controller.ts` for department-specific initial status
+    - [x] Add `hodApproveLeaveRequest` endpoint
+    - [x] Update approval/rejection permissions for HOD
+    - [x] Update notification logic to target correct approvers
+- [x] Dashboard & Stats
+    - [x] Update `getOverviewStats` to include HOD counts
+    - [x] Update `OMDashboard` to handle HOD view
+- [x] Frontend Implementation
+    - [x] Update `Requests.tsx` with HOD filter and buttons
+    - [x] Update status badges/labels
+    - [x] Route HOD Projects to dashboard
+    - [x] Update ApprovalTimeline steps
+- [x] Verification
+    - [x] Test Projects department flow (Employee -> HOD -> GM -> CEO)
+    - [x] Test regular department flow (Employee -> OM -> GM -> CEO)
+    - [x] Test HOD Projects own leave application (HOD -> GM -> CEO)
+- [x] Notification Implementation (Projects)
+    - [x] Update `email.service.ts` with HOD-friendly templates
+    - [x] Add notification triggers to email/in-app in `createLeaveRequest`
+    - [x] Add notification triggers to email/in-app in `hodApproveLeaveRequest`

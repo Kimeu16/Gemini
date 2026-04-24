@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Technical plan to create a unified 'ship.ps1' script that automates the entire workflow from local cleanup and Git synchronization to production deployment. This script will consolidate the manual steps previously performed into a single command for the user.",
+  "updatedAt": "2026-04-14T05:46:48.058409200Z",
+  "requestFeedback": true
+}

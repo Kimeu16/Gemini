@@ -1,0 +1,20 @@
+# Increase Header Vertical Size in PDF
+
+The goal is to increase the height of the header section in the leave request PDF generator (`corporatePdf.ts`). This will shift the content sections downwards, reducing the large amount of empty space current present below Section 4 (Contact & Handover) on the first page.
+
+## Proposed Changes
+
+### PDF Library
+
+#### [MODIFY] [corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
+
+- **Header Spacing**: Increase the spacing before the thick black separator in `drawHeader` and the return value to push content down by ~10-15mm.
+- **Inter-section Spacing (Page 1)**: Increase the vertical gaps between Sections 1, 2, 3, and 4.
+- **Inter-section Spacing (Page 2)**: Increase the vertical gaps between Sections 5 and 6.
+
+## Verification Plan
+
+### Manual Verification
+- Generate a Leave Request PDF and visually inspect the vertical alignment on both pages.
+- Verify that "4. CONTACT & HANDOVER" still fits comfortably on Page 1.
+- Verify that "6. AUTHORIZATION SIGNATURES" still fits comfortably on Page 2.

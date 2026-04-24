@@ -1,0 +1,62 @@
+# Implementation Plan: Unified Infrastructure & Daily Log Rotation
+
+Centralize all Leave Tracker components on the backend (VM2) and frontend (VM1) into a single managed root folder and implement daily log partitioning.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Path Migration:** The application root will move from `C:\leave-tracker` to `C:\AlanDick-LeaveTracker\app`. Although atomic, there will be a ~5 second service interruption while I re-point the Nginx configuration and recreate the Windows Scheduled Task.
+
+## Proposed Changes
+
+### 1. Unified Folder Structure
+The new standard structure on both VMs will be:
+*   `C:\AlanDick-LeaveTracker\` (Root)
+    *   `\app` — Active Junction (where the binaries run)
+    *   `\versions` — Historical releases (kept for 5 versions)
+    *   `\ops` — Monitoring and maintenance scripts
+    *   `\staging` — Landing zone for deployments
+    *   `\logs` — Daily folders (e.g., `\2026-04-17`)
+    *   `\metadata` — Deployment locks, manifest, and master `deploy.log`
+
+---
+
+### 2. Script Updates
+
+#### [MODIFY] [deploy-v2.ps1](file:///c:/Apps/Leave%20Tracker/deploy-v2.ps1)
+*   Update all `$remote*` path variables to point inside the new root.
+*   Update the cleanup logic (Step 10) to prune the `\logs` directory to keep only the 3 most recent folders.
+*   Add logic to create the daily log folder at the start of every deployment.
+
+#### [MODIFY] [ship.ps1](file:///c:/Apps/Leave%20Tracker/ship.ps1)
+*   Update the `CleanupOnly` mode paths to match the new structure.
+
+#### [MODIFY] [cleanup-vm.ps1](file:///c:/Apps/Leave%20Tracker/ops/cleanup-vm.ps1)
+*   Rewrite the log rotation section to handle directory-based rotation (keeping last 3 day folders) instead of file-line trimming.
+
+#### [MODIFY] [watchdog-backend.ps1](file:///c:/Apps/Leave%20Tracker/ops/watchdog-backend.ps1) & [watchdog-nginx.ps1](file:///c:/Apps/Leave%20Tracker/ops/watchdog-nginx.ps1)
+*   Update the `Write-WatchdogLog` function to:
+    1.  Get the current date (`yyyy-MM-dd`).
+    2.  Ensure a folder for that date exists in `\logs`.
+    3.  Append to the log file inside that date-specific folder.
+
+---
+
+### 3. Migration (The "Scrub")
+I will perform the following actions via SSH on both VMs:
+1.  **Stop** current Scheduled Tasks (`LeaveTrackerBackend`, `Watchdogs`).
+2.  **Move** existing contents of `C:\releases` to `C:\AlanDick-LeaveTracker\versions`.
+3.  **Move** `C:\ops` to `C:\AlanDick-LeaveTracker\ops`.
+4.  **Re-register** tasks with the new paths.
+5.  **Remove** the old scattered root folders (`C:\releases`, `C:\ops`, `C:\deploy`, etc.) to finalize the "One Folder" look.
+
+## Verification Plan
+
+### Automated Tests
+*   Run `npm run cleanup:dry` to verify the new paths are correctly identified.
+*   Execute a test deployment (`npm run ship`) and verify that logs are created in `C:\AlanDick-LeaveTracker\logs\2026-04-17\`.
+*   Check that the old folders (`C:\ops`, `C:\releases`) are gone from the file system.
+
+### Manual Verification
+*   Verify the app/API is still reachable via health checks after migration.
+*   Manually inspect the `C:\AlanDick-LeaveTracker` root to ensure it looks exactly as the user requested.

@@ -1,0 +1,80 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+AD
+AlanDick
+Enterprise
+Main Menu
+[0] (73,177)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[1] (81,177)<span >Command Center />
+[2] (73,230)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold bg-white/10 text-white shadow-[0_4px_12px_rgba(0,0,0,0.1)]' />
+	[3] (9,230)<div  />
+	[4] (76,230)<span >Site Inventory />
+	[5] (127,230)<div  />
+[6] (73,284)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[7] (81,284)<span >Users & Teams />
+[8] (73,338)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[9] (81,338)<span >Escalation Matrix />
+[10] (73,391)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[11] (81,391)<span >Operations Checklists />
+[12] (73,445)<button class='group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-sm font-semibold text-muted-foreground hover:text-white hover:bg-white/5' />
+	[13] (81,445)<span >Security & Access />
+Support
+[14] (73,559)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all text-sm font-semibold group' />
+	[15] (48,559)<span >Settings />
+[16] (73,613)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all text-sm font-semibold group' />
+	[17] (54,613)<span >Help Center />
+[18] (73,908)<button class='w-full flex items-center gap-3 px-4 py-3 rounded-xl text-destructive hover:bg-destructive/10 transition-all text-sm font-bold group mb-2' />
+	[19] (49,908)<span >Sign Out />
+[20] (73,961)<button class='w-full flex items-center justify-center py-2.5 rounded-xl text-muted-foreground hover:text-white hover:bg-white/5 transition-all' />
+[21] (174,43)<button class='p-2.5 rounded-xl hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all duration-200 border border-transparent hover:border-border' />
+Site Inventory
+AlanDick East Africa Operations
+[22] (802,43)<input class='bg-transparent border-none focus:ring-0 text-sm ml-3 w-48 placeholder:text-muted-foreground/60' placeholder='Search command center...' />
+[23] (889,43)<button class='p-2.5 rounded-xl hover:bg-secondary/80 text-muted-foreground hover:text-foreground transition-all relative group border border-transparent hover:border-border' />
+	[24] (892,36)<span  />
+[25] (943,43)<button class='flex items-center gap-3 p-1.5 pr-4 rounded-xl hover:bg-secondary/80 transition-all border border-transparent hover:border-border' />
+	[26] (916,43)<div  />
+		[27] (916,43)<span >AD />
+	[28] (953,43)<div  />
+		[29] (953,34)<p >Administrator />
+		[30] (953,50)<p >Ops Manager />
+[31] (285,167)<input class='flex w-full border px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10 h-10 text-sm bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/10 rounded-xl transition-all shadow-sm' placeholder='Search all 40+ fields...' />
+[32] (885,167)<select class='bg-transparent text-[13px] font-bold focus:ring-0 border-none p-0 pr-8 text-foreground' />
+[33] (951,167)<button class='p-2.5 rounded-xl border border-border/50 bg-background/50 text-muted-foreground hover:text-foreground hover:bg-background transition-all shadow-sm' />
+[34] (573,1109)<div class='flex-1 overflow-auto relative custom-scrollbar' scrollable='true' />
+	Location / Site
+	Busia Amerikwai
+	[35] (952,316)<td  />
+		[36] (952,316)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	East Karateng
+	[37] (952,385)<td  />
+		[38] (952,385)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Eldoret Sogomo
+	[39] (952,453)<td  />
+		[40] (952,453)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Kamelilo
+	[41] (952,522)<td  />
+		[42] (952,522)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Kapiyo
+	[43] (952,591)<td  />
+		[44] (952,591)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Kariobangi Flyover
+	[45] (952,659)<td  />
+		[46] (952,659)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Kisumu Kibuye Catholic Church
+	[47] (952,728)<td  />
+		[48] (952,728)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Kihara Kwa Karo
+	[49] (952,796)<td  />
+		[50] (952,796)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Kihara Njakai Stage
+	[51] (952,865)<td  />
+		[52] (952,865)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Kirunguro Junction
+	[53] (952,934)<td  />
+		[54] (952,934)<button class='p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-primary/10 text-primary transition-all' />
+	Kisoko
+
+</current_dom>

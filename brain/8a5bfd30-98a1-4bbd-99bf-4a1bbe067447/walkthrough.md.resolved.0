@@ -1,0 +1,38 @@
+# Infrastructure Consolidation Walkthrough
+
+The Leave Tracker application has been successfully consolidated from a distributed multi-VM architecture to a unified single-VM environment on `10.172.19.15`.
+
+## Key Changes
+
+### 🏗️ Architecture Consolidation
+- **Single Host**: Both Frontend (Nginx) and Backend (Node.js) now coexist on `10.172.19.15`.
+- **Directory Structure**: The application is organized under `C:\AlanDick-LeaveTracker\app\` with dedicated `frontend/` and `backend/` subdirectories.
+- **Local Proxying**: Nginx now proxies `/api` requests to `127.0.0.1:5000` instead of a remote IP, reducing network latency.
+
+### 🚀 Deployment & Automation
+- **Unified Deployment**: `deploy-v2.ps1` has been refactored to handle the entire deployment in a single SSH session, managing both frontend and backend staging and cutover.
+- **Consolidated Setup**: Created `setup-vm.ps1` to replace the separate frontend/backend setup scripts.
+- **Watchdog Integration**: `install-watchdogs.ps1` and the watchdog scripts themselves now target the consolidated directory structure on the single VM.
+
+### 📝 Documentation & Config
+- **Global IP Update**: All references to the legacy frontend IP (`10.172.19.16`) have been updated to `10.172.19.15` across all documentation (`README.md`, `TECHNICAL_DOCS.md`, `Technical_Guide.html`, etc.).
+- **Environment Config**: Updated `server/.env.production` with the new unified URLs.
+
+## Verification Results
+
+### ✅ Automated Verification
+- **Dry-Run Deployment**: Successfully executed `.\deploy-v2.ps1 -DryRun -SkipConfirm`.
+    - Local builds (Vite/TSC) completed successfully.
+    - Staging and packaging logic verified for the new subdirectory structure.
+    - Version metadata generated correctly.
+- **Probe Script**: `probe_vms_v2.ps1` updated and ready to verify the health of all components on the single host.
+
+### 🛠️ Bug Fixes
+- **UserGuide.tsx**: Resolved a duplicate component declaration for `AdminGuide` and restored the `CtoGuide` (System Admin Guide) which was missing its tab.
+
+## Next Steps for User
+
+1. **Clean Start**: Run `setup-vm.ps1` on `10.172.19.15` to ensure the new folder structure and firewall rules are in place.
+2. **Execute Deployment**: Run `.\deploy-v2.ps1` to perform the actual migration.
+3. **Verify Monitoring**: Ensure OpManager is updated to point to the health endpoints on `10.172.19.15`.
+4. **Decommission**: Once verified, `10.172.19.16` can be safely decommissioned.

@@ -1,0 +1,33 @@
+# Implementation Plan - PDF and UI Layout Refinements
+
+This plan addresses several visual issues reported: the overflow of the "Chief Executive Officer" label in the signatures, the synchronization of spacing across the document, and the removal of background shading in specific fields.
+
+## User Review Required
+
+> [!IMPORTANT]
+> - I am increasing the signature label width from **34mm to 40mm** in the PDF and from **120px to 150px** in the UI. This ensures long role titles like "Chief Executive Officer" fit perfectly without overlapping borders.
+> - The light grey backgrounds in the "Contact & Handover" section will be removed to provide a cleaner, more consistent monochromatic look.
+
+## Proposed Changes
+
+### [PDF Generation] (corporatePdf.ts)
+
+#### [MODIFY] [corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
+- Increase `sigLabelW` constant to `40`.
+- In the `Section: Contact & Handover`, remove the `setColor(doc, rowBg, 'fill')` and `doc.rect(...)` logic to eliminate background shading.
+
+---
+
+### [UI Preview] (Requests.tsx)
+
+#### [MODIFY] [Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)
+- Update `gridTemplateColumns` in all three signature rows (OM, GM, CEO) from `120px 1fr 1fr` to `150px 1fr 1fr`.
+- In the "Contact & Handover" grid, remove the `background: "#f8f7fc"` styling from all four column containers.
+- Review and adjust margins (`marginBottom`, `padding`) to ensure the preview flow matches the PDF's second-page layout (Handover Details immediately above Official Approval).
+
+## Verification Plan
+
+### Manual Verification
+- Generate a PDF and verify that "Chief Executive Officer" fits within its column on Page 2.
+- Inspect the UI Preview (Dialog) to ensure the first column of the signature table is wider and that the Contact/Handover fields have no grey background.
+- Confirm the spacing between the Handover Report and Official Approval sections remains compact and professional in both views.

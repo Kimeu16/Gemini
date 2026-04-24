@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Implementation plan to automate the transition from a fully approved Reservation to a finalized Leave Request, eliminating redundant approval steps for management.",
+  "updatedAt": "2026-04-10T12:02:43.925784300Z",
+  "requestFeedback": true
+}

@@ -1,0 +1,15 @@
+# Production Verification Plan - 10.172.19.16
+
+- [x] Navigate to http://10.172.19.16/requests
+- [x] Perform hard reload (Ctrl+Shift+R)
+- [x] Open a leave request details modal
+- [f] Confirm label "Contact while on leave" is visible
+    - **Observed:** Label is still "Contact While Away".
+- [f] Confirm logo in modal header is enlarged
+    - **Observed:** Logo appears unchanged.
+- [ ] Report findings to the user
+
+**Notes:**
+- JS file loaded: `Requests-DbfhrDQ8.js`.
+- Previous local build showed `Requests-BysiR4ph.js` as the correct one.
+- Deployment seems to have served a different (likely older) asset.

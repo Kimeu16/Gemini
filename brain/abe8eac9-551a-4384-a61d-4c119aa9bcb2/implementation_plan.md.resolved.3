@@ -1,0 +1,28 @@
+# Fix Login Failure and Phone Number Normalization
+
+The user is testing locally on `localhost:8080` (laptop IP `10.172.19.161`) and cannot login. Issues identified include a stuck backend process and a potential mismatch in password/phone number formats ("07" vs "254").
+
+## Proposed Changes
+
+### [Server]
+
+#### [MODIFY] [auth.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/auth.controller.ts)
+- Update the `login` function to normalize the password input when comparing it with the stored phone number (legacy password).
+- Ensure that if a user enters a phone number in ANY format (`07...`, `254...`, etc.), it is correctly compared against the normalized version in the database.
+- Specifically, the comparison will be: `normalizePhone(storedCredential) === normalizePhone(password)`.
+
+#### [MODIFY] [.env](file:///c:/Apps/Leave%20Tracker/server/.env)
+- Keep production configurations as requested (Reverted).
+
+## Verification Plan
+
+### Automated Tests
+- Restart backend server.
+- Verify `http://localhost:5000/api/health` returns 200 OK (Done).
+- Use `curl` to test login with `0714229987` as password for `kimeu.anthony@alandick.co.ke`.
+
+### Manual Verification
+- Ask the user to try logging in at `http://localhost:8080/login` using `254714229987` or `0714229987` as the password.
+
+### Manual Verification
+- Ask the user to try logging in again at `http://10.172.19.161:8080/login`.

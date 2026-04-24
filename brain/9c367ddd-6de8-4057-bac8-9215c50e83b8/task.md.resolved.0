@@ -1,0 +1,16 @@
+- [ ] Update Backend Components
+    - [ ] Update `server/src/services/email.service.ts` (Renaming templates & updating HTML)
+    - [ ] Update `server/src/controllers/leave.controller.ts` (Renaming variables & updating labels)
+    - [ ] Update `server/src/controllers/reservation.controller.ts` (Internal variable updates)
+- [ ] Update Frontend Components
+    - [ ] Update `src/components/dashboard/AdminDashboard.tsx` (Query keys & IDs)
+    - [ ] Update `src/pages/Requests.tsx` (Role labels)
+    - [ ] Update `src/pages/CalendarView.tsx` (Internal function names)
+    - [ ] Update `src/lib/corporatePdf.ts` (Signature logic consistency)
+- [ ] Update Documentation
+    - [ ] Update `Technical_Guide.html`
+    - [ ] Update `TECHNICAL_DOCS.md`
+    - [ ] Update `wiki/1-Architecture/Flow.md`
+- [ ] Verification
+    - [ ] Run `npm run build` in server and client
+    - [ ] Verify core workflow in UI

@@ -1,0 +1,6 @@
+- [x] Clean up junk files (`.zip`, `fix*`, `server/scratch/`)
+- [x] Update `.gitignore` to include junk patterns
+- [x] Stage and commit Group 1: Database & Backend Workflows
+- [x] Stage and commit Group 2: New Reservation Feature (including untracked files)
+- [x] Stage and commit Group 3: Frontend UI & Dashboards
+- [x] Final verification and push to `origin main`

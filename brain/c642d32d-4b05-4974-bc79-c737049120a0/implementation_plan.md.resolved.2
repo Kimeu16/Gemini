@@ -1,0 +1,41 @@
+# Calendar UX Improvements Plan
+
+We will proceed with implementing the 'Top 3 Quick Wins' suggested, completely transforming the usability and aesthetics of the new FullCalendar integration.
+
+## Proposed Changes
+
+---
+
+### `src/components/FullCalendarView.tsx`
+#### [MODIFY] `FullCalendarView.tsx`
+1. **Dynamic Tooltips:** We will intercept the `eventMouseEnter` API provided by FullCalendar to render an elegant floating UI Tooltip showing:
+    - Employee Name
+    - Leave Date Range
+    - Leave Type and specific Approval Status
+   We'll handle manual hover tracking to position the tooltip cleanly directly over the node without overlapping or visual lag.
+2. **Leave Type Color Palettes:** Currently, events in `FullCalendarView` are mapped to colors based on their generic approval status. We will construct a vibrant `hsl` color palette matching different leave types (`Annual`, `Sick`, `Maternity`, etc.) and inject those specific `backgroundColor` variables directly into the event object for better glanceability.
+
+---
+
+### `src/pages/CalendarView.tsx`
+#### [MODIFY] `CalendarView.tsx`
+1. **Clickable Approval Stats:** 
+   Currently, the *Approval Progress* indicators map local state logic holding up to the internal component. We will replace this with:
+   - `onClick={() => navigate('/requests?status={TARGET}')}` to redirect managers directly to the `Requests` grid exactly filtered by what they clicked on.
+2. **Fix Upcoming Leaves Populator:** 
+   Update the `upcomingLeaves` logic calculation. It will specifically filter `allLeaves` to sort and crop the dataset strictly to the **next 5 approved leaves strictly greater than today**, preventing an empty 'No upcoming leaves' default state if they exist.
+
+---
+
+### `src/pages/Requests.tsx`
+#### [MODIFY] `Requests.tsx`
+1. **URL Param Registration:** Connect the internal `[statusFilter, setStatusFilter]` hook initialization to reliably read default targets from `searchParams.get("status")`. Doing this completes the bridge to make external cross-page status navigation possible.
+
+
+## Open Questions
+- Is there a specific visual color (CSS hex or HSL format) you prefer for these leave categories, or should I generate a well-balanced modern palette for `Annual`, `Sick`, `Maternity`, etc?
+- Are you satisfied with restricting the Right-panel 'Upcoming Leaves' strictly to only **Approved** leaves, or should it show Pending leaves as well?
+
+## Verification Plan
+1. Hover dynamically across colored events in the local Dev browser to ensure perfect spatial rendering.
+2. Click any of the sidebar "Pending OM/GM/etc" tags and verify robust redirect and automatic state-binding routing behavior to the Requests view.

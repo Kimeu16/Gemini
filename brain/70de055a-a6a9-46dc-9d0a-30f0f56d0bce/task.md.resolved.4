@@ -1,0 +1,13 @@
+- [ ] Refactor Email Configuration
+    - [ ] Update `server/src/config/env.ts` with new SMTP variables
+    - [ ] Update `server/src/services/email.service.ts` to use generic SMTP transport
+    - [ ] Update `server/.env` with new company credentials
+- [ ] Hide Test User "Anthony Kimeu"
+    - [ ] Add `isTest` field to `User` model in `schema.prisma`
+    - [ ] Run migration and regenerate Prisma client
+    - [ ] Create and run script to mark "Anthony Kimeu" as test user
+    - [ ] Filter out test users in `server/src/controllers/employee.controller.ts`
+- [ ] Deploy and Verify
+    - [ ] Run `npm run build` in server to ensure no breaking changes
+    - [ ] Trigger a test email (e.g. forgot password)
+    - [ ] Check Employees page to confirm test user is hidden

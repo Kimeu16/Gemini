@@ -1,0 +1,33 @@
+# Walkthrough: Fixed Prisma "undefined@P1" Login Error
+
+I have resolved the database error that was preventing users from logging in. The issue was caused by a stale or misconfigured Prisma client that was failing to map SQL Server columns correctly when used with the driver adapter.
+
+## Changes Made
+
+### 🔧 Prisma Configuration
+I updated [schema.prisma](file:///c:/Apps/Leave%20Tracker/server/prisma/schema.prisma) to explicitly enable the `driverAdapters` preview feature (required for `@prisma/adapter-mssql` in some v7 contexts) and regenerated the client.
+
+### 🚀 Client Regeneration
+I ran `npx prisma generate` to rebuild the TypeSafe client. This refreshed the internal SQL mapping logic and resolved the `undefined@P1` column error.
+
+## 🧪 Verification Results
+
+### Debug Script Validation
+I ran a standalone debug script to test core database functionality:
+- **`prisma.user.count()`**: SUCCESS (Returned 6 users)
+- **`prisma.user.findFirst()`**: SUCCESS (Found user `tkymeu@gmail.com`)
+
+```bash
+# Debug Output
+--- DB Debug ---
+Testing prisma.user.count()...
+User count: 6
+Testing findFirst with email: tkymeu@gmail.com...
+User found: tkymeu@gmail.com
+```
+
+### Application Login
+The dev server (monitored via nodemon) automatically reloaded with the new client. Login attempts for `tkymeu@gmail.com` should now process successfully without 500 errors.
+
+> [!TIP]
+> If you encounter similar "column undefined" errors in the future after updating dependencies, running `npx prisma generate` is the first recommended step to synchronize the client with the database driver.

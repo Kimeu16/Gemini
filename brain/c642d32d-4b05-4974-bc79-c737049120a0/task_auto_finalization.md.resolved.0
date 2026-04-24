@@ -1,0 +1,6 @@
+- [ ] Update `createLeaveSchema` in `leave.controller.ts` to include `reservationId`
+- [ ] Implement auto-approval logic in `createLeaveRequest`
+- [ ] Update `convertReservation` in `reservation.controller.ts` for consistency
+- [ ] Add "Pre-Approved" UI banner and logic in `Requests.tsx`
+- [ ] Pass `reservationId` in `Requests.tsx` submission payload
+- [ ] End-to-end verification

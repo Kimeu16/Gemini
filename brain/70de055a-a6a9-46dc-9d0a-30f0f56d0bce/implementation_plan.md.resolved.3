@@ -1,0 +1,36 @@
+# Implementation Plan: Hide Test User from Directory
+
+The objective is to hide the test Operations Manager user ("Anthony Kimeu") from the public Employees directory while retaining the account in the database for continued testing.
+
+## Proposed Changes
+
+### [Database & Backend]
+
+#### [MODIFY] [schema.prisma](file:///c:/Apps/Leave%20Tracker/server/prisma/schema.prisma)
+- Add an `isTest` boolean field to the `User` model with a default value of `false`.
+- This provides a standard way to distinguish test/hidden accounts from production data.
+
+#### [MODIFY] [employee.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/employee.controller.ts)
+- Update the `getAllEmployees` and `employee.count` functions to include a filter for `isTest: false`.
+- This ensures that test users are automatically excluded from the Team Directory and employee counts.
+
+### [Data Migration]
+
+#### [SCRIPT] [mark-test-user.ts](file:///c:/Apps/Leave%20Tracker/server/src/scripts/mark-test-user.ts) [NEW]
+- Create a one-off script to find the user "Anthony Kimeu" and set `isTest: true`.
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> This change involves a database schema migration. I will follow the `/schema-change` workflow to ensure no data is lost during the update.
+
+## Verification Plan
+
+### Automated Tests
+- I will run `npm run build` in the backend to ensure the new filter is correctly typed and the Prisma client is regenerated.
+
+### Manual Verification
+- I will verify through the UI (Employees page) that Anthony Kimeu is no longer visible in the "Operations" section.
+- I will verify via a DB query that the record still exists with the `is_test` flag set to `true`.

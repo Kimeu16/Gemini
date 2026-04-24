@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary": "Implemented a toggleable List View for the employees directory. Users can now switch between a visual card grid and a compact table format, which includes direct visibility of phone numbers and leave balances. Also verified and fixed Kiprotich Davis's leave balance to 47 days.",
+  "updatedAt": "2026-04-14T09:55:37.931380900Z"
+}

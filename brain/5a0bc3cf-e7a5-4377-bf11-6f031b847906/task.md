@@ -1,0 +1,11 @@
+- [ ] Implement Monochrome Quadrant Header in `corporatePdf.ts`
+    - [ ] Relocate Title and Ref/Date to the Top Right.
+    - [ ] Place Company Details below the Logo on the Left.
+    - [ ] Add thick Black horizontal separator line.
+    - [ ] Replace all Navy Blue (`#181545`) with Solid Black (`#111111`).
+- [ ] Implement Monochrome Quadrant Header in `Requests.tsx`
+    - [ ] Restructure HTML/JSX to mirror the quadrant design.
+    - [ ] Update all Navy Blue styles to Solid Black.
+- [ ] Final Verification
+    - [ ] Verify 1:1 layout parity between PDF and UI.
+    - [ ] Ensure no blue fragments remain in any section.

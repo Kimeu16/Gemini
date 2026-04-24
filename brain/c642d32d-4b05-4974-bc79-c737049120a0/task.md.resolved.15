@@ -1,0 +1,8 @@
+- [x] Create `PendingReservations.tsx` shared component
+- [x] Update `OMDashboard.tsx` to include `PendingReservations`
+- [x] Update `GMDashboard.tsx` to include `PendingReservations`
+- [x] Update `CEODashboard.tsx` to include `PendingReservations`
+- [x] Update `CalendarView.tsx` to handle `reservationId` search param
+- [x] Update `FullCalendarViewComponent.tsx` to auto-open event and jump to date
+- [x] Fix `ReferenceError` (Cannot access 'events' before initialization)
+- [/] Verify functionality

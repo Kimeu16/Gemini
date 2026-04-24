@@ -1,0 +1,4 @@
+- [ ] Update `drawHeader` in `corporatePdf.ts` to increase vertical size
+- [ ] Increase spacing between Sections 1, 2, 3, and 4 on Page 1
+- [ ] Increase spacing on Page 2 for Sections 5 and 6
+- [ ] Verify vertical alignment and page fit

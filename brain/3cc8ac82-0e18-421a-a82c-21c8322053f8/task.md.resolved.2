@@ -1,0 +1,7 @@
+- [/] Update `server/prisma/schema.prisma` to include `requestNumber Int @default(autoincrement()) @map("request_number")` on `LeaveRequest`
+- [ ] Run `npx prisma migrate dev --name add_request_number` in `server/` directory
+- [ ] Run `npx prisma generate` to update Prisma Client
+- [ ] Ensure `LeaveRequest` interface in `src/types/leave.ts` includes `requestNumber: number;`
+- [ ] Update UI endpoint controller mapping if it restricts fields, to make sure `requestNumber` is returned.
+- [ ] Update `Requests.tsx` mapping to include `requestNumber` and format it as `A01`
+- [ ] Update `generateLeaveRequestPdf` in `corporatePdf.ts` to use `A01` sequentially padded format

@@ -1,0 +1,4 @@
+- [ ] Implement Git status analysis in `ship.ps1`
+- [ ] Construct automated commit message from changed files
+- [ ] Update Git sync logic to prioritize the auto-message
+- [ ] Verify with `.\ship.ps1 -DryRun`

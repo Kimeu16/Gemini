@@ -1,0 +1,21 @@
+# Fix Login Failure (ERR_CONNECTION_REFUSED)
+
+The user is testing locally on their laptop (`10.172.19.161`) before deploying to the production VM (`10.172.19.16`). The login is failing with `ERR_CONNECTION_REFUSED` because the backend is currently unresponsive on port 5000 and the configurations are targeted only at the production IP.
+
+## Proposed Changes
+
+### [Server]
+
+#### [MODIFY] [.env](file:///c:/Apps/Leave%20Tracker/server/.env)
+- Update `ALLOWED_ORIGINS` to include the laptop IP `http://10.172.19.161:8080`.
+- Change `NODE_ENV` to `development` to enable detailed logging and disable production-only security blocks that might be interfering with local testing.
+- Ensure the server is listening correctly and responding to requests.
+
+## Verification Plan
+
+### Automated Tests
+- Kill the current stuck node processes.
+- Restart the server and verify `curl -i http://localhost:5000/api/health` returns 200 OK.
+
+### Manual Verification
+- Ask the user to try logging in again at `http://10.172.19.161:8080/login`.

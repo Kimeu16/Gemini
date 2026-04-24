@@ -1,0 +1,44 @@
+# Hardening Deployment System (v2.1)
+
+This plan addresses the advanced feedback received from the peer reviews. We are moving the deployment script from "good" to "production-hardened" by adding safety guards, security improvements, and better reliability.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Identity Change**: The hardcoded username `anthony.kimeu` will be removed. You MUST ensure `DEPLOY_VM_USER` is set in your environment variables, or the script will prompt you for a username every time.
+
+> [!WARNING]
+> **Disk Space**: We will now keep the previous deployment directory (`leave-tracker-prev`) until the *next* deployment succeeds. Ensure the backend VM has enough disk space to hold roughly 2x the application size (currently ~1MB, so very safe).
+
+## Proposed Changes
+
+### [Component] [deploy-v2.ps1](file:///c:/Apps/Leave%20Tracker/deploy-v2.ps1)
+
+#### 1. Security & Identity
+- [ ] Remove hardcoded default for `$VmUser`.
+- [ ] Implement check: if `$DryRun` is active, skip `New-DeployCredential` to allow "secret-less" simulations.
+- [ ] Use `${TestPort}` syntax in all throw messages to avoid PowerShell variable-colon collision bugs.
+
+#### 2. Concurrency & Stability
+- [ ] **Deployment Locking**: Create/Check `C:\deploy.lock` on the remote VMs at the start. If it exists, abort. This prevents two developers from deploying at once.
+- [ ] **Port Cleanup**: At the start of Step 8g (Pre-flight), explicitly check for and kill any process on `$TestPort`. This prevents orphaned processes from previous failed runs from blocking the new one.
+
+#### 3. Operation & Safety
+- [ ] **Extended Backup**: Modify Step 10 (Cleanup) to keep `leave-tracker-prev` instead of deleting it immediately. It will be replaced only at the *start* of the next cutover.
+- [ ] **Manual Rollback Mode**: Add a `-Rollback` switch.
+    - If run with `-Rollback`, the script skips build/upload and immediately executes the remote swap: `leave-tracker` <-> `leave-tracker-prev` and restarts the service.
+- [ ] **Integrity Checks**: Add MD5/SHA256 checksum verification after ZIP uploads to ensure zero corruption over the network.
+- [ ] **Optimization**: Remove the fixed `Start-Sleep -Seconds 6` before health checks. Rely purely on the existing retry logic to minimize downtime.
+
+#### 4. Diagnostics
+- [ ] **Smart Task Update**: In Step 8h, check if the Scheduled Task exists. If so, only update the `TaskAction` instead of re-registering the whole task. This preserves the "Last Run" history.
+
+## Verification Plan
+
+### Automated Tests
+- [ ] **Locking Test**: Start one deployment, then try to start a second one manually to verify the second one aborts with "Deployment in progress".
+- [ ] **Rollback Test**: Run `.\deploy-v2.ps1 -Rollback` and verify using a browser that the previous version is restored instantly.
+- [ ] **DryRun Test**: Run `.\deploy-v2.ps1 -DryRun` without setting any credentials/passwords to ensure it completes successfully.
+
+### Manual Verification
+- [ ] Deploy to production and verify that `C:\leave-tracker-prev` still exists after completion.

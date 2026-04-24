@@ -1,0 +1,10 @@
+- [ ] Update `reservation.controller.ts` with sequential logic
+    - [ ] Update `createReservation` initial status
+    - [ ] Update `handleReservation` transition logic
+    - [ ] Implement targeted notifications per stage
+- [ ] Update frontend components
+    - [ ] Update `CalendarView.tsx` status config
+    - [ ] Update `FullCalendarView.tsx` decision modal
+- [ ] Verification
+    - [ ] Test Projects department flow (HOD -> CEO)
+    - [ ] Test other departments flow (OM -> CEO)
