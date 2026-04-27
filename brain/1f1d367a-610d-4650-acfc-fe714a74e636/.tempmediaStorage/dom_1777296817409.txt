@@ -1,0 +1,142 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<div  />
+	AlanDick East Africa
+	Leave Management System
+	[1] (66,164)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/dashboard' />
+		[2] (75,164)<span >Dashboard />
+	[3] (66,209)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 bg-white/15 text-white' href='/requests' />
+		[4] (75,209)<span >Requests />
+	[5] (66,254)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/my-history' />
+		[6] (75,254)<span >My History />
+	[7] (66,300)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/calendar' />
+		[8] (75,300)<span >Calendar />
+	[9] (66,345)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/notifications' />
+		[10] (75,345)<span >Notifications />
+	[11] (66,390)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/employees' />
+		[12] (75,390)<span >Employees />
+	[13] (66,436)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/reports' />
+		[14] (75,436)<span >Reports />
+	[15] (66,481)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/logs' />
+		[16] (75,481)<span >Logs />
+	[17] (66,526)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/guide' />
+		[18] (75,526)<span >User Guide />
+	[19] (66,572)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/profile' />
+		[20] (75,572)<span >My Profile />
+	[21] (66,617)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/settings' />
+		[22] (75,617)<span >Settings />
+	[23] (66,896)<button class='flex items-center gap-3 px-3 py-2.5 w-full rounded-xl text-sm font-medium transition-all duration-200 hover:bg-red-500/20 hover:text-red-300' />
+		[24] (41,896)<span >Logout />
+	Build Version
+	v20260424-1626
+	[25] (867,32)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 rounded-xl text-white hover:bg-white/10' />
+	[26] (894,32)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 relative text-white hover:bg-white/10' id='radix-:r16:' />
+	Administrator
+	ADMINISTRATOR
+	[27] (978,32)<span  />
+		[28] (978,32)<img  />
+	Leave Requests
+	Manage employee leave applications
+	[29] (862,122)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary w-full sm:w-auto'>Reserve Dates />
+	[30] (944,122)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary w-full sm:w-auto'>New Request />
+	[31] (209,189)<button class='flex h-10 items-center justify-between rounded-md border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full sm:w-40 glass border-border/50' role='combobox'>All Requests />
+		All Requests
+	[32] (288,189)<button class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-2 border-border/50 w-full sm:w-auto'>Export All />
+	[33] (238,273)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-3' placeholder='Search by employee name...' />
+	[34] (402,273)<button class='flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1' role='combobox'>All Types />
+		All Types
+	[35] (503,266)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs text-muted-foreground'>From Date />
+	[36] (567,302)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
+	[37] (664,266)<label class='font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs text-muted-foreground'>To Date />
+	[38] (731,302)<input class='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm' />
+	[39] (895,273)<button class='flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1' role='combobox'>All Employees />
+		All Employees
+	[40] (238,358)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 h-full'>Clear Filters />
+	[41] (164,448)<input class='w-4 h-4 rounded border-border' />
+	Employee
+	Type
+	Duration
+	Days
+	Status
+	Actions
+	[42] (567,517)<tr  />
+		[43] (164,517)<td  />
+			[44] (164,515)<input class='w-4 h-4 rounded border-border' />
+		[45] (296,517)<td  />
+			[46] (296,517)<div  />
+				[47] (195,517)<span  />
+					[48] (195,517)<img  />
+				[49] (256,517)<div  />
+					[50] (256,509)<p >Kithinji Muriungi Alfred />
+					[51] (256,529)<p >Assets Manager />
+		[52] (464,517)<td  />
+			[53] (443,518)<div >ANNUAL />
+		[54] (558,517)<td  />
+			[55] (558,509)<p >5/4/2026 />
+			[56] (558,527)<p >to
+5/5/2026 />
+		[57] (669,517)<td  />
+			[58] (625,516)<span >1
+days />
+			[59] (653,518)<span >(Scattered) />
+		[60] (805,517)<td  />
+			[61] (772,517)<div >Fully Approved />
+		[62] (930,517)<td  />
+			[63] (930,517)<div  />
+				[64] (907,517)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground rounded-md h-9 px-3 border-border/50 hover:bg-accent/50 transition-all duration-200' />
+					[65] (914,517)<span >View />
+	[66] (567,592)<tr  />
+		[67] (164,592)<td  />
+			[68] (164,590)<input class='w-4 h-4 rounded border-border' />
+		[69] (296,592)<td  />
+			[70] (296,592)<div  />
+				[71] (195,592)<span  />
+					[72] (195,592)<img  />
+				[73] (257,592)<div  />
+					[74] (257,584)<p >Joram Muriithi Ndung'u />
+					[75] (257,605)<p >Operations Manager />
+		[76] (464,592)<td  />
+			[77] (443,593)<div >ANNUAL />
+		[78] (558,592)<td  />
+			[79] (558,584)<p >4/25/2026 />
+			[80] (558,602)<p >to
+4/27/2026 />
+		[81] (669,592)<td  />
+			[82] (625,592)<span >1
+days />
+			[83] (653,593)<span >(Scattered) />
+		[84] (805,592)<td  />
+			[85] (773,592)<div >Rejected by GM />
+		[86] (930,592)<td  />
+			[87] (930,592)<div  />
+				[88] (907,592)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground rounded-md h-9 px-3 border-border/50 hover:bg-accent/50 transition-all duration-200' />
+					[89] (914,592)<span >View />
+	[90] (567,667)<tr  />
+		[91] (164,667)<td  />
+			[92] (164,665)<input class='w-4 h-4 rounded border-border' />
+		[93] (296,667)<td  />
+			[94] (296,667)<div  />
+				[95] (195,667)<span  />
+					[96] (195,667)<img  />
+				[97] (256,667)<div  />
+					[98] (256,659)<p >Kithinji Muriungi Alfred />
+					[99] (256,680)<p >Assets Manager />
+		[100] (464,667)<td  />
+			[101] (443,668)<div >ANNUAL />
+		[102] (558,667)<td  />
+			[103] (558,659)<p >5/4/2026 />
+			[104] (558,678)<p >to
+5/5/2026 />
+		[105] (669,667)<td  />
+			[106] (626,667)<span >2
+days />
+		[107] (805,667)<td  />
+			[108] (773,667)<div >Rejected by GM />
+		[109] (930,667)<td  />
+			[110] (930,667)<div  />
+				[111] (907,667)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground rounded-md h-9 px-3 border-border/50 hover:bg-accent/50 transition-all duration-200' />
+					[112] (914,667)<span >View />
+
+</current_dom>

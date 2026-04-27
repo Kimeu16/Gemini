@@ -1,0 +1,8 @@
+- [ ] Update `Requests.tsx` to include default signatures in preview
+    - [ ] Add mapping for HOD, OM, GM, and Admin signatures
+    - [ ] Update the preview loop logic to use images instead of names when approved
+- [ ] Update `handleDownloadPDF` in `Requests.tsx`
+    - [ ] Change `ADMINISTRATOR` default signature to `/mercy_signature.png`
+    - [ ] Decide whether to include it in the final PDF (based on user's manual signature requirement)
+- [ ] Verify changes in `corporatePdf.ts`
+- [ ] Generate test PDF or verify preview in browser
