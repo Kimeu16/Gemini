@@ -1,0 +1,44 @@
+# CTO Approval Delegation Walkthrough
+
+This update introduces a sophisticated delegation architecture for the Leave Tracker system, ensuring that administrative processes continue seamlessly even when the General Manager is absent.
+
+## 1. Out of Office (Away) Management
+The General Manager can now manually signal their absence through a new "Out of Office Mode" toggle on their Profile page.
+
+- **Manual Toggle**: When activated, the `isAway` flag is set in the database.
+- **Visual Feedback**: The card changes color and icons (Plane/Palmtree) reflect the status.
+- **Impact**: Instantly delegates approval authority to the CTO.
+
+## 2. Hybrid Absence Detection Engine
+The system doesn't just rely on manual toggles. It also automatically detects GM absence if they have an **active, approved leave request** for today.
+
+### Detection Logic (`approvalUtils.ts`):
+```typescript
+export const isGeneralManagerAway = async () => {
+    // 1. Check manual toggle (isAway flag)
+    // 2. Check automatic detection (active approved leave for today)
+};
+```
+
+## 3. Delegated Approval Authority
+The CTO (Phineas Mwenda Kinoti) is now authorized to endorse requests that are `PENDING_GM` whenever the GM is away.
+
+### CTO Perspective (Requests Page):
+- When the GM is away, the CTO sees an **"Endorse (for GM)"** button.
+- Rejection authority is also delegated to maintain workflow balance.
+
+## 4. Audit & Communications
+To maintain strict compliance and transparency, all delegation actions are clearly logged and communicated.
+
+- **Audit Trail**: The database records exactly which user (GM or CTO) performed the endorsement.
+- **Notifications**: Emails to employees now dynamically reflect the role of the approver (e.g., "Endorsed by CTO (on behalf of GM)").
+
+## Verification Plan
+
+### Automated Checks
+- Verified that the `isAway` field is correctly migrated to the SQL Server database.
+- Confirmed that the `gm-status` endpoint correctly evaluates both the flag and active leave records.
+
+### Manual Verification Required
+1. **GM Toggle**: Log in as GM, toggle "Away" on the profile, and verify that the CTO can now see endorsement buttons.
+2. **Automatic Detection**: Create an approved leave request for the GM that covers today, and verify that delegation triggers automatically even if the manual toggle is off.

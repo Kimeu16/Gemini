@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Implemented a comprehensive approval delegation system and a specialized CTO dashboard. The system features a hybrid absence detection engine (manual toggle + active leave) and grants the CTO emergency endorsement authority. The new adaptive CTO dashboard provides real-time alerts and surfaces delegated tasks only when the General Manager is away. Communication channels have been updated for role-specific transparency.",
+  "updatedAt":  "2026-04-28T12:56:44.039471Z",
+  "version":  "1"
+}
