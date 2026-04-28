@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "This implementation plan outlines the steps to integrate real-time requester leave balances into the official Leave Application PDF. \nKey changes include:\n1. Updating the `LeaveRequest` and `LeaveRequestPdfData` types to support leave balance information.\n2. Modifying the `useMemo` transformation in `Requests.tsx` to extract and parse leave balances from the backend response.\n3. Updating the `generateLeaveRequestPdf` utility in `corporatePdf.ts` to render a new summary section displaying the requester's current Annual and Sick leave balances.\n4. Passing the balance data through the PDF generation flow in `Requests.tsx`.",
+  "updatedAt":  "2026-04-28T13:36:00.265022800Z",
+  "requestFeedback":  true
+}

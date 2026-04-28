@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_TASK",
+  "summary":  "Task list for integrating leave balances into the PDF generation flow.\n1. Update LeaveRequest type in src/types/leave.ts.\n2. Update LeaveRequestPdfData type in src/lib/corporatePdf.ts.\n3. Update useMemo transformation in src/pages/Requests.tsx.\n4. Update PDF generation logic in src/lib/corporatePdf.ts.\n5. Pass balance data to PDF generator in src/pages/Requests.tsx.",
+  "updatedAt":  "2026-04-28T13:36:32.192130500Z"
+}

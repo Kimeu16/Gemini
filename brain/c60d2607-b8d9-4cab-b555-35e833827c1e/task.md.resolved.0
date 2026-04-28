@@ -1,0 +1,6 @@
+- [ ] Update `LeaveRequest` interface in `src/types/leave.ts`
+- [ ] Update `LeaveRequestPdfData` interface in `src/lib/corporatePdf.ts`
+- [ ] Update `useMemo` in `src/pages/Requests.tsx` to parse `leaveBalances`
+- [ ] Update `generateLeaveRequestPdf` in `src/lib/corporatePdf.ts` to render balances
+- [ ] Update `handleDownloadPdf` in `src/pages/Requests.tsx` to pass `leaveBalances`
+- [ ] Verify PDF generation with real balances

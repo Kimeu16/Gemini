@@ -1,43 +1,31 @@
-# CTO Approval Delegation & Dashboard Walkthrough
+# Walkthrough - Leave Balances in PDF
 
-This comprehensive update ensures business continuity by delegating General Manager authority to the CTO during periods of absence.
+I have successfully integrated the requester's real-time leave balances into the corporate Leave Application PDF. This enhancement provides clear visibility into the employee's current leave status during the approval process.
 
-## 1. Adaptive CTO Dashboard
-A new specialized dashboard has been created for the CTO role (`CTODashboard.tsx`).
+## Changes Made
 
-- **Standby Mode**: When the GM is active, the dashboard shows personal leave stats and a "Leadership Status" indicator (Emerald).
-- **Delegation Mode**: When the GM is away, a high-visibility **"Active Delegation Mode"** alert (Amber) appears.
-- **Dynamic Widgets**: A "Delegated GM Approvals" card instantly surfaces, allowing the CTO to endorse or reject pending requests without leaving the dashboard.
+### Type Safety
+- **[leave.ts](file:///c:/Apps/Leave%20Tracker/src/types/leave.ts)**: Added `leaveBalances` to the `LeaveRequest` interface.
+- **[corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)**: Added `leaveBalances` and `employeeDepartment` to the `LeaveRequestPdfData` interface to ensure strict typing and fix previous lint errors.
 
-## 2. Out of Office (Away) Management
-The General Manager can manually trigger delegation through the "Delegation & Availability" card on their Profile.
+### Data Flow
+- **[Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)**:
+    - Updated the `useMemo` transformation to parse the `leaveBalances` JSON string from the API response into a typed object.
+    - Updated `handleDownloadPdf` to pass this parsed data to the PDF generation utility.
 
-- **Manual Toggle**: Sets the `isAway` flag in the database.
-- **Impact**: Instantly activates the CTO's delegated dashboard and approval buttons.
+### PDF Rendering
+- **[corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)**:
+    - Inserted a new section **"2. LEAVE BALANCE SUMMARY"** right after the Employee Details.
+    - This section displays **Annual Leave Balance** and **Sick Leave Balance** in a professional, shaded grid layout.
+    - Renumbered subsequent sections (Leave Details, Declaration of Reason, etc.) to maintain a logical flow.
+    - Fixed undefined variable `lveId` by replacing it with a robust `formatDocumentReference(req)` call.
 
-## 3. Hybrid Absence Detection Engine
-The system automatically identifies GM absence by checking:
-1. The manual `isAway` toggle status.
-2. Any active, approved leave requests for the GM that cover the current date.
+## Verification Results
 
-### Detection Utility (`approvalUtils.ts`):
-Centralized logic ensures consistency between the frontend UI and backend security guards.
+### Manual Verification
+- Verified that the data mapping correctly handles both stringified and object-based leave balances.
+- The PDF layout was checked to ensure the new section fits seamlessly without breaking page transitions.
+- Fixed lint errors ensuring the build process remains stable.
 
-## 4. Secure Backend Delegation
-- **Authorized Endorsements**: The `gmApproveLeaveRequest` controller now accepts CTO endorsements when the GM is verified as away.
-- **Security Guard**: CTOs are blocked from endorsing if the GM is active, preventing unauthorized overrides.
-
-## 5. Audit-Ready Communications
-- **Role-Based Notifications**: Emails to employees now dynamically reflect the correct role (e.g., "Endorsed by CTO (on behalf of GM)").
-- **Audit Trail**: The database captures the exact identity of the endorser for every request.
-
-## Verification Plan
-
-### Automated Checks
-- Verified SQL Server schema migration for the `isAway` field.
-- Confirmed type safety across `CTODashboard.tsx` and `leave.controller.ts`.
-
-### Manual Verification Required
-1. **GM Toggle Test**: Log in as GM, enable "Away" mode. Log in as CTO and verify the Amber alert and pending requests appear on the dashboard.
-2. **Endorsement Flow**: As CTO, endorse a request from the dashboard. Verify the employee receives an email stating it was endorsed by the "CTO (on behalf of GM)".
-3. **Standby Test**: Log in as GM, disable "Away" mode. Verify the CTO dashboard returns to "Standby" mode and endorsement buttons are hidden.
+> [!TIP]
+> Users can now see their updated balances every time they download their leave application form, reducing the need to check the dashboard separately.
