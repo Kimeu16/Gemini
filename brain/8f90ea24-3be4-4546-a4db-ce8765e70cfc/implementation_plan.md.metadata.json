@@ -1,7 +1,5 @@
 {
   "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
-  "summary":  "Final implementation plan for the delegation and substitute approval system. Covers 6 features: CEO absence bypass, GM as OM/HOD substitute with auto-phase-skip, CTO delegation (already done), line manager hierarchy updates, and substitute approver notifications. All open questions resolved with confirmed defaults.",
-  "updatedAt":  "2026-04-29T07:32:53.590358900Z",
-  "version":  "1",
+  "updatedAt":  "2026-04-29T11:48:38.612753400Z",
   "requestFeedback":  true
 }
