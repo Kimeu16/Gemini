@@ -1,72 +1,52 @@
-# Delegation & Substitute Approval System — Final Implementation Plan
+# Implementation Plan: Corporate Delegation Dashboard
 
-## Confirmed Scope
+Finalize the delegation workflow by providing a high-fidelity administrative interface for managing approver absences and automated substitution routing.
 
-### Feature 1: CEO Absence → GM Auto-Approves (Skip Manual Signature)
-- Add `isCEOAway()` helper using same pattern as `isGeneralManagerAway()` (isAway toggle + active leave detection)
-- When CEO is away and GM approves at Phase 2, request goes directly to `APPROVED` (skipping `PENDING_ADMIN`)
-- Administrator is notified that the CEO signature step was bypassed
+## User Review Required
 
-### Feature 2: GM as OM/HOD Substitute with Auto-Phase-Skip
-- When **OM is absent** → GM can approve `PENDING_OM` requests
-- When **HOD Projects is absent** → GM can approve `PENDING_HOD_PROJECTS` requests
-- In both cases, GM's single approval **auto-skips Phase 2** → goes to `PENDING_ADMIN`
-- Add `isOperationsManagerAway()` and `isHODProjectsAway()` helpers
-
-### Feature 3: CTO Approves on Behalf of GM ✅
-- Already implemented — no changes needed
-
-### Feature 4: GM/CTO Line Manager = Administrator (CEO proxy)
-- Update frontend line manager dropdown: GM and CTO see Administrator
-- Backend routing already correct (GM/CTO → `PENDING_ADMIN`)
-
-### Feature 5: HOD Projects & OM Line Managers = CTO and GM ✅
-- Already implemented — no changes needed
-
-### Feature 6: Substitute Approver Notifications
-- When a substitute acts, notify the original expected approver (email + in-app)
-- Exception: CEO is blocked from all emails (existing `BLOCKED_EMAILS` policy)
-- Applies to both approvals AND rejections
-
----
+> [!IMPORTANT]
+> The Delegation Dashboard will be accessible only to the **Administrator** role. It will control the "Away" status of key personnel (OM, GM, CTO, HOD Projects), which directly impacts the automated approval routing logic implemented in the controllers.
 
 ## Proposed Changes
 
-### Backend
+### [Backend] Refactoring & Cleanup
 
-#### [MODIFY] `approvalUtils.ts`
-- Add `isCEOAway()` — checks CEO/Administrator `isAway` + active leave
-- Add `isOperationsManagerAway()` — checks OM `isAway` + active leave
-- Add `isHODProjectsAway()` — checks HOD `isAway` + active leave
+#### [MODIFY] [delegation.controller.ts](file:///c:/Apps/Leave%20Tracker/server/src/controllers/delegation.controller.ts)
+- Fix role constant names (use `ADMIN` instead of `ADMINISTRATOR`).
+- Ensure type safety for `isAway` and `substituteId` fields.
 
-#### [MODIFY] `leave.controller.ts`
-- **`gmApproveLeaveRequest`**: When CEO is away, skip `PENDING_ADMIN` → go to `APPROVED` directly, deduct balance, send final approval email
-- **`omApproveLeaveRequest` / `hodApproveLeaveRequest`**: Allow GM to approve when OM/HOD is away; auto-skip GM phase → go to `PENDING_ADMIN`
-- Add substitute notification logic in all approval/rejection handlers
-- Add CTO substitute for rejection authorization
+#### [MODIFY] [delegation.routes.ts](file:///c:/Apps/Leave%20Tracker/server/src/routes/delegation.routes.ts)
+- Fix middleware imports (`authenticate` and `authorize`).
+- Use correct role key `ADMIN`.
 
-#### [MODIFY] `leave.routes.ts`
-- Add `GENERAL_MANAGER` to OM-approve and HOD-approve route authorization
+### [Frontend] Delegation Dashboard
 
-#### [MODIFY] `email.service.ts`
-- Add `substituteApprovalNotification` email template
-- Add `ceoBypassNotification` template for Administrator
+#### [NEW] [Delegation.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Delegation.tsx)
+- Create a premium, dark-mode-ready dashboard for managing delegations.
+- **Features**:
+  - Grid of Approver Cards with glassmorphism effects.
+  - Real-time "Away" toggle switches with Framer Motion animations.
+  - Substitute selection dropdowns with live filtering.
+  - Audit status indicators (last updated, current proxy).
+  - "World Class" aesthetics using Tailwind CSS and Lucide icons.
 
-### Frontend
+#### [MODIFY] [App.tsx](file:///c:/Apps/Leave%20Tracker/src/App.tsx)
+- Register the `/delegation` route.
+- Restrict access to the `ADMINISTRATOR` role.
 
-#### [MODIFY] `Requests.tsx`
-- Update line manager dropdown: GM/CTO see Administrator
-- Allow GM to act on `PENDING_OM` / `PENDING_HOD_PROJECTS` when OM/HOD is away
-- Add visual indicator for substitute approvals
-
----
+#### [MODIFY] [Sidebar.tsx](file:///c:/Apps/Leave%20Tracker/src/components/layout/Sidebar.tsx) (checking location)
+- Add "Delegation" to the navigation menu for Administrators.
 
 ## Verification Plan
 
 ### Automated Tests
-- Test each delegation path end-to-end
-- Verify balance deduction on all approval paths
-- Verify CEO email blocking still works
+- `npx prisma generate` to confirm schema alignment.
+- Verify API endpoints `/api/delegation/status` and `/api/delegation/update` via diagnostic scripts.
 
 ### Manual Verification
-- Test all substitute approval flows through the UI
+1. Log in as Administrator.
+2. Navigate to the new Delegation page.
+3. Toggle an approver (e.g., General Manager) as "Away".
+4. Assign a substitute.
+5. Verify that the "Away" status persists and reflects in the database.
+6. (Optional) Submit a leave request and verify it follows the delegation "Double-Jump" or "CEO Bypass" logic.
