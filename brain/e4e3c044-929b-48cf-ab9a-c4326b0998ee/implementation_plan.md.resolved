@@ -1,47 +1,28 @@
-# Implementation Plan - Removing Sick Leave and Reconfiguring Delegation
+# Implementation Plan - Expand Delegation Page Access
 
-This plan outlines the steps to remove "Sick Leave" functionality from the frontend and update the "Delegation" feature access control to exclude the Administrator role and include Operations Managers, General Managers, HOD Projects, and the CTO.
+The goal is to allow all Approver roles (Operations Manager, General Manager, CTO, HOD Projects) to access and manage delegations, while also ensuring the Administrator role is not accidentally excluded.
 
 ## Proposed Changes
 
-### Frontend - Sick Leave Removal
+### Backend
 
-#### [MODIFY] [corporatePdf.ts](file:///c:/Apps/Leave%20Tracker/src/lib/corporatePdf.ts)
-- Remove "SICK LEAVE BALANCE" field box from the PDF layout (around line 974).
-- Update the "Scope" section text to exclude "Sick" (around line 1137).
+#### [MODIFY] [delegation.routes.ts](file:///c:/Apps/Leave%20Tracker/server/src/routes/delegation.routes.ts)
+- Update the `authorize` middleware to include `OPERATIONS_MANAGER`, `GENERAL_MANAGER`, `CTO`, and `HOD_PROJECTS` in addition to `ADMINISTRATOR`.
 
-#### [MODIFY] [Requests.tsx](file:///c:/Apps/Leave%20Tracker/src/pages/Requests.tsx)
-- Remove "Sick Leave" from the leave type selection dropdowns (around lines 1348 and 2528).
-- Remove logic that references "SICK" for leave balance checks (around lines 2533, 2623, 2641).
-
-#### [MODIFY] [AdminDashboard.tsx](file:///c:/Apps/Leave%20Tracker/src/components/dashboard/AdminDashboard.tsx)
-- Remove hardcoded sick leave balances in `employeeProfile` query (lines 115 and 121).
-
-#### [MODIFY] [EmployeeDashboard.tsx](file:///c:/Apps/Leave%20Tracker/src/components/dashboard/EmployeeDashboard.tsx)
-- Remove hardcoded sick leave balances in `employeeProfile` query (lines 76 and 83).
-
-#### [MODIFY] [LeaveBalanceCard.tsx](file:///c:/Apps/Leave%20Tracker/src/components/LeaveBalanceCard.tsx)
-- Remove "Sick Leave" entry from `LEAVE_TYPES` array (around line 32).
-
-#### [MODIFY] [AuthContext.tsx](file:///c:/Apps/Leave%20Tracker/src/contexts/AuthContext.tsx)
-- Remove `sick` field from `User` interface's `leaveBalances` (line 20).
-- Update mock user data to exclude `sick` (line 79).
-
-### Frontend - Delegation Access Control
-
-#### [MODIFY] [Sidebar.tsx](file:///c:/Apps/Leave%20Tracker/src/components/layout/Sidebar.tsx)
-- Update `allowedRoles` for the "Delegation" nav item to `["OPERATIONS_MANAGER", "GENERAL_MANAGER", "CTO", "HOD_PROJECTS"]` and remove `"ADMINISTRATOR"` (line 49).
+### Frontend
 
 #### [MODIFY] [App.tsx](file:///c:/Apps/Leave%20Tracker/src/App.tsx)
-- Update `allowedRoles` for the `/delegation` route to `["OPERATIONS_MANAGER", "GENERAL_MANAGER", "CTO", "HOD_PROJECTS"]` and remove `"ADMINISTRATOR"` (line 102).
+- Add `ADMINISTRATOR` to the `allowedRoles` for the `/delegation` route.
+
+#### [MODIFY] [Sidebar.tsx](file:///c:/Apps/Leave%20Tracker/src/components/layout/Sidebar.tsx)
+- Add `ADMINISTRATOR` to the `allowedRoles` for the "Delegation" navigation item.
 
 ## Verification Plan
 
 ### Automated Tests
-- N/A (Frontend logic changes)
+- None available for this specific change, but manual verification will be thorough.
 
 ### Manual Verification
-- Log in as Administrator: Verify "Delegation" is NO LONGER in the sidebar and `/delegation` is inaccessible.
-- Log in as OM/GM/CTO/HOD Projects: Verify "Delegation" IS in the sidebar and accessible.
-- Verify "Sick Leave" is no longer an option in the "Apply for Leave" form.
-- Verify "Sick Leave Balance" is gone from the Dashboard and PDF prints.
+- Log in as **Operations Manager** and verify the Delegation page displays the list of approvers and allows toggling status.
+- Log in as **Administrator** and verify the Delegation page is still accessible and functional.
+- Log in as a regular **Employee** and verify the Delegation page is NOT accessible.

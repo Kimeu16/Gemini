@@ -1,5 +1,6 @@
 {
   "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
-  "summary":  "Walkthrough of changes to make Administrators follow the full leave approval chain (OM → GM → other Admin) instead of auto-approving their own requests.",
-  "updatedAt":  "2026-05-04T05:46:02.583357600Z"
+  "summary":  "System-wide eradication of \"Sick Leave\" from the Leave Tracker system, including database sanitization and backend logic refactoring.",
+  "updatedAt":  "2026-05-04T07:31:51.937840Z",
+  "version":  "1"
 }

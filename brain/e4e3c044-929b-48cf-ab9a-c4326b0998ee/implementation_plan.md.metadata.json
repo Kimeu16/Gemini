@@ -1,7 +1,7 @@
 {
   "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
-  "summary":  "A plan to remove Sick Leave from the frontend and reconfigure Delegation feature access roles.",
-  "updatedAt":  "2026-05-04T06:43:15.739060100Z",
-  "version":  "1",
+  "summary":  "Expand access to the Delegation Management page to include all Approvers (OM, GM, CTO, HOD) and ensure Administrators retain access.",
+  "updatedAt":  "2026-05-04T07:39:23.913604300Z",
+  "version":  "3",
   "requestFeedback":  true
 }
