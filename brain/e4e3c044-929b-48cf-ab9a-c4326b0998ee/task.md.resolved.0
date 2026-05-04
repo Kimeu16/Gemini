@@ -1,0 +1,7 @@
+# Admin Leave Approval Flow — Task Tracker
+
+- [ ] Backend: Remove admin auto-approve bypass in `createLeaveRequest`
+- [ ] Backend: Add self-approval guard in `adminApproveLeaveRequest`
+- [ ] Frontend: Show line manager dropdown for ADMINISTRATOR role
+- [ ] Frontend: Hide approve button for admin's own PENDING_ADMIN request
+- [ ] Verify: Build backend and frontend

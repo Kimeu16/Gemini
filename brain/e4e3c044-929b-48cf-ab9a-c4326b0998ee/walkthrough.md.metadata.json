@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Walkthrough of changes to make Administrators follow the full leave approval chain (OM → GM → other Admin) instead of auto-approving their own requests.",
+  "updatedAt":  "2026-05-04T05:46:02.583357600Z"
+}
