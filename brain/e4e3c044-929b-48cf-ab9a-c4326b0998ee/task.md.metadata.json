@@ -1,6 +1,6 @@
 {
   "artifactType":  "ARTIFACT_TYPE_TASK",
-  "summary":  "Cleaning up task list and marking backend cleanup as completed.",
-  "updatedAt":  "2026-05-04T07:31:43.693883100Z",
-  "version":  "5"
+  "summary":  "Marking delegation access expansion tasks as completed.",
+  "updatedAt":  "2026-05-04T07:46:39.156864500Z",
+  "version":  "7"
 }

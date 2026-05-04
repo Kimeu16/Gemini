@@ -1,35 +1,26 @@
-# Walkthrough: "Sick Leave" Eradication
+# Walkthrough: Expanded Delegation Access
 
-We have successfully removed all traces of "Sick Leave" from the system, aligning it with the updated leave policy (Annual, Maternity, and Paternity only).
+We have successfully expanded the access permissions for the Delegation Management page. Previously, while the sidebar link was visible to some roles, the backend data was restricted exclusively to the Administrator role.
 
-## Key Accomplishments
+## Changes Made
 
-### 1. Database Sanitization
-- **Purge Script**: Created and executed `server/scripts/purge_sick_leave.ts` to programmatically remove the `sick` key from the `leaveBalances` JSON column for all 62 employees in the database.
-- **Migration**: Updated `schema.prisma` to set the default `leaveBalances` to `{"annual": 24}`, ensuring new employees start with the correct structure.
+### 1. Backend Route Authorization
+- Updated `server/src/routes/delegation.routes.ts` to allow multiple roles to access delegation endpoints.
+- **Allowed Roles**: `ADMINISTRATOR`, `OPERATIONS_MANAGER`, `GENERAL_MANAGER`, `CTO`, and `HOD_PROJECTS`.
 
-### 2. Backend Logic Purge
-- **Constants**: Removed `SICK` from `DEFAULT_LEAVE_BALANCES` in `server/src/utils/constants.ts`.
-- **Controllers**:
-    - **Leave Controller**: Removed validation and deduction logic for `SICK` leave.
-    - **Employee Controller**: Removed `sick` from Zod schemas, transformations, and creation logic.
-    - **Carry Forward Controller**: Refactored year-end processing to exclude `sick` from carry-forward calculations.
-    - **Reservation Controller**: Removed `SICK` from the reservation creation schema.
+### 2. Frontend Route Protection
+- Updated `src/App.tsx` to include `ADMINISTRATOR` in the `allowedRoles` list for the `/delegation` route.
+- This ensures that Admins can also access the page (they were previously missing from the frontend allowed list).
 
-### 3. Frontend & Types
-- **Type Safety**: Updated `LeaveType` and `LeaveBalances` interfaces in `src/types/leave.ts` and `carryforward.controller.ts` to strictly exclude the `sick` property.
-- **UI Verification**: Confirmed that `Requests.tsx`, `Employees.tsx`, `Reports.tsx`, and `AdminDashboard.tsx` are clean of any "Sick Leave" references.
+### 3. Sidebar Visibility
+- Updated `src/components/layout/Sidebar.tsx` to include `ADMINISTRATOR` in the `allowedRoles` for the Delegation navigation item.
 
-## Verification Results
+## Verification
 
-### Automated Checks
-- **Migration Script**: Logged 62 employees processed and successfully updated.
-- **Prisma Client**: Regenerated to reflect schema changes.
+### Role Access
+- **Operations Manager (OM)**: Can now view the delegation status of all approvers and update their absence/substitute status.
+- **Administrator**: Retains full access to the delegation management tools.
+- **Other Approvers**: GM, CTO, and HOD Projects now have the same management capabilities as the OM and Admin.
 
-### Manual Verification Required
-- [ ] Log in as an admin and verify that the "Sick Leave" option is no longer present in the "Add Employee" or "Create Request" dropdowns.
-- [ ] Check a few employee profiles to ensure their `leaveBalances` JSON no longer contains the `sick` key.
-- [ ] Run a test leave request for "Annual Leave" and ensure balances deduct correctly.
-
-> [!IMPORTANT]
-> The temporary migration script `server/scripts/purge_sick_leave.ts` has been deleted for security and cleanliness.
+> [!TIP]
+> Users may need to refresh their browser or log out and back in to pick up the new role-based permissions in their session.
