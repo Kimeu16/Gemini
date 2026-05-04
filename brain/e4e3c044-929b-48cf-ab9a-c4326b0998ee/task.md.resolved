@@ -1,7 +1,9 @@
-# Admin Leave Approval Flow — Task Tracker
-
-- [x] Backend: Remove admin auto-approve bypass in `createLeaveRequest`
-- [x] Backend: Add self-approval guard in `adminApproveLeaveRequest`
-- [x] Frontend: Show line manager dropdown for ADMINISTRATOR role
-- [x] Frontend: Hide approve button for admin's own PENDING_ADMIN request
-- [x] Verify: Build backend and frontend (both compile, pre-existing errors only)
+- [ ] Remove Sick Leave from `corporatePdf.ts`
+- [ ] Remove Sick Leave from `Requests.tsx`
+- [ ] Remove Sick Leave from `AdminDashboard.tsx`
+- [ ] Remove Sick Leave from `EmployeeDashboard.tsx`
+- [ ] Remove Sick Leave from `LeaveBalanceCard.tsx`
+- [ ] Remove Sick Leave from `AuthContext.tsx`
+- [ ] Update Delegation roles in `Sidebar.tsx`
+- [ ] Update Delegation roles in `App.tsx`
+- [ ] Verify changes

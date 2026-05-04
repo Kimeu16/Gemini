@@ -1,6 +1,7 @@
 {
   "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
-  "summary":  "Plan to remove the Administrator auto-approve bypass so that Administrators follow the same leave approval flow as regular employees (OM → GM → other Administrator). Covers backend changes in leave.controller.ts (remove auto-approve, add self-approval guard) and frontend changes in Requests.tsx (show line manager dropdown for admins, prevent self-approval in UI).",
-  "updatedAt":  "2026-05-04T05:42:05.884956300Z",
+  "summary":  "A plan to remove Sick Leave from the frontend and reconfigure Delegation feature access roles.",
+  "updatedAt":  "2026-05-04T06:43:15.739060100Z",
+  "version":  "1",
   "requestFeedback":  true
 }

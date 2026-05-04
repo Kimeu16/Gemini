@@ -1,6 +1,6 @@
 {
   "artifactType":  "ARTIFACT_TYPE_TASK",
-  "summary":  "All tasks completed for the administrator leave approval flow change.",
-  "updatedAt":  "2026-05-04T05:45:37.380865Z",
-  "version":  "1"
+  "summary":  "Tracking progress for removing sick leave and reconfiguring delegation access.",
+  "updatedAt":  "2026-05-04T06:44:39.282342900Z",
+  "version":  "2"
 }
