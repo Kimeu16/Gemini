@@ -1,0 +1,7 @@
+# Task: Verify professional initials for employee avatars
+
+- [ ] Navigate to http://localhost:8080/employees (Done)
+- [ ] Log in with tkymeu@gmail.com / 0714229987 if needed
+- [ ] Inspect employee cards for initial-based avatars
+- [ ] Confirm absence of cartoon faces
+- [ ] Report findings

@@ -1,35 +1,31 @@
-# System Configuration Update: CTO Roles & Profile
+# System Configuration Update: CTO Roles & Production Hotfixes
 
-I have completed the updates to the system hierarchy and user management as requested.
+I have successfully resolved the production outage and finalized the executive delegation workflows.
 
 ## Changes Implemented
 
-### 1. Approval Hierarchy & Reporting
-- **CTO Reporting**: The **CTO**'s leave requests now route directly to the **General Manager** (`PENDING_GM`) for approval, rather than the Administrator.
-- **Line Manager Routing**: If a user selects the **General Manager** as their handover line manager, the request is now correctly routed to the GM level.
+### 1. Production Backend Hotfixes
+- Identified and resolved three TypeScript build errors that were causing the backend build pipeline to fail and crashing the `npm run ship` deployment.
+- Fixed `APP_CONSTANTS.ROLES.ADMINISTRATOR` to `APP_CONSTANTS.ROLES.ADMIN` in `approvalUtils.ts`.
+- Updated `leave.controller.ts` to access `substituteUser?.id` instead of a non-existent `substituteId` property.
+- Fixed an incorrect search field mapping (`reason` to `description`) in `leave.controller.ts`.
+- Successfully deployed the backend hotfix via `npm run ship` to the production VM. The system health monitor has confirmed all services are online.
 
-### 2. CTO System Visibility
+### 2. Executive Handover & Approval Workflow (`Requests.tsx`)
+- **CTO Delegation:** The **CTO** can now hand over their duties to the **General Manager (GM)** or **Operations Manager (OM)**.
+- **OM and HOD Projects Delegation:** Added explicit configuration so that the **Operations Manager** and **HOD Projects** can hand over to the GM, CTO, or each other.
+- **Approval Routing:** Confirmed that CTO leave requests are correctly routed to the General Manager (`PENDING_GM`) for approval.
+
+### 3. CTO System Visibility
 - **Employee Directory**: The CTO now has full access to the **Employee Directory**, including detailed profiles.
 - **Management Access**: Added access for the CTO to the **Reports** and **Logs** sections in the sidebar.
 - **API Authorization**: Updated backend routes to allow the CTO to perform administrative tasks like managing welcome emails and employee profiles.
 
-### 3. Test Account Exclusion
-- **User**: `ignitionx8@gmail.com` (Willis Ochieng)
-- **Status**: Marked as `isTest: true` and `isActive: false`. This account will no longer appear in employee lists, reports, or system usage metrics.
-
-### 4. Profile Update: Phineas Mwenda Kinoti
-Updated the profile for `kinoti.mwenda@alandick.co.ke` with the following details:
-- **Role**: CTO
-- **Position**: CTO
-- **Department**: EXECUTIVE
-- **Gender**: MALE
-- **Work Schedule**: MON_FRI
-- **Leave Balances**: 
-  - Annual: **63.5 days**
-  - Sick: **10 days**
-- **Phone**: 254721467896
+### 4. Test Account Exclusion & Profile Updates
+- **Test User**: `ignitionx8@gmail.com` (Willis Ochieng) was marked as `isTest: true` and `isActive: false` so it no longer appears in production lists or reports.
+- **Profile Update**: Configured `kinoti.mwenda@alandick.co.ke` with the CTO role, EXECUTIVE department, MON_FRI schedule, and 63.5 Annual/10 Sick leave days.
 
 ## Verification
-- Verified database updates for both user accounts.
-- Confirmed logic in `leave.controller.ts` reflects the new reporting hierarchy.
-- Confirmed `Sidebar.tsx` and `employee.routes.ts` permissions include the `CTO` role.
+- Verified the backend API is live on port 5000 and the `/api/auth/me` endpoint is fully operational.
+- Verified that the `Requests.tsx` component is dynamically loading the updated `handoverOptions`.
+- Both frontend and backend are successfully live via the zero-downtime deployment pipeline.

@@ -1,0 +1,234 @@
+[0] (500,500)<div  />
+	AlanDick East Africa
+	Leave Management System
+	[1] (66,164)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/dashboard' />
+		[2] (75,164)<span >Dashboard />
+	[3] (66,209)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/requests' />
+		[4] (75,209)<span >Requests />
+	[5] (66,254)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/my-history' />
+		[6] (75,254)<span >My History />
+	[7] (66,300)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/calendar' />
+		[8] (75,300)<span >Calendar />
+	[9] (66,345)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/notifications' />
+		[10] (75,345)<span >Notifications />
+	[11] (66,390)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 bg-white/15 text-white' href='/employees' />
+		[12] (75,390)<span >Employees />
+	[13] (66,436)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/delegation' />
+		[14] (75,436)<span >Delegation />
+	[15] (66,481)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/reports' />
+		[16] (75,481)<span >Reports />
+	[17] (66,526)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/logs' />
+		[18] (75,526)<span >Logs />
+	[19] (66,572)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/guide' />
+		[20] (75,572)<span >User Guide />
+	[21] (66,617)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/profile' />
+		[22] (75,617)<span >My Profile />
+	[23] (66,662)<a class='flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200' href='/settings' />
+		[24] (75,662)<span >Settings />
+	[25] (66,896)<button class='flex items-center gap-3 px-3 py-2.5 w-full rounded-xl text-sm font-medium transition-all duration-200 hover:bg-red-500/20 hover:text-red-300' />
+		[26] (41,896)<span >Logout />
+	Build Version
+	v20260505-0856
+	[27] (850,32)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 rounded-xl text-white hover:bg-white/10' />
+	[28] (877,32)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-10 w-10 relative text-white hover:bg-white/10' id='radix-:r0:' />
+	Anthony Kimeu
+	Operations Manager
+	[29] (978,32)<span  />
+		[30] (978,32)<img  />
+	[31] (567,533)<main class='flex-1 overflow-y-auto p-4 md:p-6 bg-muted/10' scrollable='true' />
+		Employees
+		Manage your team members and annual leave balances
+		[32] (779,122)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary w-full sm:w-auto shadow-md'>Export Data />
+		[33] (856,122)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary w-full sm:w-auto shadow-md'>Bulk Import />
+		[34] (937,122)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary w-full sm:w-auto shadow-md'>New Employee />
+		[35] (191,206)<button class='relative flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 z-10 text-white'>Team Directory />
+			[36] (191,206)<div  />
+		[37] (295,206)<button class='relative flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 z-10 text-muted-foreground hover:text-foreground hover:bg-muted/30'>Annual Processing />
+			[38] (335,206)<span >OM />
+		Showing
+		60
+		team members
+		[39] (943,281)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md h-8 w-10 p-0 gradient-primary shadow-sm' />
+		[40] (965,281)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground rounded-md h-8 w-10 p-0 hover:bg-muted' />
+		ADMINISTRATION
+		17
+		[41] (283,485)<div  />
+			[42] (283,485)<div  />
+				[43] (283,443)<div  />
+					[44] (176,441)<span  />
+						[45] (176,441)<img  />
+					[46] (303,443)<div  />
+						[47] (303,443)<div  />
+							[48] (244,443)<div  />
+								[49] (244,419)<h3 >Administrator />
+								[50] (244,441)<p >System Administrator />
+								[51] (229,468)<div >ADMINISTRATION />
+							[52] (397,424)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[53] (283,528)<div  />
+					[54] (283,523)<div  />
+						[55] (185,523)<span >Work Schedule />
+						[56] (390,523)<div >Mon-Fri />
+					[57] (283,551)<div  />
+						[58] (183,551)<span >Leave Balance />
+						[59] (392,551)<span >24
+Days />
+		[60] (563,485)<div  />
+			[61] (563,485)<div  />
+				[62] (563,443)<div  />
+					[63] (456,441)<span  />
+						[64] (456,441)<img  />
+					[65] (583,443)<div  />
+						[66] (583,443)<div  />
+							[67] (539,443)<div  />
+								[68] (539,419)<h3 >Anthony  Mwaura Ndungu />
+								[69] (539,441)<p >Employee />
+								[70] (509,468)<div >ADMINISTRATION />
+							[71] (677,424)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[72] (563,528)<div  />
+					[73] (563,523)<div  />
+						[74] (465,523)<span >Work Schedule />
+						[75] (669,523)<div >Mon-Sat />
+					[76] (563,551)<div  />
+						[77] (463,551)<span >Leave Balance />
+						[78] (672,551)<span >53
+Days />
+		[79] (843,485)<div  />
+			[80] (843,485)<div  />
+				[81] (843,443)<div  />
+					[82] (736,441)<span  />
+						[83] (736,441)<img  />
+					[84] (863,443)<div  />
+						[85] (863,443)<div  />
+							[86] (815,443)<div  />
+								[87] (815,419)<h3 >Belinda Michel Anyango />
+								[88] (815,441)<p >House Keeper />
+								[89] (789,468)<div >ADMINISTRATION />
+							[90] (957,424)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[91] (843,528)<div  />
+					[92] (843,523)<div  />
+						[93] (745,523)<span >Work Schedule />
+						[94] (949,523)<div >Mon-Sat />
+					[95] (843,551)<div  />
+						[96] (743,551)<span >Leave Balance />
+						[97] (952,551)<span >26
+Days />
+		[98] (283,707)<div  />
+			[99] (283,707)<div  />
+				[100] (283,665)<div  />
+					[101] (176,663)<span  />
+						[102] (176,663)<img  />
+					[103] (303,665)<div  />
+						[104] (303,665)<div  />
+							[105] (247,665)<div  />
+								[106] (247,641)<h3 >Daniel Lubale Sikoyo />
+								[107] (247,663)<p >House Keeper />
+								[108] (229,690)<div >ADMINISTRATION />
+							[109] (397,646)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[110] (283,750)<div  />
+					[111] (283,745)<div  />
+						[112] (185,745)<span >Work Schedule />
+						[113] (389,745)<div >Mon-Sat />
+					[114] (283,773)<div  />
+						[115] (183,773)<span >Leave Balance />
+						[116] (392,773)<span >31
+Days />
+		[117] (563,707)<div  />
+			[118] (563,707)<div  />
+				[119] (563,665)<div  />
+					[120] (456,663)<span  />
+						[121] (456,663)<img  />
+					[122] (583,665)<div  />
+						[123] (583,665)<div  />
+							[124] (534,665)<div  />
+								[125] (534,641)<h3 >Kelvin Mukhaye Akwale />
+								[126] (534,663)<p >Employee />
+								[127] (509,690)<div >ADMINISTRATION />
+							[128] (677,646)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[129] (563,750)<div  />
+					[130] (563,745)<div  />
+						[131] (465,745)<span >Work Schedule />
+						[132] (669,745)<div >Mon-Sat />
+					[133] (563,773)<div  />
+						[134] (463,773)<span >Leave Balance />
+						[135] (672,773)<span >38
+Days />
+		[136] (843,707)<div  />
+			[137] (843,707)<div  />
+				[138] (843,665)<div  />
+					[139] (736,663)<span  />
+						[140] (736,663)<img  />
+					[141] (863,665)<div  />
+						[142] (863,665)<div  />
+							[143] (814,665)<div  />
+								[144] (814,641)<h3 >Kelvin Mukhaye Akwale />
+								[145] (814,663)<p >EMPLOYEE />
+								[146] (789,690)<div >ADMINISTRATION />
+							[147] (957,646)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[148] (843,750)<div  />
+					[149] (843,745)<div  />
+						[150] (745,745)<span >Work Schedule />
+						[151] (949,745)<div >Mon-Sat />
+					[152] (843,773)<div  />
+						[153] (743,773)<span >Leave Balance />
+						[154] (952,773)<span >38
+Days />
+		[155] (283,929)<div  />
+			[156] (283,929)<div  />
+				[157] (283,887)<div  />
+					[158] (176,885)<span  />
+						[159] (176,885)<img  />
+					[160] (303,887)<div  />
+						[161] (303,887)<div  />
+							[162] (235,887)<div  />
+								[163] (235,863)<h3 >Mercy Cheptoo />
+								[164] (235,885)<p >Administrator />
+								[165] (229,912)<div >ADMINISTRATION />
+							[166] (397,868)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[167] (283,972)<div  />
+					[168] (283,967)<div  />
+						[169] (185,967)<span >Work Schedule />
+						[170] (389,967)<div >Mon-Sat />
+					[171] (283,995)<div  />
+						[172] (183,995)<span >Leave Balance />
+						[173] (392,995)<span >47
+Days />
+		[174] (563,929)<div  />
+			[175] (563,929)<div  />
+				[176] (563,887)<div  />
+					[177] (456,885)<span  />
+						[178] (456,885)<img  />
+					[179] (583,887)<div  />
+						[180] (583,887)<div  />
+							[181] (523,887)<div  />
+								[182] (523,863)<h3 >Mercy Njoki Maina />
+								[183] (523,885)<p >Administrator />
+								[184] (509,912)<div >ADMINISTRATION />
+							[185] (677,868)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[186] (563,972)<div  />
+					[187] (563,967)<div >Work Schedule />
+						Work Schedule
+						[188] (669,967)<div >Mon-Sat />
+					[189] (563,995)<div >Leave Balance />
+						Leave Balance
+						[190] (672,995)<span >32
+Days />
+		[191] (843,929)<div  />
+			[192] (843,929)<div  />
+				[193] (843,887)<div  />
+					[194] (736,885)<span  />
+						[195] (736,885)<img  />
+					[196] (863,887)<div  />
+						[197] (863,887)<div  />
+							[198] (820,887)<div  />
+								[199] (820,863)<h3 >Mwangi Shadrack Mwaura />
+								[200] (820,885)<p >Driver />
+								[201] (789,912)<div >ADMINISTRATION />
+							[202] (957,868)<button class='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 rounded-md h-8 w-8 p-0 hover:bg-destructive/10 hover:text-destructive shrink-0' />
+				[203] (843,972)<div  />
+					[204] (843,967)<div  />
+						[205] (745,967)<span >Work Schedule />
+						[206] (949,967)<div >Mon-Sat />
+					[207] (843,995)<div  />
+						[208] (743,995)<span >Leave Balance />
+						[209] (952,995)<span >90
+Days />
