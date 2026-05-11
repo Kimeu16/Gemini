@@ -1,0 +1,7 @@
+- [x] Refactor `createLeaveRequest` to background notifications
+- [x] Refactor `hodApproveLeaveRequest` to background notifications
+- [x] Refactor `omApproveLeaveRequest` to background notifications
+- [x] Refactor `gmApproveLeaveRequest` to background notifications
+- [x] Refactor `adminApproveLeaveRequest` to background notifications
+- [x] Refactor `rejectLeaveRequest` to background notifications
+- [x] Verify background delivery via logs
