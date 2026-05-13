@@ -1,0 +1,27 @@
+# Tasks: Premium Portfolio Enhancements
+
+- [ ] Core Infrastructure & Styles
+    - [ ] Update `styles.css` with Dual Theme support
+    - [ ] Create `theme-provider.tsx`
+    - [ ] Create `theme-toggle.tsx`
+    - [ ] Add Custom Cursor styles to CSS
+- [ ] Global Layout Enhancements (`__root.tsx`)
+    - [ ] Integrate Theme Provider
+    - [ ] Integrate Custom Cursor component
+    - [ ] Add Global Page Transitions
+- [ ] Header & Navigation
+    - [ ] Add "Available for work" status indicator to `SiteHeader`
+    - [ ] Create `mobile-menu.tsx`
+    - [ ] Integrate Theme Toggle and Mobile Menu into `SiteHeader`
+- [ ] Homepage Enhancements (`index.tsx`)
+    - [ ] Replace CSS animations with Framer Motion
+    - [ ] Add interactive hover effects to Portrait and Projects
+    - [ ] Implement "Pause on Hover" for Marquee
+- [ ] Work Page & Case Studies
+    - [ ] Enhance `work.tsx` with project visuals/SVGs
+    - [ ] Create `work.$projectId.tsx` dynamic route
+    - [ ] Add basic content for one case study as a template
+- [ ] Final Polish & Verification
+    - [ ] Verify responsive design
+    - [ ] Check theme persistence
+    - [ ] Final performance check
