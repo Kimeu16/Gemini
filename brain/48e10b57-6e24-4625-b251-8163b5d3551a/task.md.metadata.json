@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_TASK",
+  "summary":  "Checklist tracking all files that need updating to add public IP 40.90.111.70:8086 access alongside existing private IP 10.172.19.16.",
+  "updatedAt":  "2026-05-14T06:44:48.191242400Z"
+}

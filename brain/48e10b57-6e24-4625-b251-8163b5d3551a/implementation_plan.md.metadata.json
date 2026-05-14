@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Plan to reconfigure the Leave Tracker application from private IP 10.172.19.16:80 to public IP 40.90.111.70:8086. Covers changes to server .env files (FRONTEND_URL, ALLOWED_ORIGINS), Nginx configs (server_name), health monitor defaults, deploy scripts, and documentation. Frontend code needs no changes due to dynamic API URL resolution. Includes open questions about port forwarding target, dual-access requirements, and email link behavior.",
+  "updatedAt":  "2026-05-14T06:41:54.795111700Z",
+  "requestFeedback":  true
+}
