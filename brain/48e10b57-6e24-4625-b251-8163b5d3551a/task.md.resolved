@@ -1,26 +1,28 @@
 # Public IP Configuration Task
 
 ## Critical Config Files
-- [ ] `server/.env` — Update FRONTEND_URL and ALLOWED_ORIGINS
-- [ ] `server/.env.production` — Update FRONTEND_URL and ALLOWED_ORIGINS
-- [ ] `nginx.conf` — Add public IP to server_name
-- [ ] `nginx-windows.conf` — Add public IP to server_name
-- [ ] `server/ops/health-monitor.ts` — Update default fallback URL
+- [x] `server/.env` — Update FRONTEND_URL and ALLOWED_ORIGINS
+- [x] `server/.env.production` — Update FRONTEND_URL and ALLOWED_ORIGINS
+- [x] `nginx.conf` — Add public IP to server_name
+- [x] `nginx-windows.conf` — Add public IP to server_name
+- [x] `server/ops/health-monitor.ts` — Update default fallback URL
 
 ## Deploy/Setup Scripts
-- [ ] `deploy-v2.ps1` — Update default FrontIp
-- [ ] `deploy-native.ps1` — Update default FrontIp
-- [ ] `setup-vm.ps1` — Update env template
-- [ ] `install-watchdogs.ps1` — Update default FrontIp
-- [ ] `probe_vms_v2.ps1` — Update default FrontIp
-- [ ] `ops/health-monitor.ps1` — Update default URL
-- [ ] `scratch/remote-setup-frontend.ps1` — Update default FrontIp
+- [x] `deploy-v2.ps1` — Update default FrontIp
+- [x] `deploy-native.ps1` — Update default FrontIp
+- [x] `setup-vm.ps1` — Update env template
+- [x] `install-watchdogs.ps1` — Update default FrontIp
+- [x] `probe_vms_v2.ps1` — Update default FrontIp
+- [x] `ops/health-monitor.ps1` — Update default URL
+- [x] `scratch/remote-setup-frontend.ps1` — Update default FrontIp
+- [x] `install-health-monitor.ps1` — Update summary output
 
 ## Documentation
-- [ ] `README.md` — Update IP references
-- [ ] `TECHNICAL_DOCS.md` — Update IP references
-- [ ] `WATCHDOG-SETUP.md` — Update IP references
+- [x] `README.md` — Update IP references
+- [x] `TECHNICAL_DOCS.md` — Update IP references
+- [x] `WATCHDOG-SETUP.md` — Update IP references
 
 ## Verification
-- [ ] Restart backend and verify CORS
-- [ ] Verify frontend works on both IPs
+- [x] Backend health check — 200 OK
+- [x] CORS accepts `http://40.90.111.70:8086` ✅
+- [x] CORS accepts `http://10.172.19.16` ✅ (dual access)

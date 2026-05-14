@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Complete walkthrough of the public IP (40.90.111.70:8086) configuration changes. Documents all 16 modified files across config, scripts, and docs. Includes verification results showing CORS accepts both public and private IPs. Notes that no frontend code changes were needed due to dynamic URL resolution.",
+  "updatedAt":  "2026-05-14T07:07:32.711596200Z"
+}
