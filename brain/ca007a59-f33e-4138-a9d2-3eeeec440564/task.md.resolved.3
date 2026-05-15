@@ -1,0 +1,10 @@
+- [x] Create provisioning script `server/src/scripts/provision-test-users.ts`
+- [x] Run provisioning script
+- [x] Update `server/src/controllers/delegation.controller.ts`
+- [x] Update `server/src/controllers/stats.controller.ts`
+- [x] Update `server/src/controllers/auth.controller.ts`
+- [x] Update `server/src/controllers/employee.controller.ts`
+- [x] Update `server/src/controllers/carryforward.controller.ts`
+- [x] Update `server/src/controllers/leave.controller.ts`
+- [x] Update `server/src/controllers/reservation.controller.ts`
+- [x] Verify test users are hidden and functional

@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Implementation plan for creating test users and ensuring they are hidden from system-wide employee lists. This involves a provisioning script and updates to several controllers to filter by the `isTest` flag.",
+  "updatedAt":  "2026-05-15T05:42:47.922759500Z",
+  "requestFeedback":  true
+}
